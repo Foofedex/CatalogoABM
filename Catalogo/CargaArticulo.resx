@@ -124,7 +124,7 @@
   <data name="BTNBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAW5JREFUOE+lk71LAmEcxx0bHG4RWpLUpYzWIoqwRDDrLmisqJYiClpc2qIX2iKp
+        vwAADr8BOAVTJAAAAW5JREFUOE+lk71LAmEcxx0bHG4RWpLUpYzWIoqwRDDrLmisqJYiClpc2qIX2iKp
         g8AkGiIwIpTU/8K1oAZfwKDulFTofKG+3ekT3nnP3dIHvsP9uO+H557nOQv+iangW2pC+pLIEx1jQRPY
         PdtDJpshAzp0QR3YediH7XgEFfGTDOnoBXI5GD1ET3QUA7wfr+lnFN8EXSqlcut1rYCUrTdjcKZYOG79
         cJ/7McQHNHHwXiyFtoEftUBVdiRYOGNzcD6ysKdm0ZcMaMIkPODC6/IuE0FDqiN4d9Qpx+WySWwxLxbC
@@ -133,6 +133,9 @@
         H6wgl8+TCR1DgUKjWoNUM/sbgV+kYT+uHUSzeQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAMIOAADCDgAAAAAAAAAA

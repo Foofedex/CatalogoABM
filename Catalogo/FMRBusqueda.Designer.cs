@@ -1,6 +1,6 @@
 ﻿namespace Catalogo
 {
-    partial class Form2
+    partial class FMRBusqueda
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.txtBusquedad = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRBusqueda));
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.lbl_busquedad = new System.Windows.Forms.Label();
-            this.btnBusquedad = new System.Windows.Forms.Button();
+            this.btnBusqueda = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.LBListaBusqueda = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // txtBusquedad
+            // txtBusqueda
             // 
-            this.txtBusquedad.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtBusquedad.Cursor = System.Windows.Forms.Cursors.IBeam;
-            resources.ApplyResources(this.txtBusquedad, "txtBusquedad");
-            this.txtBusquedad.Name = "txtBusquedad";
-            this.txtBusquedad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            resources.ApplyResources(this.txtBusqueda, "txtBusqueda");
+            this.txtBusqueda.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtBusqueda.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBusqueda.Name = "txtBusqueda";
             // 
             // lbl_busquedad
             // 
@@ -50,36 +50,43 @@
             this.lbl_busquedad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_busquedad.Name = "lbl_busquedad";
             // 
-            // btnBusquedad
+            // btnBusqueda
             // 
-            this.btnBusquedad.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnBusquedad.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnBusquedad, "btnBusquedad");
-            this.btnBusquedad.Name = "btnBusquedad";
-            this.btnBusquedad.UseVisualStyleBackColor = false;
-            this.btnBusquedad.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.btnBusqueda, "btnBusqueda");
+            this.btnBusqueda.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBusqueda.Name = "btnBusqueda";
+            this.btnBusqueda.UseVisualStyleBackColor = false;
+            this.btnBusqueda.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnVolver
             // 
+            resources.ApplyResources(this.btnVolver, "btnVolver");
             this.btnVolver.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnVolver, "btnVolver");
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // Form2
+            // LBListaBusqueda
+            // 
+            resources.ApplyResources(this.LBListaBusqueda, "LBListaBusqueda");
+            this.LBListaBusqueda.FormattingEnabled = true;
+            this.LBListaBusqueda.MultiColumn = true;
+            this.LBListaBusqueda.Name = "LBListaBusqueda";
+            // 
+            // FMRBusqueda
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.LBListaBusqueda);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnBusquedad);
+            this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.lbl_busquedad);
-            this.Controls.Add(this.txtBusquedad);
+            this.Controls.Add(this.txtBusqueda);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Name = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "FMRBusqueda";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,9 +94,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBusquedad;
+        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lbl_busquedad;
-        private System.Windows.Forms.Button btnBusquedad;
+        private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.ListBox LBListaBusqueda;
     }
 }

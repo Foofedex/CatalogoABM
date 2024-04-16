@@ -115,9 +115,11 @@
             this.TXTBID.AcceptsTab = true;
             this.TXTBID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBID.Location = new System.Drawing.Point(99, 23);
+            this.TXTBID.Location = new System.Drawing.Point(98, 26);
+            this.TXTBID.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTBID.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBID.Name = "TXTBID";
-            this.TXTBID.Size = new System.Drawing.Size(203, 21);
+            this.TXTBID.Size = new System.Drawing.Size(237, 21);
             this.TXTBID.TabIndex = 7;
             // 
             // TXTBNombre
@@ -126,9 +128,11 @@
             this.TXTBNombre.AcceptsTab = true;
             this.TXTBNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBNombre.Location = new System.Drawing.Point(99, 58);
+            this.TXTBNombre.Location = new System.Drawing.Point(99, 61);
+            this.TXTBNombre.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTBNombre.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBNombre.Name = "TXTBNombre";
-            this.TXTBNombre.Size = new System.Drawing.Size(203, 21);
+            this.TXTBNombre.Size = new System.Drawing.Size(237, 21);
             this.TXTBNombre.TabIndex = 8;
             // 
             // TXTBDescripcion
@@ -137,9 +141,11 @@
             this.TXTBDescripcion.AcceptsTab = true;
             this.TXTBDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBDescripcion.Location = new System.Drawing.Point(99, 98);
+            this.TXTBDescripcion.Location = new System.Drawing.Point(99, 101);
+            this.TXTBDescripcion.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTBDescripcion.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBDescripcion.Name = "TXTBDescripcion";
-            this.TXTBDescripcion.Size = new System.Drawing.Size(203, 21);
+            this.TXTBDescripcion.Size = new System.Drawing.Size(237, 21);
             this.TXTBDescripcion.TabIndex = 9;
             // 
             // TXTBMarca
@@ -148,9 +154,11 @@
             this.TXTBMarca.AcceptsTab = true;
             this.TXTBMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBMarca.Location = new System.Drawing.Point(99, 140);
+            this.TXTBMarca.Location = new System.Drawing.Point(98, 140);
+            this.TXTBMarca.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTBMarca.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBMarca.Name = "TXTBMarca";
-            this.TXTBMarca.Size = new System.Drawing.Size(203, 21);
+            this.TXTBMarca.Size = new System.Drawing.Size(237, 21);
             this.TXTBMarca.TabIndex = 10;
             // 
             // TXTBCategoria
@@ -159,9 +167,11 @@
             this.TXTBCategoria.AcceptsTab = true;
             this.TXTBCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBCategoria.Location = new System.Drawing.Point(99, 174);
+            this.TXTBCategoria.Location = new System.Drawing.Point(99, 177);
+            this.TXTBCategoria.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTBCategoria.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBCategoria.Name = "TXTBCategoria";
-            this.TXTBCategoria.Size = new System.Drawing.Size(203, 21);
+            this.TXTBCategoria.Size = new System.Drawing.Size(237, 21);
             this.TXTBCategoria.TabIndex = 11;
             // 
             // TXTBPrecio
@@ -170,9 +180,11 @@
             this.TXTBPrecio.AcceptsTab = true;
             this.TXTBPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBPrecio.Location = new System.Drawing.Point(98, 215);
+            this.TXTBPrecio.Location = new System.Drawing.Point(98, 218);
+            this.TXTBPrecio.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTBPrecio.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBPrecio.Name = "TXTBPrecio";
-            this.TXTBPrecio.Size = new System.Drawing.Size(203, 21);
+            this.TXTBPrecio.Size = new System.Drawing.Size(237, 21);
             this.TXTBPrecio.TabIndex = 12;
             // 
             // BTNAdd
@@ -204,25 +216,27 @@
             // 
             // BTNBack
             // 
+            this.BTNBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BTNBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BTNBack.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.BTNBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTNBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BTNBack.Image = ((System.Drawing.Image)(resources.GetObject("BTNBack.Image")));
             this.BTNBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNBack.Location = new System.Drawing.Point(420, 309);
+            this.BTNBack.Location = new System.Drawing.Point(437, 381);
             this.BTNBack.Name = "BTNBack";
             this.BTNBack.Size = new System.Drawing.Size(78, 25);
             this.BTNBack.TabIndex = 16;
             this.BTNBack.Text = "Volver";
             this.BTNBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNBack.UseVisualStyleBackColor = true;
+            this.BTNBack.Click += new System.EventHandler(this.BTNBack_Click);
             // 
             // FMRArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(512, 349);
+            this.ClientSize = new System.Drawing.Size(527, 418);
             this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.BTNDelete);
             this.Controls.Add(this.BTNEdit);
@@ -239,10 +253,11 @@
             this.Controls.Add(this.LBLDescripcion);
             this.Controls.Add(this.LBLID);
             this.Controls.Add(this.LBLNombre);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MinimumSize = new System.Drawing.Size(543, 457);
             this.Name = "FMRArticulo";
             this.Text = "Articulo";
             this.ResumeLayout(false);

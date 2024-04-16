@@ -32,7 +32,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.articuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +39,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.BarraEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             // 
             this.articuloToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buscarToolStripMenuItem,
-            this.listarToolStripMenuItem,
+            this.listaToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
             this.articuloToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -72,12 +72,6 @@
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
-            // 
-            // listarToolStripMenuItem
-            // 
-            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listarToolStripMenuItem.Text = "Listar";
             // 
             // exitToolStripMenuItem
             // 
@@ -114,6 +108,7 @@
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -130,6 +125,12 @@
             this.BarraEstado.Name = "BarraEstado";
             this.BarraEstado.Size = new System.Drawing.Size(0, 17);
             // 
+            // listaToolStripMenuItem
+            // 
+            this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Text = "Listar";
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,7 +138,7 @@
             this.ClientSize = new System.Drawing.Size(664, 441);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(680, 480);
@@ -159,7 +160,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem articuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -167,6 +167,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
     }
 }
 

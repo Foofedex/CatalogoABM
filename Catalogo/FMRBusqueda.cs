@@ -10,28 +10,24 @@ using System.Windows.Forms;
 
 namespace Catalogo
 {
-    public partial class Form2 : Form
+    public partial class FMRBusqueda : Form
     {
-        public Form2()
+        ABM_Articulo articulo= new ABM_Articulo();
+        DataTable dt = new DataTable();
+        public FMRBusqueda()
         {
             InitializeComponent();
         }
 
  
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            string busquedad = txtBusquedad.Text;   
+            
+            string busquedad = txtBusqueda.Text;
+            
+            dt= articulo.Buscar(busquedad);
+            LBListaBusqueda.Items.Add(dt);
         }
 
 
@@ -39,7 +35,6 @@ namespace Catalogo
         {
             this.Close();
            
-
         }
     }
 }

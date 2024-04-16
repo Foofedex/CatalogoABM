@@ -117,28 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtBusquedad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 100</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtBusqueda.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="txtBusquedad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 20</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtBusqueda.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 65</value>
+  </data>
+  <data name="txtBusqueda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtBusquedad.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtBusqueda.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtBusquedad.Name" xml:space="preserve">
-    <value>txtBusquedad</value>
+  <data name="&gt;&gt;txtBusqueda.Name" xml:space="preserve">
+    <value>txtBusqueda</value>
   </data>
-  <data name="&gt;&gt;txtBusquedad.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtBusqueda.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtBusquedad.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtBusqueda.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtBusquedad.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;txtBusqueda.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="lbl_busquedad.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -168,35 +172,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_busquedad.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnBusquedad.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnBusqueda.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnBusqueda.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
   </data>
-  <data name="btnBusquedad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 169</value>
+  <data name="btnBusqueda.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 101</value>
   </data>
-  <data name="btnBusquedad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 23</value>
+  <data name="btnBusqueda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 23</value>
   </data>
-  <data name="btnBusquedad.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnBusqueda.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnBusquedad.Text" xml:space="preserve">
+  <data name="btnBusqueda.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
-  <data name="&gt;&gt;btnBusquedad.Name" xml:space="preserve">
-    <value>btnBusquedad</value>
+  <data name="&gt;&gt;btnBusqueda.Name" xml:space="preserve">
+    <value>btnBusqueda</value>
   </data>
-  <data name="&gt;&gt;btnBusquedad.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnBusqueda.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnBusquedad.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnBusqueda.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnBusquedad.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;btnBusqueda.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnVolver.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="btnVolver.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
@@ -205,7 +214,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnVolver.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 212</value>
+    <value>179, 462</value>
   </data>
   <data name="btnVolver.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 23</value>
@@ -226,6 +235,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnVolver.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LBListaBusqueda.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="LBListaBusqueda.HorizontalScrollbar" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LBListaBusqueda.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 155</value>
+  </data>
+  <data name="LBListaBusqueda.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LBListaBusqueda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 212</value>
+  </data>
+  <data name="LBListaBusqueda.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LBListaBusqueda.Name" xml:space="preserve">
+    <value>LBListaBusqueda</value>
+  </data>
+  <data name="&gt;&gt;LBListaBusqueda.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LBListaBusqueda.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LBListaBusqueda.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -235,7 +274,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>322, 265</value>
+    <value>364, 497</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -313,11 +352,8 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>338, 304</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>338, 304</value>
+    <value>380, 536</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -326,7 +362,7 @@
     <value>Busqueda</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form2</value>
+    <value>FMRBusqueda</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

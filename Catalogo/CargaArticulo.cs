@@ -17,6 +17,9 @@ namespace Catalogo
             InitializeComponent();
         }
 
-       
+        private void BTNBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
