@@ -45,6 +45,10 @@ namespace Catalogo
             ventana.ShowDialog();
         }
 
-      
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 ventanaBusquedad = new Form2();
+            ventanaBusquedad.ShowDialog();
+       }
     }
 }

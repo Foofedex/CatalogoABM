@@ -71,6 +71,7 @@
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
             this.buscarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
             // listarToolStripMenuItem
             // 
@@ -111,7 +112,7 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             // 
             // statusStrip1
