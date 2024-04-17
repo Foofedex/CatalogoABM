@@ -36,23 +36,21 @@
             this.LBLMarca = new System.Windows.Forms.Label();
             this.LBLCategoria = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.LBLPrecio = new System.Windows.Forms.Label();
-            this.TXTBID = new System.Windows.Forms.TextBox();
+            this.LblUrl = new System.Windows.Forms.Label();
             this.TXTBNombre = new System.Windows.Forms.TextBox();
             this.TXTBDescripcion = new System.Windows.Forms.TextBox();
             this.TXTBMarca = new System.Windows.Forms.TextBox();
             this.TXTBCategoria = new System.Windows.Forms.TextBox();
             this.TXTBPrecio = new System.Windows.Forms.TextBox();
             this.BTNAdd = new System.Windows.Forms.Button();
-            this.BTNEdit = new System.Windows.Forms.Button();
-            this.BTNDelete = new System.Windows.Forms.Button();
             this.BTNBack = new System.Windows.Forms.Button();
+            this.TXTBID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // LBLNombre
             // 
             this.LBLNombre.AutoSize = true;
-            this.LBLNombre.Location = new System.Drawing.Point(30, 64);
+            this.LBLNombre.Location = new System.Drawing.Point(85, 86);
             this.LBLNombre.Name = "LBLNombre";
             this.LBLNombre.Size = new System.Drawing.Size(62, 15);
             this.LBLNombre.TabIndex = 0;
@@ -61,7 +59,7 @@
             // LBLID
             // 
             this.LBLID.AutoSize = true;
-            this.LBLID.Location = new System.Drawing.Point(32, 26);
+            this.LBLID.Location = new System.Drawing.Point(85, 48);
             this.LBLID.Name = "LBLID";
             this.LBLID.Size = new System.Drawing.Size(60, 15);
             this.LBLID.TabIndex = 1;
@@ -70,7 +68,7 @@
             // LBLDescripcion
             // 
             this.LBLDescripcion.AutoSize = true;
-            this.LBLDescripcion.Location = new System.Drawing.Point(5, 101);
+            this.LBLDescripcion.Location = new System.Drawing.Point(85, 123);
             this.LBLDescripcion.Name = "LBLDescripcion";
             this.LBLDescripcion.Size = new System.Drawing.Size(87, 15);
             this.LBLDescripcion.TabIndex = 3;
@@ -79,20 +77,20 @@
             // LBLMarca
             // 
             this.LBLMarca.AutoSize = true;
-            this.LBLMarca.Location = new System.Drawing.Point(45, 143);
+            this.LBLMarca.Location = new System.Drawing.Point(85, 165);
             this.LBLMarca.Name = "LBLMarca";
-            this.LBLMarca.Size = new System.Drawing.Size(47, 15);
+            this.LBLMarca.Size = new System.Drawing.Size(51, 15);
             this.LBLMarca.TabIndex = 4;
-            this.LBLMarca.Text = "Marca";
+            this.LBLMarca.Text = "Marca:";
             // 
             // LBLCategoria
             // 
             this.LBLCategoria.AutoSize = true;
-            this.LBLCategoria.Location = new System.Drawing.Point(23, 177);
+            this.LBLCategoria.Location = new System.Drawing.Point(85, 199);
             this.LBLCategoria.Name = "LBLCategoria";
-            this.LBLCategoria.Size = new System.Drawing.Size(69, 15);
+            this.LBLCategoria.Size = new System.Drawing.Size(73, 15);
             this.LBLCategoria.TabIndex = 5;
-            this.LBLCategoria.Text = "Categoria";
+            this.LBLCategoria.Text = "Categoria:";
             // 
             // imageList1
             // 
@@ -100,27 +98,15 @@
             this.imageList1.ImageSize = new System.Drawing.Size(120, 120);
             this.imageList1.TransparentColor = System.Drawing.Color.Black;
             // 
-            // LBLPrecio
+            // LblUrl
             // 
-            this.LBLPrecio.AutoSize = true;
-            this.LBLPrecio.Location = new System.Drawing.Point(36, 221);
-            this.LBLPrecio.Name = "LBLPrecio";
-            this.LBLPrecio.Size = new System.Drawing.Size(56, 15);
-            this.LBLPrecio.TabIndex = 6;
-            this.LBLPrecio.Text = "Precio :";
-            // 
-            // TXTBID
-            // 
-            this.TXTBID.AcceptsReturn = true;
-            this.TXTBID.AcceptsTab = true;
-            this.TXTBID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBID.Location = new System.Drawing.Point(98, 26);
-            this.TXTBID.MaximumSize = new System.Drawing.Size(565, 21);
-            this.TXTBID.MinimumSize = new System.Drawing.Size(237, 21);
-            this.TXTBID.Name = "TXTBID";
-            this.TXTBID.Size = new System.Drawing.Size(237, 21);
-            this.TXTBID.TabIndex = 7;
+            this.LblUrl.AutoSize = true;
+            this.LblUrl.Location = new System.Drawing.Point(85, 243);
+            this.LblUrl.Name = "LblUrl";
+            this.LblUrl.Size = new System.Drawing.Size(82, 15);
+            this.LblUrl.TabIndex = 6;
+            this.LblUrl.Text = "Url_Imagen";
+            this.LblUrl.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // TXTBNombre
             // 
@@ -128,7 +114,7 @@
             this.TXTBNombre.AcceptsTab = true;
             this.TXTBNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBNombre.Location = new System.Drawing.Point(99, 61);
+            this.TXTBNombre.Location = new System.Drawing.Point(179, 83);
             this.TXTBNombre.MaximumSize = new System.Drawing.Size(565, 21);
             this.TXTBNombre.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBNombre.Name = "TXTBNombre";
@@ -141,7 +127,7 @@
             this.TXTBDescripcion.AcceptsTab = true;
             this.TXTBDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBDescripcion.Location = new System.Drawing.Point(99, 101);
+            this.TXTBDescripcion.Location = new System.Drawing.Point(179, 123);
             this.TXTBDescripcion.MaximumSize = new System.Drawing.Size(565, 21);
             this.TXTBDescripcion.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBDescripcion.Name = "TXTBDescripcion";
@@ -154,7 +140,7 @@
             this.TXTBMarca.AcceptsTab = true;
             this.TXTBMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBMarca.Location = new System.Drawing.Point(98, 140);
+            this.TXTBMarca.Location = new System.Drawing.Point(179, 162);
             this.TXTBMarca.MaximumSize = new System.Drawing.Size(565, 21);
             this.TXTBMarca.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBMarca.Name = "TXTBMarca";
@@ -167,7 +153,7 @@
             this.TXTBCategoria.AcceptsTab = true;
             this.TXTBCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBCategoria.Location = new System.Drawing.Point(99, 177);
+            this.TXTBCategoria.Location = new System.Drawing.Point(179, 199);
             this.TXTBCategoria.MaximumSize = new System.Drawing.Size(565, 21);
             this.TXTBCategoria.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBCategoria.Name = "TXTBCategoria";
@@ -180,7 +166,7 @@
             this.TXTBPrecio.AcceptsTab = true;
             this.TXTBPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBPrecio.Location = new System.Drawing.Point(98, 218);
+            this.TXTBPrecio.Location = new System.Drawing.Point(179, 240);
             this.TXTBPrecio.MaximumSize = new System.Drawing.Size(565, 21);
             this.TXTBPrecio.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBPrecio.Name = "TXTBPrecio";
@@ -189,30 +175,12 @@
             // 
             // BTNAdd
             // 
-            this.BTNAdd.Location = new System.Drawing.Point(98, 272);
+            this.BTNAdd.Location = new System.Drawing.Point(214, 279);
             this.BTNAdd.Name = "BTNAdd";
-            this.BTNAdd.Size = new System.Drawing.Size(75, 23);
+            this.BTNAdd.Size = new System.Drawing.Size(167, 23);
             this.BTNAdd.TabIndex = 13;
             this.BTNAdd.Text = "Agregar";
             this.BTNAdd.UseVisualStyleBackColor = true;
-            // 
-            // BTNEdit
-            // 
-            this.BTNEdit.Location = new System.Drawing.Point(179, 272);
-            this.BTNEdit.Name = "BTNEdit";
-            this.BTNEdit.Size = new System.Drawing.Size(75, 23);
-            this.BTNEdit.TabIndex = 14;
-            this.BTNEdit.Text = "Editar";
-            this.BTNEdit.UseVisualStyleBackColor = true;
-            // 
-            // BTNDelete
-            // 
-            this.BTNDelete.Location = new System.Drawing.Point(260, 272);
-            this.BTNDelete.Name = "BTNDelete";
-            this.BTNDelete.Size = new System.Drawing.Size(75, 23);
-            this.BTNDelete.TabIndex = 15;
-            this.BTNDelete.Text = "Eliminar";
-            this.BTNDelete.UseVisualStyleBackColor = true;
             // 
             // BTNBack
             // 
@@ -231,6 +199,20 @@
             this.BTNBack.UseVisualStyleBackColor = true;
             this.BTNBack.Click += new System.EventHandler(this.BTNBack_Click);
             // 
+            // TXTBID
+            // 
+            this.TXTBID.AcceptsReturn = true;
+            this.TXTBID.AcceptsTab = true;
+            this.TXTBID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXTBID.Location = new System.Drawing.Point(179, 48);
+            this.TXTBID.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTBID.MinimumSize = new System.Drawing.Size(237, 21);
+            this.TXTBID.Name = "TXTBID";
+            this.TXTBID.Size = new System.Drawing.Size(237, 21);
+            this.TXTBID.TabIndex = 7;
+            this.TXTBID.TextChanged += new System.EventHandler(this.TXTBID_TextChanged);
+            // 
             // FMRArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -238,8 +220,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(527, 418);
             this.Controls.Add(this.BTNBack);
-            this.Controls.Add(this.BTNDelete);
-            this.Controls.Add(this.BTNEdit);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.TXTBPrecio);
             this.Controls.Add(this.TXTBCategoria);
@@ -247,7 +227,7 @@
             this.Controls.Add(this.TXTBDescripcion);
             this.Controls.Add(this.TXTBNombre);
             this.Controls.Add(this.TXTBID);
-            this.Controls.Add(this.LBLPrecio);
+            this.Controls.Add(this.LblUrl);
             this.Controls.Add(this.LBLCategoria);
             this.Controls.Add(this.LBLMarca);
             this.Controls.Add(this.LBLDescripcion);
@@ -259,7 +239,9 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MinimumSize = new System.Drawing.Size(543, 457);
             this.Name = "FMRArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulo";
+            this.Load += new System.EventHandler(this.FMRArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,16 +255,14 @@
         private System.Windows.Forms.Label LBLMarca;
         private System.Windows.Forms.Label LBLCategoria;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label LBLPrecio;
-        private System.Windows.Forms.TextBox TXTBID;
+        private System.Windows.Forms.Label LblUrl;
         private System.Windows.Forms.TextBox TXTBNombre;
         private System.Windows.Forms.TextBox TXTBDescripcion;
         private System.Windows.Forms.TextBox TXTBMarca;
         private System.Windows.Forms.TextBox TXTBCategoria;
         private System.Windows.Forms.TextBox TXTBPrecio;
         private System.Windows.Forms.Button BTNAdd;
-        private System.Windows.Forms.Button BTNEdit;
-        private System.Windows.Forms.Button BTNDelete;
         private System.Windows.Forms.Button BTNBack;
+        private System.Windows.Forms.TextBox TXTBID;
     }
 }

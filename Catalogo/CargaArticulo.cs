@@ -21,5 +21,15 @@ namespace Catalogo
         {
             this.Close();
         }
+
+        private void FMRArticulo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTBID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

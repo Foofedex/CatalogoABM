@@ -42,6 +42,7 @@ namespace Catalogo
 
         public DataTable Buscar(string n)
         {
+            /*
             string nombre = n;
             using (SqlConnection connection = new SqlConnection(coneccionstring))
             {
@@ -66,7 +67,7 @@ namespace Catalogo
                     MessageBox.Show("No se pudo conectar con el servidor" + ex.Message);
                 }
             }
-
+            */
 
             return DatosArticulos;
         } 

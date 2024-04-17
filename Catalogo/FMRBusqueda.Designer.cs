@@ -46,8 +46,8 @@
             // lbl_busquedad
             // 
             resources.ApplyResources(this.lbl_busquedad, "lbl_busquedad");
-            this.lbl_busquedad.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbl_busquedad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_busquedad.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_busquedad.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lbl_busquedad.Name = "lbl_busquedad";
             // 
             // btnBusqueda
@@ -71,9 +71,13 @@
             // LBListaBusqueda
             // 
             resources.ApplyResources(this.LBListaBusqueda, "LBListaBusqueda");
+            this.LBListaBusqueda.BackColor = System.Drawing.SystemColors.Control;
+            this.LBListaBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LBListaBusqueda.FormattingEnabled = true;
             this.LBListaBusqueda.MultiColumn = true;
             this.LBListaBusqueda.Name = "LBListaBusqueda";
+            this.LBListaBusqueda.Sorted = true;
+            this.LBListaBusqueda.SelectedIndexChanged += new System.EventHandler(this.LBListaBusqueda_SelectedIndexChanged);
             // 
             // FMRBusqueda
             // 

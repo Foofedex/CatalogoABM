@@ -46,5 +46,11 @@ namespace Catalogo
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Catalago v1.0 creado por Daniel Guillen, Ale y Fede");       }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Eliminar eliminar = new Eliminar();
+            eliminar.ShowDialog();
+        }
     }
 }
