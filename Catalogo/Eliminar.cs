@@ -80,5 +80,10 @@ namespace Catalogo
         {
 
         }
+
+        private void BTNBack_Click(object sender, EventArgs e)
+        {
+            Form.ActiveForm.Close();
+        }
     }
 }

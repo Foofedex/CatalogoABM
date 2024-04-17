@@ -36,23 +36,24 @@
             this.lblSeleccionado = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.BTNBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(83, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 15);
+            this.label1.Size = new System.Drawing.Size(174, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "ingrese el nombre del articulo";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(177, 93);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 23);
@@ -63,12 +64,11 @@
             // 
             // listSeleccion
             // 
-            this.listSeleccion.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.listSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             this.listSeleccion.FormattingEnabled = true;
-            this.listSeleccion.ItemHeight = 15;
             this.listSeleccion.Location = new System.Drawing.Point(48, 132);
             this.listSeleccion.Name = "listSeleccion";
-            this.listSeleccion.Size = new System.Drawing.Size(252, 139);
+            this.listSeleccion.Size = new System.Drawing.Size(252, 134);
             this.listSeleccion.TabIndex = 3;
             this.listSeleccion.SelectedIndexChanged += new System.EventHandler(this.listSeleccion_SelectedIndexChanged);
             // 
@@ -87,7 +87,7 @@
             this.lblSeleccionado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSeleccionado.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblSeleccionado.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.lblSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             this.lblSeleccionado.Location = new System.Drawing.Point(34, 288);
             this.lblSeleccionado.Name = "lblSeleccionado";
             this.lblSeleccionado.Size = new System.Drawing.Size(280, 23);
@@ -97,7 +97,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Bold);
             this.button2.Location = new System.Drawing.Point(34, 93);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(137, 23);
@@ -106,12 +106,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // BTNBack
+            // 
+            this.BTNBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTNBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BTNBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BTNBack.Image = ((System.Drawing.Image)(resources.GetObject("BTNBack.Image")));
+            this.BTNBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTNBack.Location = new System.Drawing.Point(261, 318);
+            this.BTNBack.Name = "BTNBack";
+            this.BTNBack.Size = new System.Drawing.Size(78, 25);
+            this.BTNBack.TabIndex = 17;
+            this.BTNBack.Text = "Volver";
+            this.BTNBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTNBack.UseVisualStyleBackColor = true;
+            this.BTNBack.Click += new System.EventHandler(this.BTNBack_Click);
+            // 
             // Eliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(351, 324);
+            this.ClientSize = new System.Drawing.Size(351, 356);
+            this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblSeleccionado);
             this.Controls.Add(this.txtEliminar);
@@ -119,8 +137,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(367, 363);
-            this.MinimumSize = new System.Drawing.Size(367, 363);
+            this.MaximumSize = new System.Drawing.Size(367, 395);
+            this.MinimumSize = new System.Drawing.Size(367, 395);
             this.Name = "Eliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar";
@@ -138,5 +156,6 @@
         private System.Windows.Forms.Label lblSeleccionado;
         private System.Windows.Forms.Button button2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button BTNBack;
     }
 }

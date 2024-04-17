@@ -52,5 +52,6 @@ namespace Catalogo
             Eliminar eliminar = new Eliminar();
             eliminar.ShowDialog();
         }
+
     }
 }

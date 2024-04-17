@@ -39,7 +39,9 @@ namespace Catalogo
 
         private void LBListaBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
+            VistaArticuloYDetalle objVistarArticulo = new VistaArticuloYDetalle();
 
+            objVistarArticulo.ShowDialog();
         }
     }
 }
