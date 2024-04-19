@@ -61,6 +61,18 @@
     <Compile Include="Eliminar.Designer.cs">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMRListadeArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMRListadeArticulo.Designer.cs">
+      <DependentUpon>FMRListadeArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMRModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMRModificar.Designer.cs">
+      <DependentUpon>FMRModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMRPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar.resx">
       <DependentUpon>Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMRListadeArticulo.resx">
+      <DependentUpon>FMRListadeArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMRModificar.resx">
+      <DependentUpon>FMRModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMRPrincipal.resx">
       <DependentUpon>FMRPrincipal.cs</DependentUpon>

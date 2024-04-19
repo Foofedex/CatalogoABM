@@ -53,5 +53,16 @@ namespace Catalogo
             eliminar.ShowDialog();
         }
 
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMRModificar modificarART= new FMRModificar();
+            modificarART.ShowDialog();
+        }
+
+        private void listaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMRListadeArticulo listadeArticulo= new FMRListadeArticulo();
+            listadeArticulo.ShowDialog();
+        }
     }
 }
