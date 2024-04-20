@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catalogo.conexion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace Catalogo
 
         private void TXTBID_TextChanged(object sender, EventArgs e)
         {
-
+     
         }
     }
 }

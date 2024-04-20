@@ -55,6 +55,9 @@
       <DependentUpon>CargaArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="conexion.cs" />
+    <Compile Include="conexion\BDConexion.cs" />
+    <Compile Include="conexion\Consultas.cs" />
+    <Compile Include="Consultas.cs" />
     <Compile Include="Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>

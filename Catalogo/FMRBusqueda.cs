@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Catalogo.conexion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catalogo.conexion;
+
 
 namespace Catalogo
 {
+
     public partial class FMRBusqueda : Form
     {
         ABM_Articulo articulo= new ABM_Articulo();
@@ -25,7 +30,8 @@ namespace Catalogo
         {
             
             string busquedad = txtBusqueda.Text;
-            
+           
+
             dt= articulo.Buscar(busquedad);
             LBListaBusqueda.Items.Add(dt);
         }
@@ -39,7 +45,12 @@ namespace Catalogo
 
         private void LBListaBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             VistaArticuloYDetalle objVistarArticulo = new VistaArticuloYDetalle();
+
+            Catalogo.conexion.Consultas nueva;
+
+
 
             objVistarArticulo.ShowDialog();
         }
