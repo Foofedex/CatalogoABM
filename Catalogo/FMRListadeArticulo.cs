@@ -16,5 +16,11 @@ namespace Catalogo
         {
             InitializeComponent();
         }
+
+        private void FMRListadeArticulo_Load(object sender, EventArgs e)
+        {
+            conexionART conecArti= new conexionART();
+            DGVArticulosLista.DataSource = conecArti.ListarArticulo();
+        }
     }
 }

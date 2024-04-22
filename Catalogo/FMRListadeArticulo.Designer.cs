@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRListadeArticulo));
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.DGVArticulosLista = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVArticulosLista)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // DGVArticulosLista
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DGVArticulosLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(31, 12);
-            this.listBox1.MinimumSize = new System.Drawing.Size(675, 420);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(675, 420);
-            this.listBox1.TabIndex = 0;
+            this.DGVArticulosLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVArticulosLista.Location = new System.Drawing.Point(12, 12);
+            this.DGVArticulosLista.Name = "DGVArticulosLista";
+            this.DGVArticulosLista.Size = new System.Drawing.Size(714, 429);
+            this.DGVArticulosLista.TabIndex = 0;
             // 
             // FMRListadeArticulo
             // 
@@ -50,17 +50,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(738, 453);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.DGVArticulosLista);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(754, 492);
             this.Name = "FMRListadeArticulo";
             this.Text = "FMRListadeArticulo";
+            this.Load += new System.EventHandler(this.FMRListadeArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVArticulosLista)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridView DGVArticulosLista;
     }
 }

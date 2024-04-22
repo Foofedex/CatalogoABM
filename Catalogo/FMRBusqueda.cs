@@ -1,5 +1,5 @@
 ﻿
-using Catalogo.conexion;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Catalogo.conexion;
+
 
 
 namespace Catalogo
@@ -32,7 +32,7 @@ namespace Catalogo
             string busquedad = txtBusqueda.Text;
            
 
-            dt= articulo.Buscar(busquedad);
+            
             LBListaBusqueda.Items.Add(dt);
         }
 
@@ -48,7 +48,7 @@ namespace Catalogo
 
             VistaArticuloYDetalle objVistarArticulo = new VistaArticuloYDetalle();
 
-            Catalogo.conexion.Consultas nueva;
+           
 
 
 

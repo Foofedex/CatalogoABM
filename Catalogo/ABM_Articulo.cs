@@ -13,8 +13,8 @@ namespace Catalogo
 {
     internal class ABM_Articulo
     {
-        string coneccionstring = @"Data Source=(local);Initial Catalog=CATALOGO_P3_DB;Integrated Security=True";
-        DataTable DatosArticulos= new DataTable();
+        
+       
         public List<Articulo> list = new List<Articulo>();
        
 
@@ -40,36 +40,23 @@ namespace Catalogo
 
         }
 
-        public DataTable Buscar(string n)
+        public Articulo Buscar(string n)
         {
+            Articulo aux = new Articulo();
             /*
-            string nombre = n;
-            using (SqlConnection connection = new SqlConnection(coneccionstring))
-            {
-                try { 
-                connection.Open();
-                    string query = @"SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.Descripcion AS Marca, c.Descripcion AS Categoria, i.ImagenUrl 
+         
+                    "SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.Descripcion AS Marca, c.Descripcion AS Categoria, i.ImagenUrl 
                                     FROM ARTICULOS a
                                     INNER JOIN marcas m ON a.IdMarca = m.Id
                                     INNER JOIN categorias c ON a.idcategoria = c.id
-                                    INNER JOIN IMAGENES i ON a.id = i.IdArticulo
-                                    WHERE a.Nombre LIKE '%nombre%' OR a.Descripcion LIKE '%nombre%' OR m.Descripcion LIKE '%nombre%' OR c.Descripcion LIKE '%nombre%';";
+                                    INNER JOIN IMAGENES i ON a.id = i.IdArticulo;
 
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("nombre", nombre);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    adapter.Fill(DatosArticulos);
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se pudo conectar con el servidor" + ex.Message);
-                }
+                   
+              
             }
             */
 
-            return DatosArticulos;
+            return aux;
         } 
 
        

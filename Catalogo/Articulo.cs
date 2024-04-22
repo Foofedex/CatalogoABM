@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Catalogo
 {
-    internal class Articulo
+    public class Articulo
     {
-        public int ID;
-        public string Nombre;
-        public string Descripcion;
-        public string Marca;
-        public string Categoria;
-        public SqlMoney Precio;
-        public string Imagen;
+        public string ID { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public string Marca { get; set; }
+        public string Categoria { get; set; }
+        public SqlMoney Precio { get; set; }
+        public string Imagen { get; set; }
 
         public void Cargar()
         {
