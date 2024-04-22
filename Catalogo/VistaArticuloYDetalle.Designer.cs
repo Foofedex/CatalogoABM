@@ -201,7 +201,7 @@
             this.PicBoxImg.Location = new System.Drawing.Point(33, 12);
             this.PicBoxImg.Name = "PicBoxImg";
             this.PicBoxImg.Size = new System.Drawing.Size(259, 183);
-            this.PicBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicBoxImg.TabIndex = 18;
             this.PicBoxImg.TabStop = false;
             this.PicBoxImg.WaitOnLoad = true;
@@ -229,7 +229,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(354, 457);
             this.Name = "VistaArticuloYDetalle";
-            this.Text = "VistaArticuloYDetalle";
+            this.Text = "Detalle de los articulos";
             this.Load += new System.EventHandler(this.VistaArticuloYDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxImg)).EndInit();

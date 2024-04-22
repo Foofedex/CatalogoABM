@@ -7,7 +7,9 @@ using System.Data.SqlClient;
 using System.Net.Configuration;
 using System.Data.SqlTypes;
 using System.Reflection;
-namespace Catalogo
+using Dominio;
+
+namespace Acciones
 {
     public class conexionART
     {

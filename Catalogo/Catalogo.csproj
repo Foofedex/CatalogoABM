@@ -47,14 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABM_Articulo.cs" />
-    <Compile Include="Articulo.cs" />
     <Compile Include="CargaArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CargaArticulo.Designer.cs">
       <DependentUpon>CargaArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="conexion.cs" />
     <Compile Include="Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +133,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Acciones\Acciones.csproj">
+      <Project>{299538df-0d7a-47a4-aa55-81fdccaed0bc}</Project>
+      <Name>Acciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{fd09c20f-abe5-4c94-99c6-460453487116}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
