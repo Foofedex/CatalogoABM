@@ -43,6 +43,7 @@
             this.DGVArticulosLista.Name = "DGVArticulosLista";
             this.DGVArticulosLista.Size = new System.Drawing.Size(714, 429);
             this.DGVArticulosLista.TabIndex = 0;
+            this.DGVArticulosLista.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVArticulosLista_CellMouseClick);
             // 
             // FMRListadeArticulo
             // 

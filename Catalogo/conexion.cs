@@ -9,7 +9,7 @@ using System.Data.SqlTypes;
 using System.Reflection;
 namespace Catalogo
 {
-    internal class conexionART
+    public class conexionART
     {
 
         public List<Articulo> ListarArticulo()

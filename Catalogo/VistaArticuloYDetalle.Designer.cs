@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VistaArticuloYDetalle));
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.ImgArticulo = new System.Windows.Forms.PictureBox();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -42,29 +41,15 @@
             this.lblNombre2 = new System.Windows.Forms.Label();
             this.lblCodigo2 = new System.Windows.Forms.Label();
             this.BTNBack = new System.Windows.Forms.Button();
+            this.PicBoxImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxImg)).BeginInit();
             this.SuspendLayout();
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // ImgArticulo
-            // 
-            this.ImgArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImgArticulo.ImageLocation = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-" +
-    "frontcanaryyellow-thumb-149016542";
-            this.ImgArticulo.Location = new System.Drawing.Point(13, 12);
-            this.ImgArticulo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ImgArticulo.Name = "ImgArticulo";
-            this.ImgArticulo.Size = new System.Drawing.Size(299, 177);
-            this.ImgArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ImgArticulo.TabIndex = 0;
-            this.ImgArticulo.TabStop = false;
             // 
             // LblCodigo
             // 
@@ -89,7 +74,6 @@
             this.lblNombre.Size = new System.Drawing.Size(66, 15);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre :";
-            this.lblNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblDescripcion
             // 
@@ -209,12 +193,26 @@
             this.BTNBack.UseVisualStyleBackColor = true;
             this.BTNBack.Click += new System.EventHandler(this.BTNBack_Click);
             // 
+            // PicBoxImg
+            // 
+            this.PicBoxImg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PicBoxImg.Location = new System.Drawing.Point(33, 12);
+            this.PicBoxImg.Name = "PicBoxImg";
+            this.PicBoxImg.Size = new System.Drawing.Size(259, 183);
+            this.PicBoxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicBoxImg.TabIndex = 18;
+            this.PicBoxImg.TabStop = false;
+            this.PicBoxImg.WaitOnLoad = true;
+            // 
             // VistaArticuloYDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(338, 418);
+            this.Controls.Add(this.PicBoxImg);
             this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.lblCategoria2);
             this.Controls.Add(this.lblMarca2);
@@ -226,15 +224,15 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.LblCodigo);
-            this.Controls.Add(this.ImgArticulo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(354, 457);
             this.Name = "VistaArticuloYDetalle";
             this.Text = "VistaArticuloYDetalle";
+            this.Load += new System.EventHandler(this.VistaArticuloYDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +241,6 @@
         #endregion
 
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.PictureBox ImgArticulo;
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCategoria;
@@ -255,5 +252,6 @@
         private System.Windows.Forms.Label lblNombre2;
         private System.Windows.Forms.Label lblCodigo2;
         private System.Windows.Forms.Button BTNBack;
+        private System.Windows.Forms.PictureBox PicBoxImg;
     }
 }

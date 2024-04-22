@@ -12,15 +12,34 @@ namespace Catalogo
 {
     public partial class FMRListadeArticulo : Form
     {
+        private List<Articulo> listarArticulo;
         public FMRListadeArticulo()
         {
             InitializeComponent();
         }
 
+            conexionART conecArti= new conexionART();
         private void FMRListadeArticulo_Load(object sender, EventArgs e)
         {
-            conexionART conecArti= new conexionART();
-            DGVArticulosLista.DataSource = conecArti.ListarArticulo();
+            listarArticulo = conecArti.ListarArticulo();
+            DGVArticulosLista.DataSource = listarArticulo;
+            
         }
+
+        private void DGVArticulosLista_SelectionChanged(object sender, DataGridViewCellEventArgs e)
+        {
+     
+        }
+
+        private void DGVArticulosLista_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Articulo seleccionado = (Articulo)DGVArticulosLista.CurrentRow.DataBoundItem;
+            VistaArticuloYDetalle ventanaDeArt = new VistaArticuloYDetalle();
+            ventanaDeArt.objArticulo = seleccionado;
+            ventanaDeArt.ShowDialog();
+            
+        }
+
+
     }
 }
