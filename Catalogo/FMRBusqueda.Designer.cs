@@ -77,7 +77,6 @@
             this.LBListaBusqueda.FormattingEnabled = true;
             this.LBListaBusqueda.MultiColumn = true;
             this.LBListaBusqueda.Name = "LBListaBusqueda";
-            this.LBListaBusqueda.Sorted = true;
             this.LBListaBusqueda.SelectedIndexChanged += new System.EventHandler(this.LBListaBusqueda_SelectedIndexChanged);
             // 
             // FMRBusqueda

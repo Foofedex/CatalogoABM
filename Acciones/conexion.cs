@@ -29,7 +29,7 @@ namespace Acciones
 
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 commando.CommandType = System.Data.CommandType.Text;
-                commando.CommandText = "SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.Descripcion AS Marca, c.Descripcion AS Categoria, i.ImagenUrl  FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo;";
+                commando.CommandText = "SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.Descripcion AS Marca, CASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END AS Categoria, i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id LEFT JOIN IMAGENES i ON a.id = i.IdArticulo;";
                 commando.Connection = conexion;
                 conexion.Open();
                 lector= commando.ExecuteReader();

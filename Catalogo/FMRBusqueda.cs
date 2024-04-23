@@ -45,9 +45,10 @@ namespace Catalogo
            
             foreach (Articulo articulo in articulos)
             {
-               
 
+                MessageBox.Show("Índice seleccionado: " + articulo.Nombre.ToString());
                 LBListaBusqueda.Items.Add(articulo.Nombre );
+                
             }
         }
 
@@ -59,24 +60,13 @@ namespace Catalogo
 
         private void LBListaBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-            if (LBListaBusqueda.SelectedIndex >= 0)
-            {
-                
-                LBListaBusqueda.Text = (string)LBListaBusqueda.Items[LBListaBusqueda.SelectedIndex];
-
-                Articulo articuloSeleccionado = articulos[LBListaBusqueda.SelectedIndex];
-
-                // Asignar el artículo seleccionado a objArticulo en objVistarArticulo
+            Articulo articuloSeleccionado = articulos[LBListaBusqueda.SelectedIndex ];
                 objVistarArticulo.objArticulo = articuloSeleccionado;
+
+                MessageBox.Show("Índice seleccionado: " +LBListaBusqueda.SelectedIndex.ToString());
+            // Asignar el artículo seleccionado a objArticulo en objVistarArticulo
                 LBListaBusqueda.Items.Clear();
-
-
-            }
-            
-            
-            
+                
             objVistarArticulo.ShowDialog();
         }
 
