@@ -21,7 +21,8 @@ namespace Acciones
             SqlCommand commando = new SqlCommand();
             SqlDataReader lector;
             try
-            {
+                
+            {   //Distintas bases de conexiones
                 // conexion.ConnectionString = "server=PCFEDEX\\SQLEXPRESS; database=CATALOGO_P3_DB;integrated security=true;";
                 // conexion.ConnectionString = "server=ip\\SQLEXPRESS; database=CATALOGO_P3_DB;integrated security=true;";
                 // conexion.ConnectionString = "server=(local)\\SQLEXPRESS; database=CATALOGO_P3_DB;integrated security=true;";
@@ -68,10 +69,11 @@ namespace Acciones
 
             catch(Exception ex)
             {
+
                 throw ex;
             }
             
-            
+                finally { conexion.Close(); }   
         }
 
 
