@@ -1,5 +1,7 @@
 ﻿
 
+using Acciones;
+using Dominio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +20,11 @@ namespace Catalogo
     public partial class FMRBusqueda : Form
     {
         ABM_Articulo articulo= new ABM_Articulo();
+        List<Articulo> articulos = new List<Articulo>();
+        
         DataTable dt = new DataTable();
+        
+        VistaArticuloYDetalle objVistarArticulo = new VistaArticuloYDetalle();
         public FMRBusqueda()
         {
             InitializeComponent();
@@ -28,14 +34,22 @@ namespace Catalogo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //CAPTURO LA PALABRA Q INGRESO
             string busquedad = txtBusqueda.Text;
-           
 
+
+            conexionART Data= new conexionART();
             
-            LBListaBusqueda.Items.Add(dt);
-        }
 
+            articulos = Data.Busquedad(busquedad);
+           
+            foreach (Articulo articulo in articulos)
+            {
+               
+
+                LBListaBusqueda.Items.Add(articulo.Nombre );
+            }
+        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -46,13 +60,29 @@ namespace Catalogo
         private void LBListaBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            VistaArticuloYDetalle objVistarArticulo = new VistaArticuloYDetalle();
 
-           
+            if (LBListaBusqueda.SelectedIndex >= 0)
+            {
+                
+                LBListaBusqueda.Text = (string)LBListaBusqueda.Items[LBListaBusqueda.SelectedIndex];
+
+                Articulo articuloSeleccionado = articulos[LBListaBusqueda.SelectedIndex];
+
+                // Asignar el artículo seleccionado a objArticulo en objVistarArticulo
+                objVistarArticulo.objArticulo = articuloSeleccionado;
+                LBListaBusqueda.Items.Clear();
 
 
-
+            }
+            
+            
+            
             objVistarArticulo.ShowDialog();
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

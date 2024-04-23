@@ -42,6 +42,7 @@
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtBusqueda.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // lbl_busquedad
             // 
