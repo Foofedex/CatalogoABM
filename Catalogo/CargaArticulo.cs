@@ -39,9 +39,12 @@ namespace Catalogo
         }
 
 
+         
+      
 
             private void BTNAdd_Click_1(object sender, EventArgs e)
             {
+
               
               conexionART conexion = new conexionART();
               try
@@ -66,5 +69,38 @@ namespace Catalogo
                   MessageBox.Show(ex.ToString());
               }
             }
+
+                
+            
+        
+         
+        
+       
+
+
+        /*
+                if (decimal.Parse(TXTBPrecio.Text) >= 0) {
+                    artiNuevo.Precio= decimal.Parse(TXTBPrecio.Text);
+                }else
+                {
+                    TXTBPrecio.Text = "0";
+                    artiNuevo.Precio = decimal.Parse(TXTBPrecio.Text);
+                }
+
+               
+                MessageBox.Show(TXTBPrecio.Text);
+                // artiNuevo.Imagen = txtbUrlImagen.Text;
+
+                conexion.Agregar(artiNuevo);
+                MessageBox.Show("Articulo agregado");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        */ 
+
     }
 }

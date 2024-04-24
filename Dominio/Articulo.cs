@@ -14,7 +14,7 @@ namespace Dominio
         public string Descripcion { get; set; }
         public string Marca { get; set; }
         public string Categoria { get; set; }
-        public SqlMoney Precio { get; set; }
+        public decimal Precio { get; set; }
         public string Imagen { get; set; }
 
         public void Cargar()

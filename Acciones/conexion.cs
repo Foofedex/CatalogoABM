@@ -143,21 +143,21 @@ namespace Acciones
 
         public void Agregar(Articulo artNuevo)
         {
+
+          
             //conexion a bd
             AccesoDatos datos = new AccesoDatos();
 
 
             try
             {
+
                 datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+artNuevo.Codigo+"','" + artNuevo.Nombre+"', '" + artNuevo.Descripcion + "','" + artNuevo.Marca + "','" + artNuevo.Categoria + "','" + artNuevo.Precio + "') INSERT INTO IMAGENES(idArticulo, ImagenUrl) VALUES((SELECT MAX(id) FROM Articulos),'" + artNuevo.Imagen + "');");
+
 
                 datos.ejecutarAccion();
 
-
-
-                //datos.setearQuery("INSERT INTO IMAGENES(ImagenUrl, idArticulo) VALUES('" + artNuevo.Imagen + "', (SELECT MAX(id) FROM Articulos))");
-              //
-              //datos.ejecutarAccion();
+           
             }
             catch (Exception ex)
             {
