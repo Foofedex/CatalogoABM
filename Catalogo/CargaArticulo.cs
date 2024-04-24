@@ -52,8 +52,8 @@ namespace Catalogo
                   artiNuevo.Codigo = TXTBID.Text;
                   artiNuevo.Nombre = TXTBNombre.Text;
                   artiNuevo.Descripcion = TXTBDescripcion.Text;
-                  artiNuevo.Marca = TXTBMarca.Text;
-                  artiNuevo.Categoria = TXTBCategoria.Text;
+                  artiNuevo.Marca = cboMarca.Text;
+                  artiNuevo.Categoria = cboCategoria.Text;
                   artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
                   string url = txtbUrlImagen.Text;
                   artiNuevo.Imagen = validarUrl(url);
@@ -70,12 +70,54 @@ namespace Catalogo
               }
             }
 
-                
-            
-        
-         
-        
-       
+
+
+
+        private void FMRArticulo_Load_1(object sender, EventArgs e)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            AccesoDatos accesoDatos2 = new AccesoDatos();
+
+            try
+            {
+
+                accesoDatos.setearQuery("select id, Descripcion From Marcas");
+                accesoDatos.ejecutarLectura();
+
+
+                while (accesoDatos.Lector.Read())
+                {
+                    cboMarca.Items.Add((string)accesoDatos.Lector["Descripcion"]);
+
+                }
+
+                accesoDatos2.setearQuery("select id, Descripcion From CATEGORIAS");
+                accesoDatos2.ejecutarLectura();
+
+                while (accesoDatos2.Lector.Read())
+                {
+
+                    cboCategoria.Items.Add((string)accesoDatos2.Lector["Descripcion"]);
+
+                }
+
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("fallo");
+            }
+
+            finally
+            {
+                accesoDatos.cerrarConexion();
+                accesoDatos2.cerrarConexion();
+            }
+        }
+
+
+
 
 
         /*
@@ -100,7 +142,7 @@ namespace Catalogo
                 MessageBox.Show(ex.ToString());
             }
         }
-        */ 
+        */
 
     }
 }

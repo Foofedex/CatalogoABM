@@ -39,14 +39,14 @@
             this.LblUrl = new System.Windows.Forms.Label();
             this.TXTBNombre = new System.Windows.Forms.TextBox();
             this.TXTBDescripcion = new System.Windows.Forms.TextBox();
-            this.TXTBMarca = new System.Windows.Forms.TextBox();
-            this.TXTBCategoria = new System.Windows.Forms.TextBox();
             this.TXTBPrecio = new System.Windows.Forms.TextBox();
             this.BTNAdd = new System.Windows.Forms.Button();
             this.BTNBack = new System.Windows.Forms.Button();
             this.TXTBID = new System.Windows.Forms.TextBox();
             this.txtbUrlImagen = new System.Windows.Forms.TextBox();
             this.lblUrlImagen = new System.Windows.Forms.Label();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // LBLNombre
@@ -136,32 +136,6 @@
             this.TXTBDescripcion.Size = new System.Drawing.Size(237, 21);
             this.TXTBDescripcion.TabIndex = 9;
             // 
-            // TXTBMarca
-            // 
-            this.TXTBMarca.AcceptsReturn = true;
-            this.TXTBMarca.AcceptsTab = true;
-            this.TXTBMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBMarca.Location = new System.Drawing.Point(179, 162);
-            this.TXTBMarca.MaximumSize = new System.Drawing.Size(565, 21);
-            this.TXTBMarca.MinimumSize = new System.Drawing.Size(237, 21);
-            this.TXTBMarca.Name = "TXTBMarca";
-            this.TXTBMarca.Size = new System.Drawing.Size(237, 21);
-            this.TXTBMarca.TabIndex = 10;
-            // 
-            // TXTBCategoria
-            // 
-            this.TXTBCategoria.AcceptsReturn = true;
-            this.TXTBCategoria.AcceptsTab = true;
-            this.TXTBCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBCategoria.Location = new System.Drawing.Point(179, 199);
-            this.TXTBCategoria.MaximumSize = new System.Drawing.Size(565, 21);
-            this.TXTBCategoria.MinimumSize = new System.Drawing.Size(237, 21);
-            this.TXTBCategoria.Name = "TXTBCategoria";
-            this.TXTBCategoria.Size = new System.Drawing.Size(237, 21);
-            this.TXTBCategoria.TabIndex = 11;
-            // 
             // TXTBPrecio
             // 
             this.TXTBPrecio.AcceptsReturn = true;
@@ -237,19 +211,35 @@
             this.lblUrlImagen.TabIndex = 18;
             this.lblUrlImagen.Text = "Urlimagen:";
             // 
+            // cboMarca
+            // 
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(179, 165);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(237, 23);
+            this.cboMarca.TabIndex = 19;
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(179, 199);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(237, 23);
+            this.cboCategoria.TabIndex = 20;
+            // 
             // FMRArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(527, 418);
+            this.Controls.Add(this.cboCategoria);
+            this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.txtbUrlImagen);
             this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.TXTBPrecio);
-            this.Controls.Add(this.TXTBCategoria);
-            this.Controls.Add(this.TXTBMarca);
             this.Controls.Add(this.TXTBDescripcion);
             this.Controls.Add(this.TXTBNombre);
             this.Controls.Add(this.TXTBID);
@@ -267,6 +257,7 @@
             this.Name = "FMRArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulo";
+            this.Load += new System.EventHandler(this.FMRArticulo_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,13 +274,13 @@
         private System.Windows.Forms.Label LblUrl;
         private System.Windows.Forms.TextBox TXTBNombre;
         private System.Windows.Forms.TextBox TXTBDescripcion;
-        private System.Windows.Forms.TextBox TXTBMarca;
-        private System.Windows.Forms.TextBox TXTBCategoria;
         private System.Windows.Forms.TextBox TXTBPrecio;
         private System.Windows.Forms.Button BTNAdd;
         private System.Windows.Forms.Button BTNBack;
         private System.Windows.Forms.TextBox TXTBID;
         private System.Windows.Forms.TextBox txtbUrlImagen;
         private System.Windows.Forms.Label lblUrlImagen;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.ComboBox cboCategoria;
     }
 }
