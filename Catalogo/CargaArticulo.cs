@@ -11,11 +11,13 @@ using System.Windows.Forms;
 using Dominio;
 using Acciones;
 using System.Data.SqlTypes;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Catalogo
 {
     public partial class FMRArticulo : Form
     {
+        public Articulo artiNuevo = new Articulo();
         public FMRArticulo()
         {
             InitializeComponent();
@@ -26,62 +28,43 @@ namespace Catalogo
             this.Close();
         }
 
-        private void FMRArticulo_Load(object sender, EventArgs e)
+        string validarUrl(string url)
         {
+            string aux=url;
+
+            if (aux.Length < 1000) { return aux; }
+            else { return aux = "Cadena muy larga"; };
+          
 
         }
 
-        private void TXTBID_TextChanged(object sender, EventArgs e)
-        {
-     
-        }
 
-        private void BTNAdd_Click(object sender, EventArgs e)
-        {
-            Articulo artiNuevo = new Articulo();
-            conexionART conexion = new conexionART();
-            try
-            {
-                artiNuevo.Codigo = TXTBID.Text;
-                artiNuevo.Nombre = TXTBNombre.Text;
-                artiNuevo.Descripcion = TXTBDescripcion.Text;
-                artiNuevo.Marca = TXTBMarca.Text;
-                artiNuevo.Categoria = TXTBCategoria.Text;
-                artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
-                artiNuevo.Imagen = txtbUrlImagen.Text;
 
-                conexion.Agregar(artiNuevo);
-                MessageBox.Show("Articulo agregado");
-                Close();
-            }
-            catch (Exception ex)
+            private void BTNAdd_Click_1(object sender, EventArgs e)
             {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+              
+              conexionART conexion = new conexionART();
+              try
+              {
+                  artiNuevo.Codigo = TXTBID.Text;
+                  artiNuevo.Nombre = TXTBNombre.Text;
+                  artiNuevo.Descripcion = TXTBDescripcion.Text;
+                  artiNuevo.Marca = TXTBMarca.Text;
+                  artiNuevo.Categoria = TXTBCategoria.Text;
+                  artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+                  string url = txtbUrlImagen.Text;
+                  artiNuevo.Imagen = validarUrl(url);
+                
 
-        private void BTNAdd_Click_1(object sender, EventArgs e)
-        {
-            Articulo artiNuevo = new Articulo();
-            conexionART conexion = new conexionART();
-            try
-            {
-                artiNuevo.Codigo = TXTBID.Text;
-                artiNuevo.Nombre = TXTBNombre.Text;
-                artiNuevo.Descripcion = TXTBDescripcion.Text;
-                artiNuevo.Marca = TXTBMarca.Text;
-                artiNuevo.Categoria = TXTBCategoria.Text;
-                artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
-                // artiNuevo.Imagen = txtbUrlImagen.Text;
-
-                conexion.Agregar(artiNuevo);
-                MessageBox.Show("Articulo agregado");
-                Close();
+                  conexion.Agregar(artiNuevo);
+                  MessageBox.Show("Articulo agregado");
+                  Close();
+              }
+              
+              catch (Exception ex)
+              {
+                  MessageBox.Show(ex.ToString());
+              }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
     }
 }

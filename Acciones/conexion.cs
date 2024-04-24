@@ -149,7 +149,8 @@ namespace Acciones
 
             try
             {
-                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('" + artNuevo.Codigo + "', '" + artNuevo.Nombre + "', '" + artNuevo.Descripcion + "', " + artNuevo.Marca + ", " + artNuevo.Categoria + ", " + artNuevo.Precio + ")");
+                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+artNuevo.Codigo+"','" + artNuevo.Nombre+"', '" + artNuevo.Descripcion + "','" + artNuevo.Marca + "','" + artNuevo.Categoria + "','" + artNuevo.Precio + "') INSERT INTO IMAGENES(idArticulo, ImagenUrl) VALUES((SELECT MAX(id) FROM Articulos),'" + artNuevo.Imagen + "');");
+
                 datos.ejecutarAccion();
 
 

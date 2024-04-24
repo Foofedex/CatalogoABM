@@ -214,7 +214,6 @@
             this.TXTBID.Name = "TXTBID";
             this.TXTBID.Size = new System.Drawing.Size(237, 21);
             this.TXTBID.TabIndex = 7;
-            this.TXTBID.TextChanged += new System.EventHandler(this.TXTBID_TextChanged);
             // 
             // txtbUrlImagen
             // 
@@ -268,7 +267,6 @@
             this.Name = "FMRArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulo";
-            this.Load += new System.EventHandler(this.FMRArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
