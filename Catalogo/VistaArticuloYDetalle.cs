@@ -28,7 +28,7 @@ namespace Catalogo
         private void VistaArticuloYDetalle_Load(object sender, EventArgs e)
         {
             
-            lblCodigo2.Text= objArticulo.ID.ToString();
+            lblCodigo2.Text= objArticulo.Codigo.ToString();
             lblNombre2.Text= objArticulo.Nombre.ToString();
             lblDescripcion2.Text=objArticulo.Descripcion.ToString();
             lblCategoria2.Text=objArticulo.Categoria.ToString();

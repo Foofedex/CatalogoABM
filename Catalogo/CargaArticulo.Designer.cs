@@ -45,6 +45,8 @@
             this.BTNAdd = new System.Windows.Forms.Button();
             this.BTNBack = new System.Windows.Forms.Button();
             this.TXTBID = new System.Windows.Forms.TextBox();
+            this.txtbUrlImagen = new System.Windows.Forms.TextBox();
+            this.lblUrlImagen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LBLNombre
@@ -103,9 +105,9 @@
             this.LblUrl.AutoSize = true;
             this.LblUrl.Location = new System.Drawing.Point(85, 243);
             this.LblUrl.Name = "LblUrl";
-            this.LblUrl.Size = new System.Drawing.Size(82, 15);
+            this.LblUrl.Size = new System.Drawing.Size(52, 15);
             this.LblUrl.TabIndex = 6;
-            this.LblUrl.Text = "Url_Imagen";
+            this.LblUrl.Text = "Precio:";
             this.LblUrl.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // TXTBNombre
@@ -175,12 +177,13 @@
             // 
             // BTNAdd
             // 
-            this.BTNAdd.Location = new System.Drawing.Point(214, 279);
+            this.BTNAdd.Location = new System.Drawing.Point(215, 325);
             this.BTNAdd.Name = "BTNAdd";
             this.BTNAdd.Size = new System.Drawing.Size(167, 23);
             this.BTNAdd.TabIndex = 13;
             this.BTNAdd.Text = "Agregar";
             this.BTNAdd.UseVisualStyleBackColor = true;
+            this.BTNAdd.Click += new System.EventHandler(this.BTNAdd_Click_1);
             // 
             // BTNBack
             // 
@@ -213,12 +216,36 @@
             this.TXTBID.TabIndex = 7;
             this.TXTBID.TextChanged += new System.EventHandler(this.TXTBID_TextChanged);
             // 
+            // txtbUrlImagen
+            // 
+            this.txtbUrlImagen.AcceptsReturn = true;
+            this.txtbUrlImagen.AcceptsTab = true;
+            this.txtbUrlImagen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbUrlImagen.Location = new System.Drawing.Point(179, 278);
+            this.txtbUrlImagen.MaximumSize = new System.Drawing.Size(565, 21);
+            this.txtbUrlImagen.MinimumSize = new System.Drawing.Size(237, 21);
+            this.txtbUrlImagen.Name = "txtbUrlImagen";
+            this.txtbUrlImagen.Size = new System.Drawing.Size(237, 21);
+            this.txtbUrlImagen.TabIndex = 17;
+            // 
+            // lblUrlImagen
+            // 
+            this.lblUrlImagen.AutoSize = true;
+            this.lblUrlImagen.Location = new System.Drawing.Point(85, 284);
+            this.lblUrlImagen.Name = "lblUrlImagen";
+            this.lblUrlImagen.Size = new System.Drawing.Size(78, 15);
+            this.lblUrlImagen.TabIndex = 18;
+            this.lblUrlImagen.Text = "Urlimagen:";
+            // 
             // FMRArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(527, 418);
+            this.Controls.Add(this.lblUrlImagen);
+            this.Controls.Add(this.txtbUrlImagen);
             this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.TXTBPrecio);
@@ -264,5 +291,7 @@
         private System.Windows.Forms.Button BTNAdd;
         private System.Windows.Forms.Button BTNBack;
         private System.Windows.Forms.TextBox TXTBID;
+        private System.Windows.Forms.TextBox txtbUrlImagen;
+        private System.Windows.Forms.Label lblUrlImagen;
     }
 }

@@ -38,7 +38,7 @@ namespace Acciones
 
                     Articulo aux=new Articulo();
 
-                    aux.ID = lector.GetString(0);
+                    aux.Codigo = lector.GetString(0);
                     aux.Nombre=lector.GetString(1);
                     aux.Descripcion = lector.GetString(2);
                     aux.Precio=lector.GetSqlMoney(3);
@@ -103,7 +103,7 @@ namespace Acciones
 
                     Articulo aux = new Articulo();
 
-                    aux.ID = lector.GetString(0);
+                    aux.Codigo = lector.GetString(0);
                     aux.Nombre = lector.GetString(1);
                     aux.Descripcion = lector.GetString(2);
                     aux.Precio = lector.GetSqlMoney(3);
@@ -140,6 +140,35 @@ namespace Acciones
 
             finally { conexion.Close(); }
         }
+
+        public void Agregar(Articulo artNuevo)
+        {
+            //conexion a bd
+            AccesoDatos datos = new AccesoDatos();
+
+
+            try
+            {
+                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('" + artNuevo.Codigo + "', '" + artNuevo.Nombre + "', '" + artNuevo.Descripcion + "', " + artNuevo.Marca + ", " + artNuevo.Categoria + ", " + artNuevo.Precio + ")");
+                datos.ejecutarAccion();
+
+
+
+                //datos.setearQuery("INSERT INTO IMAGENES(ImagenUrl, idArticulo) VALUES('" + artNuevo.Imagen + "', (SELECT MAX(id) FROM Articulos))");
+              //
+              //datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
 
 
     }

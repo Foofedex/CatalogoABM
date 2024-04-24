@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Acciones;
+using System.Data.SqlTypes;
 
 namespace Catalogo
 {
@@ -32,6 +34,54 @@ namespace Catalogo
         private void TXTBID_TextChanged(object sender, EventArgs e)
         {
      
+        }
+
+        private void BTNAdd_Click(object sender, EventArgs e)
+        {
+            Articulo artiNuevo = new Articulo();
+            conexionART conexion = new conexionART();
+            try
+            {
+                artiNuevo.Codigo = TXTBID.Text;
+                artiNuevo.Nombre = TXTBNombre.Text;
+                artiNuevo.Descripcion = TXTBDescripcion.Text;
+                artiNuevo.Marca = TXTBMarca.Text;
+                artiNuevo.Categoria = TXTBCategoria.Text;
+                artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+                artiNuevo.Imagen = txtbUrlImagen.Text;
+
+                conexion.Agregar(artiNuevo);
+                MessageBox.Show("Articulo agregado");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BTNAdd_Click_1(object sender, EventArgs e)
+        {
+            Articulo artiNuevo = new Articulo();
+            conexionART conexion = new conexionART();
+            try
+            {
+                artiNuevo.Codigo = TXTBID.Text;
+                artiNuevo.Nombre = TXTBNombre.Text;
+                artiNuevo.Descripcion = TXTBDescripcion.Text;
+                artiNuevo.Marca = TXTBMarca.Text;
+                artiNuevo.Categoria = TXTBCategoria.Text;
+                artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+                // artiNuevo.Imagen = txtbUrlImagen.Text;
+
+                conexion.Agregar(artiNuevo);
+                MessageBox.Show("Articulo agregado");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
