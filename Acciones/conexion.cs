@@ -41,7 +41,7 @@ namespace Acciones
                     aux.Codigo = lector.GetString(0);
                     aux.Nombre=lector.GetString(1);
                     aux.Descripcion = lector.GetString(2);
-                    aux.Precio=lector.GetSqlMoney(3);
+                    aux.Precio=lector.GetDecimal(3);
                     aux.Marca = lector.GetString(4);
                     aux.Categoria = lector.GetString(5);
                     aux.Imagen=lector.GetString(6);
@@ -106,7 +106,7 @@ namespace Acciones
                     aux.Codigo = lector.GetString(0);
                     aux.Nombre = lector.GetString(1);
                     aux.Descripcion = lector.GetString(2);
-                    aux.Precio = lector.GetSqlMoney(3);
+                    aux.Precio = lector.GetDecimal(3);
                     aux.Marca = lector.GetString(4);
                     aux.Categoria = lector.GetString(5);
                     aux.Imagen = lector.GetString(6);
@@ -143,13 +143,20 @@ namespace Acciones
 
         public void Agregar(Articulo artNuevo)
         {
+
+            artNuevo.Categoria = "1";
+            artNuevo.Marca = "1";
+            artNuevo.Nombre= "1";
+            artNuevo.Descripcion= "1";
+            artNuevo.Codigo = "1";
+            artNuevo.Precio = (decimal)50.5;
             //conexion a bd
             AccesoDatos datos = new AccesoDatos();
 
 
             try
             {
-                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('" + artNuevo.Codigo + "', '" + artNuevo.Nombre + "', '" + artNuevo.Descripcion + "', " + artNuevo.Marca + ", " + artNuevo.Categoria + ", " + artNuevo.Precio + ")");
+                datos.setearQuery("INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES('x', 'l', 'prueba2', 1, 2, 5)");
                 datos.ejecutarAccion();
 
 

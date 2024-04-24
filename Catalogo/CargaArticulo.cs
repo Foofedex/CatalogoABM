@@ -35,7 +35,10 @@ namespace Catalogo
         {
      
         }
-
+        /*
+         
+         
+         
         private void BTNAdd_Click(object sender, EventArgs e)
         {
             Articulo artiNuevo = new Articulo();
@@ -47,7 +50,7 @@ namespace Catalogo
                 artiNuevo.Descripcion = TXTBDescripcion.Text;
                 artiNuevo.Marca = TXTBMarca.Text;
                 artiNuevo.Categoria = TXTBCategoria.Text;
-                artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+                artiNuevo.Precio = decimal.Parse(TXTBPrecio.Text);
                 artiNuevo.Imagen = txtbUrlImagen.Text;
 
                 conexion.Agregar(artiNuevo);
@@ -59,7 +62,8 @@ namespace Catalogo
                 MessageBox.Show(ex.ToString());
             }
         }
-
+         */
+        
         private void BTNAdd_Click_1(object sender, EventArgs e)
         {
             Articulo artiNuevo = new Articulo();
@@ -71,7 +75,20 @@ namespace Catalogo
                 artiNuevo.Descripcion = TXTBDescripcion.Text;
                 artiNuevo.Marca = TXTBMarca.Text;
                 artiNuevo.Categoria = TXTBCategoria.Text;
-                artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+                artiNuevo.Precio = decimal.Parse(TXTBPrecio.Text);
+
+
+
+                if (decimal.Parse(TXTBPrecio.Text) >= 0) {
+                    artiNuevo.Precio= decimal.Parse(TXTBPrecio.Text);
+                }else
+                {
+                    TXTBPrecio.Text = "0";
+                    artiNuevo.Precio = decimal.Parse(TXTBPrecio.Text);
+                }
+
+               
+                MessageBox.Show(TXTBPrecio.Text);
                 // artiNuevo.Imagen = txtbUrlImagen.Text;
 
                 conexion.Agregar(artiNuevo);
@@ -83,5 +100,6 @@ namespace Catalogo
                 MessageBox.Show(ex.ToString());
             }
         }
+         
     }
 }
