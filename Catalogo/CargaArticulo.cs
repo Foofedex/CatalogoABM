@@ -39,9 +39,6 @@ namespace Catalogo
         }
 
 
-         
-      
-
             private void BTNAdd_Click_1(object sender, EventArgs e)
             {
 
@@ -52,8 +49,6 @@ namespace Catalogo
                   artiNuevo.Codigo = TXTBID.Text;
                   artiNuevo.Nombre = TXTBNombre.Text;
                   artiNuevo.Descripcion = TXTBDescripcion.Text;
-                //  artiNuevo.Marca = cboMarca.Text;
-                //  artiNuevo.Categoria = cboCategoria.Text;
                   artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
                   string url = txtbUrlImagen.Text;
                   artiNuevo.Imagen = validarUrl(url);
@@ -71,9 +66,6 @@ namespace Catalogo
 
 
             }
-
-
-
 
         private void FMRArticulo_Load_1(object sender, EventArgs e)
         {

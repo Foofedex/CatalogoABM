@@ -13,7 +13,7 @@ namespace Acciones
 {
     public class conexionART
     {
-
+        
         public List<Articulo> ListarArticulo()
         {
          List<Articulo> Lista= new List<Articulo> ();
@@ -66,8 +66,6 @@ namespace Acciones
             
                 finally { conexion.Close(); }   
         }
-
-
 
         public List<Articulo> Busquedad(string buscar)
         {

@@ -21,6 +21,7 @@ namespace Catalogo
         AccesoDatos BD_Eliminar=new AccesoDatos();
         conexionART BD_Buscar =new conexionART();
         List<Articulo> list = new List<Articulo>();
+        string Codigo;
 
         //lo que seleccionamos en el list lo mostramos en el laber
         private void listSeleccion_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,19 +46,21 @@ namespace Catalogo
             foreach (Articulo l in list) {
                 listSeleccion.Items.Add(l.Codigo+"  "+l.Nombre +"  "+ l.Marca);
                 lblSeleccionado.Text = "Seleccione su Articulo";
+                
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (listSeleccion.Text != "") { 
-            
+            BD_Eliminar.setearQuery("delete from IMAGENES where IMAGENES.IdArticulo=(select id from ARTICULOS where ARTICULOS.Codigo='" + list[listSeleccion.SelectedIndex].Codigo+ "') delete from ARTICULOS where Codigo='"+ list[listSeleccion.SelectedIndex].Codigo+"';");
+            BD_Eliminar.ejecutarAccion();
+            BD_Eliminar.cerrarConexion();
             
             lblSeleccionado.Text = "";
             MessageBox.Show("Se Elimino Exitosamente: " + list[listSeleccion.SelectedIndex].Codigo);
 
             listSeleccion.Items.Clear();
-            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
