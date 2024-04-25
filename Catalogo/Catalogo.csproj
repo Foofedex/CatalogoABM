@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABM_Articulo.cs" />
     <Compile Include="CargaArticulo.cs">
       <SubType>Form</SubType>
     </Compile>

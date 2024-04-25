@@ -19,7 +19,7 @@ namespace Catalogo
 
     public partial class FMRBusqueda : Form
     {
-        ABM_Articulo articulo= new ABM_Articulo();
+      
         List<Articulo> articulos = new List<Articulo>();
         
         DataTable dt = new DataTable();
