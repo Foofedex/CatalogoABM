@@ -218,6 +218,7 @@
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(237, 23);
             this.cboMarca.TabIndex = 19;
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // cboCategoria
             // 
@@ -226,6 +227,7 @@
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(237, 23);
             this.cboCategoria.TabIndex = 20;
+            this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // FMRArticulo
             // 

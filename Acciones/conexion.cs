@@ -29,7 +29,7 @@ namespace Acciones
 
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 commando.CommandType = System.Data.CommandType.Text;
-                commando.CommandText = "SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.Descripcion AS Marca, CASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END AS Categoria, i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id LEFT JOIN IMAGENES i ON a.id = i.IdArticulo;";
+                commando.CommandText = "SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, \r\nCASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl \r\nFROM ARTICULOS a\r\nLEFT JOIN marcas m ON a.IdMarca = m.Id\r\nLEFT JOIN categorias c ON a.idcategoria = c.id \r\nLEFT JOIN IMAGENES i ON a.id = i.IdArticulo;";
                 commando.Connection = conexion;
                 conexion.Open();
                 lector= commando.ExecuteReader();
@@ -42,23 +42,14 @@ namespace Acciones
                     aux.Nombre=lector.GetString(1);
                     aux.Descripcion = lector.GetString(2);
                     aux.Precio=lector.GetSqlMoney(3);
-                    aux.Marca = lector.GetString(4);
-                    aux.Categoria = lector.GetString(5);
-                    aux.Imagen=lector.GetString(6);
-
-                    /* aux.ID= (string)lector["Codigo"];
-                     aux.Nombre= (string)lector["Nombre"];
-                     aux.Descripcion= (string)lector["Descripcion"];
-                     aux.Precio= (SqlMoney) lector["Precio"];
-                     aux.Marca= (string)lector["Marca"];
-                     aux.Categoria= (string)lector["Categoria"];
-                     aux.Imagen = (string)lector["ImagenUrl"];*/
-                    
-
-                    
+                    aux.IDMarca=lector.GetInt32 (4);
+                    aux.Marca = lector.GetString(5);
+                    aux.IDCategoria = lector.GetInt32(6);
+                    aux.Categoria = lector.GetString(7);
+                    aux.Imagen=lector.GetString(8);
+                                                          
                     Lista.Add(aux);
-
-                        
+                                            
                     }
 
 
@@ -93,7 +84,7 @@ namespace Acciones
 
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 commando.CommandType = System.Data.CommandType.Text;
-                commando.CommandText = "SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.Descripcion AS Marca, CASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END AS Categoria, i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id LEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%"+ buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';";
+                commando.CommandText = "SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, \r\nCASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl \r\nFROM ARTICULOS a\r\nLEFT JOIN marcas m ON a.IdMarca = m.Id\r\nLEFT JOIN categorias c ON a.idcategoria = c.id \r\nLEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%"+ buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';";
                 commando.Connection = conexion;
                 conexion.Open();
                 lector = commando.ExecuteReader();
@@ -107,19 +98,13 @@ namespace Acciones
                     aux.Nombre = lector.GetString(1);
                     aux.Descripcion = lector.GetString(2);
                     aux.Precio = lector.GetSqlMoney(3);
-                    aux.Marca = lector.GetString(4);
-                    aux.Categoria = lector.GetString(5);
-                    aux.Imagen = lector.GetString(6);
+                    aux.IDMarca = lector.GetInt32(4);
+                    aux.Marca = lector.GetString(5);
+                    aux.IDCategoria = lector.GetInt32(6);
+                    aux.Categoria = lector.GetString(7);
+                    aux.Imagen = lector.GetString(8);
 
-                    /* aux.ID= (string)lector["Codigo"];
-                     aux.Nombre= (string)lector["Nombre"];
-                     aux.Descripcion= (string)lector["Descripcion"];
-                     aux.Precio= (SqlMoney) lector["Precio"];
-                     aux.Marca= (string)lector["Marca"];
-                     aux.Categoria= (string)lector["Categoria"];
-                     aux.Imagen = (string)lector["ImagenUrl"];*/
-
-
+                    
 
                     Lista.Add(aux);
 
@@ -147,12 +132,12 @@ namespace Acciones
           
             //conexion a bd
             AccesoDatos datos = new AccesoDatos();
-
+            
 
             try
             {
-
-                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+artNuevo.Codigo+"','" + artNuevo.Nombre+"', '" + artNuevo.Descripcion + "','" + artNuevo.Marca + "','" + artNuevo.Categoria + "','" + artNuevo.Precio + "') INSERT INTO IMAGENES(idArticulo, ImagenUrl) VALUES((SELECT MAX(id) FROM Articulos),'" + artNuevo.Imagen + "');");
+              
+                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+artNuevo.Codigo+"','" + artNuevo.Nombre+"', '" + artNuevo.Descripcion + "','" + artNuevo.IDMarca + "','" + artNuevo.IDCategoria+ "','" + artNuevo.Precio + "') INSERT INTO IMAGENES(idArticulo, ImagenUrl) VALUES((SELECT MAX(id) FROM Articulos),'" + artNuevo.Imagen + "');");
 
 
                 datos.ejecutarAccion();

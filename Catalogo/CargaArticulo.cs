@@ -52,14 +52,14 @@ namespace Catalogo
                   artiNuevo.Codigo = TXTBID.Text;
                   artiNuevo.Nombre = TXTBNombre.Text;
                   artiNuevo.Descripcion = TXTBDescripcion.Text;
-                  artiNuevo.Marca = cboMarca.Text;
-                  artiNuevo.Categoria = cboCategoria.Text;
+                //  artiNuevo.Marca = cboMarca.Text;
+                //  artiNuevo.Categoria = cboCategoria.Text;
                   artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
                   string url = txtbUrlImagen.Text;
                   artiNuevo.Imagen = validarUrl(url);
-                
+                MessageBox.Show(artiNuevo.IDCategoria.ToString()+"esta es la categoria");
 
-                  conexion.Agregar(artiNuevo);
+                conexion.Agregar(artiNuevo);
                   MessageBox.Show("Articulo agregado");
                   Close();
               }
@@ -68,6 +68,8 @@ namespace Catalogo
               {
                   MessageBox.Show(ex.ToString());
               }
+
+
             }
 
 
@@ -115,34 +117,17 @@ namespace Catalogo
                 accesoDatos2.cerrarConexion();
             }
         }
+        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            artiNuevo.IDMarca =(cboMarca.SelectedIndex+1);
+           
 
-
-
-
-
-        /*
-                if (decimal.Parse(TXTBPrecio.Text) >= 0) {
-                    artiNuevo.Precio= decimal.Parse(TXTBPrecio.Text);
-                }else
-                {
-                    TXTBPrecio.Text = "0";
-                    artiNuevo.Precio = decimal.Parse(TXTBPrecio.Text);
-                }
-
-               
-                MessageBox.Show(TXTBPrecio.Text);
-                // artiNuevo.Imagen = txtbUrlImagen.Text;
-
-                conexion.Agregar(artiNuevo);
-                MessageBox.Show("Articulo agregado");
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
-        */
 
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            artiNuevo.IDCategoria = (cboCategoria.SelectedIndex+1);
+           
+        }
     }
 }

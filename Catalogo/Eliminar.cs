@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Acciones;
+using Dominio;
 namespace Catalogo
 {
     public partial class Eliminar : Form
@@ -17,20 +18,9 @@ namespace Catalogo
             InitializeComponent();
         }
 
-   
-
-
-
-
-
-
-        //cuando ingreso un text y le doy enter me busca la query
-        private void txtEliminar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar ==Convert.ToChar(Keys.Enter)) listSeleccion.Items.Add(txtEliminar.Text);
-
-        }
-
+        AccesoDatos BD_Eliminar=new AccesoDatos();
+        conexionART BD_Buscar =new conexionART();
+        List<Articulo> list = new List<Articulo>();
 
         //lo que seleccionamos en el list lo mostramos en el laber
         private void listSeleccion_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,23 +34,27 @@ namespace Catalogo
             }
         }
 
-        private void txtEliminar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listSeleccion.Items.Add(txtEliminar.Text);
-            lblSeleccionado.Text = "Seleccione su Articulo";
+           
+
+            list= BD_Buscar.Busquedad(txtEliminar.Text);
+
+            foreach (Articulo l in list) {
+                listSeleccion.Items.Add(l.Codigo+"  "+l.Nombre +"  "+ l.Marca);
+                lblSeleccionado.Text = "Seleccione su Articulo";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (listSeleccion.Text != "") { 
             
+            
             lblSeleccionado.Text = "";
-            MessageBox.Show("Se Elimino Exitosamente: " + listSeleccion.Text);
+            MessageBox.Show("Se Elimino Exitosamente: " + list[listSeleccion.SelectedIndex].Codigo);
 
             listSeleccion.Items.Clear();
             }

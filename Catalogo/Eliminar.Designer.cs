@@ -49,7 +49,7 @@
             this.label1.Size = new System.Drawing.Size(174, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "ingrese el nombre del articulo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // button1
             // 
@@ -79,8 +79,8 @@
             this.txtEliminar.Name = "txtEliminar";
             this.txtEliminar.Size = new System.Drawing.Size(232, 20);
             this.txtEliminar.TabIndex = 4;
-            this.txtEliminar.TextChanged += new System.EventHandler(this.txtEliminar_TextChanged);
-            this.txtEliminar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEliminar_KeyPress);
+
+           
             // 
             // lblSeleccionado
             // 
@@ -142,7 +142,7 @@
             this.Name = "Eliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar";
-            this.Load += new System.EventHandler(this.Eliminar_Load);
+        
             this.ResumeLayout(false);
             this.PerformLayout();
 
