@@ -47,6 +47,8 @@
             this.lblUrlImagen = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.ErrorProvCargaArticulo = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCargaArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // LBLNombre
@@ -148,6 +150,7 @@
             this.TXTBPrecio.Name = "TXTBPrecio";
             this.TXTBPrecio.Size = new System.Drawing.Size(237, 21);
             this.TXTBPrecio.TabIndex = 12;
+            this.TXTBPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.TXTBPrecio_Validating);
             // 
             // BTNAdd
             // 
@@ -229,6 +232,10 @@
             this.cboCategoria.TabIndex = 20;
             this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
+            // ErrorProvCargaArticulo
+            // 
+            this.ErrorProvCargaArticulo.ContainerControl = this;
+            // 
             // FMRArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -260,6 +267,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulo";
             this.Load += new System.EventHandler(this.FMRArticulo_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCargaArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +292,6 @@
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.ErrorProvider ErrorProvCargaArticulo;
     }
 }

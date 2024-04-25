@@ -1,6 +1,4 @@
-﻿
-
-using Acciones;
+﻿using Acciones;
 using Dominio;
 using System;
 using System.Collections.Generic;
@@ -36,11 +34,7 @@ namespace Catalogo
         {
             //CAPTURO LA PALABRA Q INGRESO
             string busquedad = txtBusqueda.Text;
-
-
             conexionART Data= new conexionART();
-            
-
             articulos = Data.Busquedad(busquedad);
            
             foreach (Articulo articulo in articulos)

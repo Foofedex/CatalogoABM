@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +38,65 @@ namespace Catalogo
         }
 
 
+        private bool validarCamposTxt()
+        {
+            bool ok = true;
+
+            if(TXTBID.Text == "")
+            {
+                ok = false;
+                ErrorProvCargaArticulo.SetError(TXTBID, "Ingrese el Codigo.");
+            }
+
+            if (TXTBNombre.Text == "")
+            {
+                ok = false;
+                ErrorProvCargaArticulo.SetError(TXTBNombre, "Ingrese el Nombre.");
+            }
+            if (TXTBDescripcion.Text == "")
+            {
+                ok = false;
+                ErrorProvCargaArticulo.SetError(TXTBDescripcion, "Ingrese la Descripcion.");
+            }
+            if (cboMarca.SelectedIndex < 0)
+            {
+                ok = false;
+                ErrorProvCargaArticulo.SetError(cboMarca, "Seleccione la Marca.");
+            }
+            if (cboCategoria.SelectedIndex < 0)
+            {
+                ok = false;
+                ErrorProvCargaArticulo.SetError(cboCategoria, "Seleccione la Categoria.");
+            }
+            if (TXTBPrecio.Text == "")
+            {
+                ok = false;
+                ErrorProvCargaArticulo.SetError(TXTBPrecio, "Ingrese el Precio.");
+            }
+            if (txtbUrlImagen.Text == "")
+            {
+                ok = false;
+                ErrorProvCargaArticulo.SetError(txtbUrlImagen, "Ingrese la Url.");
+            }
+
+
+            return ok;
+        }
+
+        private void EliminarIconosErrorProv()
+        {
+            ErrorProvCargaArticulo.SetError(TXTBID, "");
+            ErrorProvCargaArticulo.SetError(TXTBNombre, "");
+            ErrorProvCargaArticulo.SetError(TXTBDescripcion, "");
+            ErrorProvCargaArticulo.SetError(cboMarca, "");
+            ErrorProvCargaArticulo.SetError(cboCategoria, "");
+            ErrorProvCargaArticulo.SetError(TXTBPrecio, "");
+            ErrorProvCargaArticulo.SetError(txtbUrlImagen, "");
+           
+        }
+
+
+
             private void BTNAdd_Click_1(object sender, EventArgs e)
             {
 
@@ -46,15 +104,22 @@ namespace Catalogo
               conexionART conexion = new conexionART();
               try
               {
+
+                EliminarIconosErrorProv();
+                if (validarCamposTxt())
+                {
+                    MessageBox.Show("Datos Ingresados Correctamente.");
+                }
+                validarCamposTxt();
+
                   artiNuevo.Codigo = TXTBID.Text;
                   artiNuevo.Nombre = TXTBNombre.Text;
                   artiNuevo.Descripcion = TXTBDescripcion.Text;
                   artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
                   string url = txtbUrlImagen.Text;
                   artiNuevo.Imagen = validarUrl(url);
-                MessageBox.Show(artiNuevo.IDCategoria.ToString()+"esta es la categoria");
 
-                conexion.Agregar(artiNuevo);
+                  conexion.Agregar(artiNuevo);
                   MessageBox.Show("Articulo agregado");
                   Close();
               }
@@ -115,11 +180,23 @@ namespace Catalogo
            
 
         }
-
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             artiNuevo.IDCategoria = (cboCategoria.SelectedIndex+1);
            
+        }
+
+        private void TXTBPrecio_Validating(object sender, CancelEventArgs e)
+        {
+            float numero;
+            if(!float.TryParse(TXTBPrecio.Text, out numero))
+            {
+                ErrorProvCargaArticulo.SetError(TXTBPrecio, "Ingrese valor numerico.");
+            }
+            else
+            {
+                ErrorProvCargaArticulo.SetError(TXTBPrecio, "");
+            }
         }
     }
 }
