@@ -35,11 +35,31 @@ namespace Catalogo
             }
         }
 
-       
+       private bool ValidarEntadaTxt(string PalabraClave)
+        {
+            if(string.IsNullOrWhiteSpace(PalabraClave))
+            {
+                MessageBox.Show("Por favor ingrese una letra o palabra clave para continuar");
+                return false;
+            }
+            return true;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
+            if (!ValidarEntadaTxt(txtEliminar.Text))
+            {
+                return;
+            }
+
+            if(list.Count == 0)
+            {
+                MessageBox.Show("Su articulo no se encuentra.");
+                lblSeleccionado.Text = "";
+                return;
+            }
+
 
             list= BD_Buscar.Busquedad(txtEliminar.Text);
 
@@ -50,8 +70,24 @@ namespace Catalogo
             }
         }
 
+
+        private bool ValidoSeleccion()
+        {
+            if(listSeleccion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Primero busque el articlo para poder eliminarlo");
+                return false;
+            }
+            return true;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!ValidoSeleccion())
+            {
+                return;
+            }
+
             BD_Eliminar.setearQuery("delete from IMAGENES where IMAGENES.IdArticulo=(select id from ARTICULOS where ARTICULOS.Codigo='" + list[listSeleccion.SelectedIndex].Codigo+ "') delete from ARTICULOS where Codigo='"+ list[listSeleccion.SelectedIndex].Codigo+"';");
             BD_Eliminar.ejecutarAccion();
             BD_Eliminar.cerrarConexion();
