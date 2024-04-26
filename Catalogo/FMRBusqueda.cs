@@ -29,14 +29,35 @@ namespace Catalogo
         }
 
  
-
+        private bool ValidarEntradaTxtBusqueda(string palabraClave)
+        {
+            if (string.IsNullOrWhiteSpace(palabraClave))
+            {
+                MessageBox.Show("Por favor ingrese una letra o palabra clave.");
+                return false;
+            }
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (!ValidarEntradaTxtBusqueda(txtBusqueda.Text))
+            {
+                return;
+            }
+
             //CAPTURO LA PALABRA Q INGRESO
             string busquedad = txtBusqueda.Text;
             conexionART Data= new conexionART();
             articulos = Data.Busquedad(busquedad);
            
+            if(articulos.Count == 0)
+            {
+                MessageBox.Show("Su articulo no se encuentra.");
+                LBListaBusqueda.Text = "";
+                return;
+            }
+
             foreach (Articulo articulo in articulos)
             {
 

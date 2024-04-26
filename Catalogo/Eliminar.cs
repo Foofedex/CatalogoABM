@@ -53,15 +53,13 @@ namespace Catalogo
                 return;
             }
 
-            if(list.Count == 0)
+            list = BD_Buscar.Busquedad(txtEliminar.Text);
+            if (list.Count == 0)
             {
                 MessageBox.Show("Su articulo no se encuentra.");
                 lblSeleccionado.Text = "";
                 return;
             }
-
-
-            list= BD_Buscar.Busquedad(txtEliminar.Text);
 
             foreach (Articulo l in list) {
                 listSeleccion.Items.Add(l.Codigo+"  "+l.Nombre +"  "+ l.Marca);
