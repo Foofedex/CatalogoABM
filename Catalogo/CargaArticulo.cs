@@ -172,7 +172,7 @@ namespace Catalogo
 
             catch (Exception ex)
             {
-                MessageBox.Show("fallo");
+                MessageBox.Show(ex.Message);
             }
 
             finally

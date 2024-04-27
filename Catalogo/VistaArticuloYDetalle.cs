@@ -25,7 +25,7 @@ namespace Catalogo
             this.Close();
         }
 
-        private void VistaArticuloYDetalle_Load(object sender, EventArgs e)
+        public void VistaArticuloYDetalle_Load(object sender, EventArgs e)
         {
             
             lblCodigo2.Text= objArticulo.Codigo.ToString();

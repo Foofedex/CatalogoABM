@@ -12,8 +12,6 @@ namespace Acciones
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-
-
         public SqlDataReader Lector
         {
             get { return lector; }
@@ -26,6 +24,7 @@ namespace Acciones
         }
 
         public void setearQuery(string consulta)
+
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;

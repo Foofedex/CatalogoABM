@@ -25,7 +25,10 @@ namespace Catalogo
         {
             listarArticulo = conecArti.ListarArticulo();
             DGVArticulosLista.DataSource = listarArticulo;
-            
+            DGVArticulosLista.Columns[0].Visible = false;
+            DGVArticulosLista.Columns[4].Visible = false;
+            DGVArticulosLista.Columns["IDCategoria"].Visible = false;
+            DGVArticulosLista.Columns["Imagen"].Visible = false;
         }
 
         private void DGVArticulosLista_SelectionChanged(object sender, DataGridViewCellEventArgs e)

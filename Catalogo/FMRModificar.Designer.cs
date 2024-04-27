@@ -31,11 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRModificar));
             this.BTNBack = new System.Windows.Forms.Button();
             this.BTNModificar = new System.Windows.Forms.Button();
-            this.TXTBPrecio = new System.Windows.Forms.TextBox();
-            this.TXTBCategoria = new System.Windows.Forms.TextBox();
-            this.TXTBMarca = new System.Windows.Forms.TextBox();
+            this.TxtURL = new System.Windows.Forms.TextBox();
             this.TXTBDescripcion = new System.Windows.Forms.TextBox();
-            this.TXTBNombre = new System.Windows.Forms.TextBox();
+            this.TXTCodigo = new System.Windows.Forms.TextBox();
             this.LBLCategoria = new System.Windows.Forms.Label();
             this.LBLMarca = new System.Windows.Forms.Label();
             this.LBLDescripcion = new System.Windows.Forms.Label();
@@ -48,6 +46,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.BTNSearc = new System.Windows.Forms.Button();
+            this.TxtPrecio = new System.Windows.Forms.TextBox();
+            this.LblPrecio = new System.Windows.Forms.Label();
+            this.CboMarca = new System.Windows.Forms.ComboBox();
+            this.CboCategoria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // BTNBack
@@ -58,7 +60,7 @@
             this.BTNBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BTNBack.Image = ((System.Drawing.Image)(resources.GetObject("BTNBack.Image")));
             this.BTNBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNBack.Location = new System.Drawing.Point(388, 312);
+            this.BTNBack.Location = new System.Drawing.Point(388, 398);
             this.BTNBack.Name = "BTNBack";
             this.BTNBack.Size = new System.Drawing.Size(78, 25);
             this.BTNBack.TabIndex = 30;
@@ -69,52 +71,26 @@
             // 
             // BTNModificar
             // 
-            this.BTNModificar.Location = new System.Drawing.Point(139, 268);
+            this.BTNModificar.Location = new System.Drawing.Point(128, 305);
             this.BTNModificar.Name = "BTNModificar";
-            this.BTNModificar.Size = new System.Drawing.Size(167, 23);
+            this.BTNModificar.Size = new System.Drawing.Size(167, 20);
             this.BTNModificar.TabIndex = 29;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
             this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
             // 
-            // TXTBPrecio
+            // TxtURL
             // 
-            this.TXTBPrecio.AcceptsReturn = true;
-            this.TXTBPrecio.AcceptsTab = true;
-            this.TXTBPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TxtURL.AcceptsReturn = true;
+            this.TxtURL.AcceptsTab = true;
+            this.TxtURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBPrecio.Location = new System.Drawing.Point(104, 229);
-            this.TXTBPrecio.MaximumSize = new System.Drawing.Size(565, 21);
-            this.TXTBPrecio.MinimumSize = new System.Drawing.Size(237, 21);
-            this.TXTBPrecio.Name = "TXTBPrecio";
-            this.TXTBPrecio.Size = new System.Drawing.Size(253, 20);
-            this.TXTBPrecio.TabIndex = 28;
-            // 
-            // TXTBCategoria
-            // 
-            this.TXTBCategoria.AcceptsReturn = true;
-            this.TXTBCategoria.AcceptsTab = true;
-            this.TXTBCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBCategoria.Location = new System.Drawing.Point(104, 188);
-            this.TXTBCategoria.MaximumSize = new System.Drawing.Size(565, 21);
-            this.TXTBCategoria.MinimumSize = new System.Drawing.Size(237, 21);
-            this.TXTBCategoria.Name = "TXTBCategoria";
-            this.TXTBCategoria.Size = new System.Drawing.Size(253, 20);
-            this.TXTBCategoria.TabIndex = 27;
-            // 
-            // TXTBMarca
-            // 
-            this.TXTBMarca.AcceptsReturn = true;
-            this.TXTBMarca.AcceptsTab = true;
-            this.TXTBMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBMarca.Location = new System.Drawing.Point(104, 151);
-            this.TXTBMarca.MaximumSize = new System.Drawing.Size(565, 21);
-            this.TXTBMarca.MinimumSize = new System.Drawing.Size(237, 21);
-            this.TXTBMarca.Name = "TXTBMarca";
-            this.TXTBMarca.Size = new System.Drawing.Size(253, 20);
-            this.TXTBMarca.TabIndex = 26;
+            this.TxtURL.Location = new System.Drawing.Point(104, 259);
+            this.TxtURL.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TxtURL.MinimumSize = new System.Drawing.Size(237, 21);
+            this.TxtURL.Name = "TxtURL";
+            this.TxtURL.Size = new System.Drawing.Size(253, 20);
+            this.TxtURL.TabIndex = 28;
             // 
             // TXTBDescripcion
             // 
@@ -122,30 +98,30 @@
             this.TXTBDescripcion.AcceptsTab = true;
             this.TXTBDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBDescripcion.Location = new System.Drawing.Point(104, 112);
+            this.TXTBDescripcion.Location = new System.Drawing.Point(104, 117);
             this.TXTBDescripcion.MaximumSize = new System.Drawing.Size(565, 21);
             this.TXTBDescripcion.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBDescripcion.Name = "TXTBDescripcion";
             this.TXTBDescripcion.Size = new System.Drawing.Size(253, 20);
             this.TXTBDescripcion.TabIndex = 25;
             // 
-            // TXTBNombre
+            // TXTCodigo
             // 
-            this.TXTBNombre.AcceptsReturn = true;
-            this.TXTBNombre.AcceptsTab = true;
-            this.TXTBNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TXTCodigo.AcceptsReturn = true;
+            this.TXTCodigo.AcceptsTab = true;
+            this.TXTCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TXTBNombre.Location = new System.Drawing.Point(104, 72);
-            this.TXTBNombre.MaximumSize = new System.Drawing.Size(565, 21);
-            this.TXTBNombre.MinimumSize = new System.Drawing.Size(237, 21);
-            this.TXTBNombre.Name = "TXTBNombre";
-            this.TXTBNombre.Size = new System.Drawing.Size(253, 20);
-            this.TXTBNombre.TabIndex = 24;
+            this.TXTCodigo.Location = new System.Drawing.Point(104, 81);
+            this.TXTCodigo.MaximumSize = new System.Drawing.Size(565, 21);
+            this.TXTCodigo.MinimumSize = new System.Drawing.Size(237, 21);
+            this.TXTCodigo.Name = "TXTCodigo";
+            this.TXTCodigo.Size = new System.Drawing.Size(253, 20);
+            this.TXTCodigo.TabIndex = 24;
             // 
             // LBLCategoria
             // 
             this.LBLCategoria.AutoSize = true;
-            this.LBLCategoria.Location = new System.Drawing.Point(8, 187);
+            this.LBLCategoria.Location = new System.Drawing.Point(14, 192);
             this.LBLCategoria.Name = "LBLCategoria";
             this.LBLCategoria.Size = new System.Drawing.Size(55, 13);
             this.LBLCategoria.TabIndex = 21;
@@ -154,7 +130,7 @@
             // LBLMarca
             // 
             this.LBLMarca.AutoSize = true;
-            this.LBLMarca.Location = new System.Drawing.Point(8, 153);
+            this.LBLMarca.Location = new System.Drawing.Point(14, 156);
             this.LBLMarca.Name = "LBLMarca";
             this.LBLMarca.Size = new System.Drawing.Size(40, 13);
             this.LBLMarca.TabIndex = 20;
@@ -163,7 +139,7 @@
             // LBLDescripcion
             // 
             this.LBLDescripcion.AutoSize = true;
-            this.LBLDescripcion.Location = new System.Drawing.Point(8, 111);
+            this.LBLDescripcion.Location = new System.Drawing.Point(14, 120);
             this.LBLDescripcion.Name = "LBLDescripcion";
             this.LBLDescripcion.Size = new System.Drawing.Size(66, 13);
             this.LBLDescripcion.TabIndex = 19;
@@ -172,7 +148,7 @@
             // LBLNombre
             // 
             this.LBLNombre.AutoSize = true;
-            this.LBLNombre.Location = new System.Drawing.Point(8, 74);
+            this.LBLNombre.Location = new System.Drawing.Point(14, 48);
             this.LBLNombre.Name = "LBLNombre";
             this.LBLNombre.Size = new System.Drawing.Size(47, 13);
             this.LBLNombre.TabIndex = 17;
@@ -181,7 +157,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 231);
+            this.label1.Location = new System.Drawing.Point(14, 262);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 31;
@@ -195,12 +171,11 @@
             this.BTNBuscarModificar.TabIndex = 32;
             this.BTNBuscarModificar.Text = "Buscar";
             this.BTNBuscarModificar.UseVisualStyleBackColor = true;
-            this.BTNBuscarModificar.Click += new System.EventHandler(this.BTN_BuscarModificar);
             // 
             // LBLID
             // 
             this.LBLID.AutoSize = true;
-            this.LBLID.Location = new System.Drawing.Point(8, 36);
+            this.LBLID.Location = new System.Drawing.Point(13, 84);
             this.LBLID.Name = "LBLID";
             this.LBLID.Size = new System.Drawing.Size(46, 13);
             this.LBLID.TabIndex = 18;
@@ -213,13 +188,11 @@
             this.cbBoxBuscar.Name = "cbBoxBuscar";
             this.cbBoxBuscar.Size = new System.Drawing.Size(253, 21);
             this.cbBoxBuscar.TabIndex = 34;
-            this.cbBoxBuscar.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.cbBoxBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Busqueda);
             // 
             // cboBoxBusqueda
             // 
             this.cboBoxBusqueda.FormattingEnabled = true;
-            this.cboBoxBusqueda.Location = new System.Drawing.Point(104, 36);
+            this.cboBoxBusqueda.Location = new System.Drawing.Point(104, 45);
             this.cboBoxBusqueda.Name = "cboBoxBusqueda";
             this.cboBoxBusqueda.Size = new System.Drawing.Size(253, 21);
             this.cboBoxBusqueda.TabIndex = 32;
@@ -228,7 +201,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 9);
+            this.label2.Location = new System.Drawing.Point(14, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 33;
@@ -251,12 +224,50 @@
             this.BTNSearc.UseVisualStyleBackColor = true;
             this.BTNSearc.Click += new System.EventHandler(this.BuscarAmodificar);
             // 
+            // TxtPrecio
+            // 
+            this.TxtPrecio.Location = new System.Drawing.Point(104, 225);
+            this.TxtPrecio.Name = "TxtPrecio";
+            this.TxtPrecio.Size = new System.Drawing.Size(253, 20);
+            this.TxtPrecio.TabIndex = 36;
+            // 
+            // LblPrecio
+            // 
+            this.LblPrecio.AutoSize = true;
+            this.LblPrecio.Location = new System.Drawing.Point(14, 228);
+            this.LblPrecio.Name = "LblPrecio";
+            this.LblPrecio.Size = new System.Drawing.Size(40, 13);
+            this.LblPrecio.TabIndex = 38;
+            this.LblPrecio.Text = "Precio:";
+            // 
+            // CboMarca
+            // 
+            this.CboMarca.FormattingEnabled = true;
+            this.CboMarca.Location = new System.Drawing.Point(104, 153);
+            this.CboMarca.Name = "CboMarca";
+            this.CboMarca.Size = new System.Drawing.Size(253, 21);
+            this.CboMarca.TabIndex = 39;
+            this.CboMarca.SelectedIndexChanged += new System.EventHandler(this.SeleccionMarca);
+            // 
+            // CboCategoria
+            // 
+            this.CboCategoria.FormattingEnabled = true;
+            this.CboCategoria.Location = new System.Drawing.Point(104, 189);
+            this.CboCategoria.Name = "CboCategoria";
+            this.CboCategoria.Size = new System.Drawing.Size(253, 21);
+            this.CboCategoria.TabIndex = 40;
+            this.CboCategoria.SelectedIndexChanged += new System.EventHandler(this.SeleccionCategoria);
+            // 
             // FMRModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(478, 349);
+            this.ClientSize = new System.Drawing.Size(478, 435);
+            this.Controls.Add(this.CboCategoria);
+            this.Controls.Add(this.CboMarca);
+            this.Controls.Add(this.LblPrecio);
+            this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.BTNSearc);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label2);
@@ -264,11 +275,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.BTNModificar);
-            this.Controls.Add(this.TXTBPrecio);
-            this.Controls.Add(this.TXTBCategoria);
-            this.Controls.Add(this.TXTBMarca);
+            this.Controls.Add(this.TxtURL);
             this.Controls.Add(this.TXTBDescripcion);
-            this.Controls.Add(this.TXTBNombre);
+            this.Controls.Add(this.TXTCodigo);
             this.Controls.Add(this.LBLCategoria);
             this.Controls.Add(this.LBLMarca);
             this.Controls.Add(this.LBLDescripcion);
@@ -278,7 +287,6 @@
             this.MinimumSize = new System.Drawing.Size(478, 388);
             this.Name = "FMRModificar";
             this.Text = "FMRModificar";
-            this.Load += new System.EventHandler(this.FMRModificar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,11 +296,9 @@
 
         private System.Windows.Forms.Button BTNBack;
         private System.Windows.Forms.Button BTNModificar;
-        private System.Windows.Forms.TextBox TXTBPrecio;
-        private System.Windows.Forms.TextBox TXTBCategoria;
-        private System.Windows.Forms.TextBox TXTBMarca;
+        private System.Windows.Forms.TextBox TxtURL;
         private System.Windows.Forms.TextBox TXTBDescripcion;
-        private System.Windows.Forms.TextBox TXTBNombre;
+        private System.Windows.Forms.TextBox TXTCodigo;
         private System.Windows.Forms.Label LBLCategoria;
         private System.Windows.Forms.Label LBLMarca;
         private System.Windows.Forms.Label LBLDescripcion;
@@ -306,5 +312,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button BTNSearc;
+        private System.Windows.Forms.TextBox TxtPrecio;
+        private System.Windows.Forms.Label LblPrecio;
+        private System.Windows.Forms.ComboBox CboMarca;
+        private System.Windows.Forms.ComboBox CboCategoria;
     }
 }
