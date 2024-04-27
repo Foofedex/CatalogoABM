@@ -109,7 +109,7 @@ namespace Catalogo
                 if (validarCamposTxt())
                 {
 
-                    conexionART conexion = new conexionART();
+                    Controller conexion = new Controller();
                   try
                   {
 

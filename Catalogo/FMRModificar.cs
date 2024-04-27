@@ -17,7 +17,7 @@ namespace Catalogo
         string palabra;
         FMRBusqueda BusquedadModificar=new FMRBusqueda();
         Articulo ArticuloModificar=new Articulo();
-        conexionART conexionART=new conexionART();
+        Controller conexionART=new Controller();
         List<Articulo>  articulos=new List<Articulo>();
         List<Articulo> Marca=new List<Articulo>();
         List<Articulo> Categoria= new List<Articulo>();
@@ -74,27 +74,17 @@ namespace Catalogo
             CboCategoria.Text=articulos[cboBoxBusqueda.SelectedIndex].Categoria;
             TxtPrecio.Text = articulos[cboBoxBusqueda.SelectedIndex].Precio.ToString();
             TxtURL.Text= articulos[cboBoxBusqueda.SelectedIndex].Imagen.ToString();
-
-            MessageBox.Show(articulos[cboBoxBusqueda.SelectedIndex].id.ToString());
             ArticuloModificar.IDCategoria = articulos[cboBoxBusqueda.SelectedIndex].IDCategoria;
             ArticuloModificar.id = articulos[cboBoxBusqueda.SelectedIndex].id;
             ArticuloModificar.IDMarca = articulos[cboBoxBusqueda.SelectedIndex].IDMarca;
 
-            //asignamos a nuevo objeto a modificar los valores que seleccion en el combobox
-            // ArticuloModificar.Nombre = articulos[cboBoxBusqueda.SelectedIndex].Marca;
-            // ArticuloModificar.Nombre = articulos[cboBoxBusqueda.SelectedIndex].Categoria;
-            //aqui hacemos la consulda de las marcas y categoria
-
-
+           
             Marca = conexionART.Marca();
             for (int i = 0; i < Marca.Count; i++)
             {
-                 
-                
+               
                 CboMarca.Items.Add(Marca[i].Marca.ToString());
-                
-
-
+               
             }
             Categoria = conexionART.Categoria();
 
@@ -104,21 +94,19 @@ namespace Catalogo
                 CboCategoria.Items.Add(Categoria[i].Descripcion.ToString());
                 
             }
-
-            
-
+                        
         }
 
 
         private void SeleccionMarca(object sender, EventArgs e)
         {
             ArticuloModificar.IDMarca =Marca[CboMarca.SelectedIndex].IDMarca;
-            MessageBox.Show(" categoria: " + ArticuloModificar.IDCategoria.ToString() + " marca: " + ArticuloModificar.IDMarca.ToString());
+           
         }
 
         private void SeleccionCategoria(object sender, EventArgs e)
         {
-            
+         
             ArticuloModificar.IDCategoria = Categoria[CboCategoria.SelectedIndex].IDCategoria;
         }
 
@@ -133,39 +121,13 @@ namespace Catalogo
                         ArticuloModificar.Imagen = TxtURL.Text;
 
            
-            /*
-            ArticuloModificar.id = 2; 
-            ArticuloModificar.Codigo = "CEL";
-            ArticuloModificar.Nombre = "Fedexc";
-            ArticuloModificar.Descripcion = "Lunes a Viernes";
-            ArticuloModificar.Precio = 10000;
-            ArticuloModificar.Imagen = "www.google.com";
-            ArticuloModificar.IDMarca = 2;
-            ArticuloModificar.IDCategoria = 2;
-            */
-            /*
-             update ARTICULOS set 
-            Codigo='"+Modificar.Codigo + "', 
-            Nombre='" +Modificar.Nombre + "', 
-            Descripcion='"+ 
-            Modificar.Descripcion + "',IdMarca='"+ 
-            Modificar.IDMarca + "', IdCategoria='"+ 
-            Modificar.IDCategoria + "', precio='" + 
-            Modificar.Precio + "' where id= '" + 
-            Modificar.id + "' 
-            update IMAGENES set ImagenUrl='" + 
-            Modificar.Imagen + "' where '" + 
-            Modificar.id + "'=IMAGENES.IdArticulo
-             */
+           
 
-            MessageBox.Show("a enviar: "+" id "+ ArticuloModificar.id + " "+ ArticuloModificar.Nombre+ 
-                " " +ArticuloModificar.Codigo+" "+ ArticuloModificar.Descripcion+
-                " " + ArticuloModificar.Precio.ToString()+
-                " " + ArticuloModificar.Imagen);
+            MessageBox.Show("SE MODIFICO CON EXITO");
      
             
 
-            conexionART conexionART = new conexionART();
+            Controller conexionART = new Controller();
             conexionART.Modificar(ArticuloModificar);
             
         }

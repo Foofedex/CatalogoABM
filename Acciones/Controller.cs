@@ -11,7 +11,7 @@ using Dominio;
 
 namespace Acciones
 {
-    public class conexionART
+    public class Controller
     {
         
         
@@ -68,7 +68,6 @@ namespace Acciones
                 finally { conexion.Close(); }   
         }
 
-
         //buscar un articulo
         public List<Articulo> Buscar(string buscar)
         {
@@ -116,7 +115,6 @@ namespace Acciones
             return articuloList;
         }
 
-
         //consulta de categoria 
         public List<Articulo> Categoria()
         {
@@ -139,8 +137,7 @@ namespace Acciones
             return articuloList;
         }
 
-
-          //modificar
+        //modificar
         public void Modificar(Articulo Modificar)
         {
 
@@ -152,7 +149,6 @@ namespace Acciones
             
             return;
         }
-
 
 
         public List<Articulo> Busquedad(string buscar)
@@ -237,8 +233,39 @@ namespace Acciones
             }
         }
 
+        public void AgregarMarca(string a) 
+        {
+            AccesoDatos conect= new AccesoDatos();
+            string b = a.Substring(0, 1).ToUpper() + a.Substring(1).ToLower();
+            conect.setearQuery("insert into MARCAS(descripcion) values('"+b+"');");
+            conect.ejecutarAccion();
+            conect.cerrarConexion();
+        }
 
+        public void AgregarCategoria(string a)
+        {
+            AccesoDatos conect = new AccesoDatos();
 
+            string b = a.Substring(0, 1).ToUpper() + a.Substring(1).ToLower();
+            conect.setearQuery("insert into CATEGORIAS(descripcion) values('" +b+ "');");
+            conect.ejecutarAccion();
+            conect.cerrarConexion();
+        }
+
+        public void EliminarCategoria(string a)
+        {
+            AccesoDatos conect = new AccesoDatos();
+            conect.setearQuery("delete from CATEGORIAS  where Descripcion='"+a+"'");
+            conect.ejecutarAccion();
+            conect.cerrarConexion();
+        }
+        public void EliminarMarca(string a)
+        {
+            AccesoDatos conect = new AccesoDatos();
+            conect.setearQuery("delete from MARCAS  where Descripcion='"+a+"'");
+            conect.ejecutarAccion();
+            conect.cerrarConexion();
+        }
 
     }
 }

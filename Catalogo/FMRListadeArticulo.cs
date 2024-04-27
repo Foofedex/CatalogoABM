@@ -20,7 +20,7 @@ namespace Catalogo
             InitializeComponent();
         }
 
-            conexionART conecArti= new conexionART();
+            Controller conecArti= new Controller();
         private void FMRListadeArticulo_Load(object sender, EventArgs e)
         {
             listarArticulo = conecArti.ListarArticulo();

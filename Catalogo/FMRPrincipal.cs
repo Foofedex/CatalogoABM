@@ -64,5 +64,17 @@ namespace Catalogo
             FMRListadeArticulo listadeArticulo= new FMRListadeArticulo();
             listadeArticulo.ShowDialog();
         }
+
+        private void agregarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AGREGAR_MARCA_CATEGORIA MC=new AGREGAR_MARCA_CATEGORIA();
+            MC.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FMR_Eliminar_MC MC_eliminar = new FMR_Eliminar_MC();
+            MC_eliminar.ShowDialog();
+        }
     }
 }

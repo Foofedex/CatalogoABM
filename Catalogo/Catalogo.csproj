@@ -82,6 +82,18 @@
     <Compile Include="FMRBusqueda.Designer.cs">
       <DependentUpon>FMRBusqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMR_Eliminar_MC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMR_Eliminar_MC.Designer.cs">
+      <DependentUpon>FMR_Eliminar_MC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcaCategoria.Designer.cs">
+      <DependentUpon>MarcaCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VistaArticuloYDetalle.cs">
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMRBusqueda.resx">
       <DependentUpon>FMRBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMR_Eliminar_MC.resx">
+      <DependentUpon>FMR_Eliminar_MC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcaCategoria.resx">
+      <DependentUpon>MarcaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -19,7 +19,7 @@ namespace Catalogo
         }
 
         AccesoDatos BD_Eliminar=new AccesoDatos();
-        conexionART BD_Buscar =new conexionART();
+        Controller BD_Buscar =new Controller();
         List<Articulo> list = new List<Articulo>();
         string Codigo;
 

@@ -40,6 +40,9 @@
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.BarraEstado = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
@@ -56,6 +59,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.articuloToolStripMenuItem,
             this.articulosToolStripMenuItem,
+            this.marcasToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -83,7 +87,7 @@
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.listaToolStripMenuItem.Text = "Listar";
             this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
@@ -101,8 +105,8 @@
             this.eliminarToolStripMenuItem,
             this.modificarToolStripMenuItem});
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.articulosToolStripMenuItem.Text = "Edición";
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.articulosToolStripMenuItem.Text = "Edición Articulos";
             // 
             // articulosToolStripMenuItem1
             // 
@@ -136,9 +140,32 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            // 
+            // marcasToolStripMenuItem
+            // 
+            this.marcasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarToolStripMenuItem,
+            this.eliminarToolStripMenuItem1});
+            this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.marcasToolStripMenuItem.Text = "Marcas y Categorias.";
+            // 
+            // agregarToolStripMenuItem
+            // 
+            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Text = "Agregar";
+            this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click_1);
+            // 
+            // eliminarToolStripMenuItem1
+            // 
+            this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem1.Text = "Eliminar";
+            this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
             // statusStrip1
             // 
@@ -236,6 +263,9 @@
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
     }
 }
 

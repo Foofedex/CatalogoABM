@@ -53,7 +53,7 @@ namespace Catalogo
 
             //CAPTURO LA PALABRA Q INGRESO
             string busquedad = txtBusqueda.Text;
-            conexionART Data= new conexionART();
+            Controller Data= new Controller();
             articulos = Data.Busquedad(busquedad);
            
             if(articulos.Count == 0)
