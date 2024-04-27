@@ -18,8 +18,8 @@ namespace Catalogo
     public partial class FMRBusqueda : Form
     {
       
-        List<Articulo> articulos = new List<Articulo>();
-        
+       List<Articulo> articulos = new List<Articulo>();
+           public Articulo articuloIndividual=new Articulo();
         DataTable dt = new DataTable();
         
         VistaArticuloYDetalle objVistarArticulo = new VistaArticuloYDetalle();
@@ -38,9 +38,14 @@ namespace Catalogo
             }
             return true;
         }
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-
+            
+            LBListaBusqueda.Items.Clear();
+            if (txtBusqueda.Text == "") {
+                MessageBox.Show("Ingrese una palabra");
+                return;
+            }
             if (!ValidarEntradaTxtBusqueda(txtBusqueda.Text))
             {
                 return;
@@ -54,17 +59,20 @@ namespace Catalogo
             if(articulos.Count == 0)
             {
                 MessageBox.Show("Su articulo no se encuentra.");
-                LBListaBusqueda.Text = "";
+                
+       
+                txtBusqueda.Text = "";
                 return;
             }
 
             foreach (Articulo articulo in articulos)
             {
 
-                MessageBox.Show("Índice seleccionado: " + articulo.Nombre.ToString());
-                LBListaBusqueda.Items.Add(articulo.Nombre );
+                
+                LBListaBusqueda.Items.Add(articulo.Nombre+" - "+ articulo.Marca);
                 
             }
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -75,14 +83,20 @@ namespace Catalogo
 
         private void LBListaBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Articulo articuloSeleccionado = articulos[LBListaBusqueda.SelectedIndex ];
+            if (LBListaBusqueda.SelectedIndex >= 0)
+            {
+                //agrego a la clase el incide del artulo para mostrarlo 
+                Articulo articuloSeleccionado = articulos[LBListaBusqueda.SelectedIndex];
+                articuloIndividual = articuloSeleccionado;
                 objVistarArticulo.objArticulo = articuloSeleccionado;
-
-                MessageBox.Show("Índice seleccionado: " +LBListaBusqueda.SelectedIndex.ToString());
-            // Asignar el artículo seleccionado a objArticulo en objVistarArticulo
+                // Asignar el artículo seleccionado a objArticulo en objVistarArticulo
                 LBListaBusqueda.Items.Clear();
-                
-            objVistarArticulo.ShowDialog();
+                objVistarArticulo.ShowDialog();
+
+            }
+
+
+    
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)

@@ -11,6 +11,9 @@ using Dominio;
 using Acciones;
 using System.Data.SqlTypes;
 using System.Diagnostics.Eventing.Reader;
+using System.Collections;
+using System.Drawing.Imaging;
+using System.Security.Policy;
 
 namespace Catalogo
 {
@@ -26,20 +29,11 @@ namespace Catalogo
         {
             this.Close();
         }
-
-        string validarUrl(string url)
-        {
-            string aux=url;
-
-            if (aux.Length < 1000) { return aux; }
-            else { return aux = "Cadena muy larga"; };
-          
-
-        }
-
+        
 
         private bool validarCamposTxt()
         {
+            EliminarIconosErrorProv();
             bool ok = true;
 
             if(TXTBID.Text == "")
@@ -60,6 +54,7 @@ namespace Catalogo
             }
             if (cboMarca.SelectedIndex < 0)
             {
+               
                 ok = false;
                 ErrorProvCargaArticulo.SetError(cboMarca, "Seleccione la Marca.");
             }
@@ -68,18 +63,33 @@ namespace Catalogo
                 ok = false;
                 ErrorProvCargaArticulo.SetError(cboCategoria, "Seleccione la Categoria.");
             }
-            if (TXTBPrecio.Text == "")
+            float numero;
+            if (!float.TryParse(TXTBPrecio.Text, out numero) || numero<0)
             {
+                
+                ErrorProvCargaArticulo.SetError(TXTBPrecio, "Ingrese valor numerico positivo. ");
+                TXTBPrecio.Clear();
+                ok = false;
+            }
+     
+
+            /*
+             
+            if (TXTBPrecio.Text != "")
+            
+            {
+
                 ok = false;
                 ErrorProvCargaArticulo.SetError(TXTBPrecio, "Ingrese el Precio.");
             }
-            if (txtbUrlImagen.Text == "")
+             */
+
+
+            if (txtbUrlImagen.Text == "" || txtbUrlImagen.Text.Length>999)
             {
                 ok = false;
-                ErrorProvCargaArticulo.SetError(txtbUrlImagen, "Ingrese la Url.");
+                ErrorProvCargaArticulo.SetError(txtbUrlImagen, "Ingrese la Url y no puede exceder los 999 caracteres ");
             }
-
-
             return ok;
         }
 
@@ -94,43 +104,40 @@ namespace Catalogo
             ErrorProvCargaArticulo.SetError(txtbUrlImagen, "");
            
         }
-
-
-
             private void BTNAdd_Click_1(object sender, EventArgs e)
             {
-
-              
-              conexionART conexion = new conexionART();
-              try
-              {
-
-                EliminarIconosErrorProv();
                 if (validarCamposTxt())
                 {
-                    MessageBox.Show("Datos Ingresados Correctamente.");
-                }
-                validarCamposTxt();
 
-                  artiNuevo.Codigo = TXTBID.Text;
-                  artiNuevo.Nombre = TXTBNombre.Text;
-                  artiNuevo.Descripcion = TXTBDescripcion.Text;
-                  artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
-                  string url = txtbUrlImagen.Text;
-                  artiNuevo.Imagen = validarUrl(url);
+                    conexionART conexion = new conexionART();
+                  try
+                  {
 
-                  conexion.Agregar(artiNuevo);
-                  MessageBox.Show("Articulo agregado");
-                  Close();
-              }
+                    EliminarIconosErrorProv();
+                
+                        MessageBox.Show("Datos Ingresados Correctamente.");
+                
+                    validarCamposTxt();
+
+                      artiNuevo.Codigo = TXTBID.Text;
+                      artiNuevo.Nombre = TXTBNombre.Text;
+                      artiNuevo.Descripcion = TXTBDescripcion.Text;
+                      artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+                      string url = txtbUrlImagen.Text;
+                    //  artiNuevo.Imagen = validarUrl(url);
+
+                      conexion.Agregar(artiNuevo);
+                      MessageBox.Show("Articulo agregado");
+                      Close();
+                  }
               
-              catch (Exception ex)
-              {
-                  MessageBox.Show(ex.ToString());
-              }
+                  catch (Exception ex)
+                  {
+                      MessageBox.Show(ex.ToString());
+                  }
+                }
 
-
-            }
+        }
 
         private void FMRArticulo_Load_1(object sender, EventArgs e)
         {
@@ -186,17 +193,6 @@ namespace Catalogo
            
         }
 
-        private void TXTBPrecio_Validating(object sender, CancelEventArgs e)
-        {
-            float numero;
-            if(!float.TryParse(TXTBPrecio.Text, out numero))
-            {
-                ErrorProvCargaArticulo.SetError(TXTBPrecio, "Ingrese valor numerico.");
-            }
-            else
-            {
-                ErrorProvCargaArticulo.SetError(TXTBPrecio, "");
-            }
-        }
+       
     }
 }

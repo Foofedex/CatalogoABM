@@ -14,6 +14,7 @@ namespace Acciones
     public class conexionART
     {
         
+        List<Articulo> articuloList=new List<Articulo>();
         public List<Articulo> ListarArticulo()
         {
          List<Articulo> Lista= new List<Articulo> ();
@@ -66,6 +67,85 @@ namespace Acciones
             
                 finally { conexion.Close(); }   
         }
+
+
+
+        public List<Articulo> Buscar(string buscar) {
+            AccesoDatos nuevaConexion = new AccesoDatos();
+            
+            nuevaConexion.setearQuery("SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, \r\nCASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl \r\nFROM ARTICULOS a\r\nLEFT JOIN marcas m ON a.IdMarca = m.Id\r\nLEFT JOIN categorias c ON a.idcategoria = c.id \r\nLEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';"); 
+            nuevaConexion.ejecutarLectura();
+            while (nuevaConexion.Lector.Read())
+            {
+                Articulo aux= new Articulo();
+                
+                aux.Codigo = nuevaConexion.Lector.GetString(0);
+                aux.Nombre = nuevaConexion.Lector.GetString(1);
+                aux.Descripcion = nuevaConexion.Lector.GetString(2);
+                aux.Precio = nuevaConexion.Lector.GetSqlMoney(3);
+                aux.IDMarca = nuevaConexion.Lector.GetInt32(4);
+                aux.Marca = nuevaConexion.Lector.GetString(5);
+                aux.IDCategoria = nuevaConexion.Lector.GetInt32(6);
+                aux.Categoria = nuevaConexion.Lector.GetString(7);
+                aux.Imagen = nuevaConexion.Lector.GetString(8);
+
+                articuloList.Add(aux);
+
+            }
+
+
+
+
+            nuevaConexion.cerrarConexion();
+            return articuloList;
+        }
+
+        /*   se tiene que modificar para poder mandar a la base de datos
+        public List<Articulo> Modificar(Articulo buscar)
+        {
+            AccesoDatos nuevaConexion = new AccesoDatos();
+
+            nuevaConexion.setearQuery("SELECT a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, \r\nCASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl \r\nFROM ARTICULOS a\r\nLEFT JOIN marcas m ON a.IdMarca = m.Id\r\nLEFT JOIN categorias c ON a.idcategoria = c.id \r\nLEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';");
+            nuevaConexion.ejecutarLectura();
+            while (nuevaConexion.Lector.Read())
+            {
+                Articulo aux = new Articulo();
+
+                aux.Codigo = nuevaConexion.Lector.GetString(0);
+                aux.Nombre = nuevaConexion.Lector.GetString(1);
+                aux.Descripcion = nuevaConexion.Lector.GetString(2);
+                aux.Precio = nuevaConexion.Lector.GetSqlMoney(3);
+                aux.IDMarca = nuevaConexion.Lector.GetInt32(4);
+                aux.Marca = nuevaConexion.Lector.GetString(5);
+                aux.IDCategoria = nuevaConexion.Lector.GetInt32(6);
+                aux.Categoria = nuevaConexion.Lector.GetString(7);
+                aux.Imagen = nuevaConexion.Lector.GetString(8);
+
+                articuloList.Add(aux);
+
+            }
+
+
+
+
+            nuevaConexion.cerrarConexion();
+            return articuloList;
+        }
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public List<Articulo> Busquedad(string buscar)
         {

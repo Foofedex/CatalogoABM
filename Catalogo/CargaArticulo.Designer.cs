@@ -150,8 +150,7 @@
             this.TXTBPrecio.Name = "TXTBPrecio";
             this.TXTBPrecio.Size = new System.Drawing.Size(237, 21);
             this.TXTBPrecio.TabIndex = 12;
-            this.TXTBPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.TXTBPrecio_Validating);
-            // 
+                      // 
             // BTNAdd
             // 
             this.BTNAdd.Location = new System.Drawing.Point(215, 325);

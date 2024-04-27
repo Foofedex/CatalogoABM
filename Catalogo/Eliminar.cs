@@ -47,7 +47,7 @@ namespace Catalogo
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            listSeleccion.Items.Clear(); 
             if (!ValidarEntadaTxt(txtEliminar.Text))
             {
                 return;
@@ -73,7 +73,7 @@ namespace Catalogo
         {
             if(listSeleccion.SelectedIndex == -1)
             {
-                MessageBox.Show("Primero busque el articlo para poder eliminarlo");
+                MessageBox.Show("Seleccion el elemento a eliminar");
                 return false;
             }
             return true;
@@ -91,7 +91,7 @@ namespace Catalogo
             BD_Eliminar.cerrarConexion();
             
             lblSeleccionado.Text = "";
-            MessageBox.Show("Se Elimino Exitosamente: " + list[listSeleccion.SelectedIndex].Codigo);
+            MessageBox.Show("Se Elimino Exitosamente el elemento: " + list[listSeleccion.SelectedIndex].Codigo);
 
             listSeleccion.Items.Clear();
             
