@@ -28,18 +28,82 @@ namespace Catalogo
             InitializeComponent();
 
         }
-
+        
         private void BTNBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-  
+        bool StringNoVacio(string a)
+        {
+            if (a == "")
+            {
+                return false;
+            }
+            else { return true; }
 
-  
+        }
+        private bool validarCamposTxt()
+        {
+            EliminarIconosErrorProv();
+            bool ok = true;
+
+            if (!StringNoVacio(txtBuscar.Text)) ErrorProvBuscar.SetError(txtBuscar, "Ingrese el campo.");
+            if (!StringNoVacio(TXTCodigo.Text)) ErrorProvCod.SetError(TXTCodigo, "Ingrese el Código.");
+            if (!StringNoVacio(TXTBDescripcion.Text)) ErrorProvCodDescrip.SetError(TXTBDescripcion, "Ingrese la Descripcion.");
+
+            if (cboBoxBusqueda.SelectedIndex < 0)
+            {
+
+                ok = false;
+                ErrorProvCboNombre.SetError(cboBoxBusqueda, "Seleccione el nombre.");
+            }
+            if (CboMarca.SelectedIndex < 0)
+            {
+
+                ok = false;
+                ErrorProvMarca.SetError(CboMarca, "Seleccione Marca.");
+            }
+            if (CboCategoria.SelectedIndex < 0)
+            {
+                ok = false;
+                ErrorProvCboCat.SetError(CboCategoria, "Seleccione la Categoria.");
+            }
+            float numero;
+            if (!float.TryParse(TxtPrecio.Text, out numero) || numero < 0)
+            {
+
+                ErrorProvCboCat.SetError(TxtPrecio, "Ingrese valor numerico positivo. ");
+                TxtPrecio.Clear();
+                ok = false;
+            }
+
+            if (TxtURL.Text == "" || TxtURL.Text.Length > 999)
+            {
+                ok = false;
+                ErrorProvUrl.SetError(TxtURL, "Ingrese la Url y no puede exceder los 999 caracteres ");
+            }
+            return ok;
+        }
+
+        private void EliminarIconosErrorProv()
+        {
+            ErrorProvBuscar.SetError(txtBuscar, "");
+            ErrorProvCboNombre.SetError(cboBoxBusqueda, "");
+            ErrorProvCodDescrip.SetError(TXTBDescripcion, "");
+            ErrorProvCod.SetError(TXTCodigo, "");
+            ErrorProvMarca.SetError(CboMarca,"");
+            ErrorProvCboCat.SetError(CboCategoria, "");
+            ErrorProvCboCat.SetError(TxtPrecio, "");
+            ErrorProvUrl.SetError(TxtURL, "");
+
+        }
+
         private void BuscarAmodificar(object sender, EventArgs e)
         {
+
             
+
             cboBoxBusqueda.Items.Clear();
             CboCategoria.Items.Clear();
             CboMarca.Items.Clear(); 
@@ -113,22 +177,27 @@ namespace Catalogo
 
         private void BTNModificar_Click(object sender, EventArgs e)
         {
-            
-                        ArticuloModificar.Nombre = cboBoxBusqueda.Text;
-                        ArticuloModificar.Codigo=TXTCodigo.Text;
-                        ArticuloModificar.Descripcion = TXTBDescripcion.Text;
-                        ArticuloModificar.Precio= SqlMoney.Parse( TxtPrecio.Text);
-                        ArticuloModificar.Imagen = TxtURL.Text;
+            if (validarCamposTxt()){
 
+                EliminarIconosErrorProv();
+
+                ArticuloModificar.Nombre = cboBoxBusqueda.Text;
+                ArticuloModificar.Codigo = TXTCodigo.Text;
+                ArticuloModificar.Descripcion = TXTBDescripcion.Text;
+                ArticuloModificar.Precio = SqlMoney.Parse(TxtPrecio.Text);
+                ArticuloModificar.Imagen = TxtURL.Text;
+
+                 MessageBox.Show("SE MODIFICO CON EXITO");
+                Controller conexionART = new Controller();
+                conexionART.Modificar(ArticuloModificar);
+
+
+            }
+            else
+            {
+                MessageBox.Show("NO SE MODIFICO EL ARTICULO.");
+            }
            
-           
-
-            MessageBox.Show("SE MODIFICO CON EXITO");
-     
-            
-
-            Controller conexionART = new Controller();
-            conexionART.Modificar(ArticuloModificar);
             
         }
 

@@ -31,11 +31,6 @@ namespace Catalogo
             DGVArticulosLista.Columns["Imagen"].Visible = false;
         }
 
-        private void DGVArticulosLista_SelectionChanged(object sender, DataGridViewCellEventArgs e)
-        {
-     
-        }
-
         private void DGVArticulosLista_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Articulo seleccionado = (Articulo)DGVArticulosLista.CurrentRow.DataBoundItem;

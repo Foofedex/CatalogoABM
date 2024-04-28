@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRModificar));
             this.BTNBack = new System.Windows.Forms.Button();
             this.BTNModificar = new System.Windows.Forms.Button();
@@ -50,6 +51,22 @@
             this.LblPrecio = new System.Windows.Forms.Label();
             this.CboMarca = new System.Windows.Forms.ComboBox();
             this.CboCategoria = new System.Windows.Forms.ComboBox();
+            this.ErrorProvBuscar = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvCboNombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvCod = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvCodDescrip = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvCboCat = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvPrecio = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvUrl = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvMarca = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCboNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCodDescrip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCboCat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvUrl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // BTNBack
@@ -216,7 +233,7 @@
             // 
             // BTNSearc
             // 
-            this.BTNSearc.Location = new System.Drawing.Point(374, 9);
+            this.BTNSearc.Location = new System.Drawing.Point(391, 10);
             this.BTNSearc.Name = "BTNSearc";
             this.BTNSearc.Size = new System.Drawing.Size(75, 23);
             this.BTNSearc.TabIndex = 35;
@@ -258,6 +275,38 @@
             this.CboCategoria.TabIndex = 40;
             this.CboCategoria.SelectedIndexChanged += new System.EventHandler(this.SeleccionCategoria);
             // 
+            // ErrorProvBuscar
+            // 
+            this.ErrorProvBuscar.ContainerControl = this;
+            // 
+            // ErrorProvCboNombre
+            // 
+            this.ErrorProvCboNombre.ContainerControl = this;
+            // 
+            // ErrorProvCod
+            // 
+            this.ErrorProvCod.ContainerControl = this;
+            // 
+            // ErrorProvCodDescrip
+            // 
+            this.ErrorProvCodDescrip.ContainerControl = this;
+            // 
+            // ErrorProvCboCat
+            // 
+            this.ErrorProvCboCat.ContainerControl = this;
+            // 
+            // ErrorProvPrecio
+            // 
+            this.ErrorProvPrecio.ContainerControl = this;
+            // 
+            // ErrorProvUrl
+            // 
+            this.ErrorProvUrl.ContainerControl = this;
+            // 
+            // ErrorProvMarca
+            // 
+            this.ErrorProvMarca.ContainerControl = this;
+            // 
             // FMRModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +336,14 @@
             this.MinimumSize = new System.Drawing.Size(478, 388);
             this.Name = "FMRModificar";
             this.Text = "FMRModificar";
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCboNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCodDescrip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvCboCat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvUrl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +373,13 @@
         private System.Windows.Forms.Label LblPrecio;
         private System.Windows.Forms.ComboBox CboMarca;
         private System.Windows.Forms.ComboBox CboCategoria;
+        private System.Windows.Forms.ErrorProvider ErrorProvBuscar;
+        private System.Windows.Forms.ErrorProvider ErrorProvCboNombre;
+        private System.Windows.Forms.ErrorProvider ErrorProvCod;
+        private System.Windows.Forms.ErrorProvider ErrorProvCodDescrip;
+        private System.Windows.Forms.ErrorProvider ErrorProvCboCat;
+        private System.Windows.Forms.ErrorProvider ErrorProvPrecio;
+        private System.Windows.Forms.ErrorProvider ErrorProvUrl;
+        private System.Windows.Forms.ErrorProvider ErrorProvMarca;
     }
 }

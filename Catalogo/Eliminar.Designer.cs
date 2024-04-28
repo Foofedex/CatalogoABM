@@ -93,7 +93,6 @@
             this.lblSeleccionado.Size = new System.Drawing.Size(280, 23);
             this.lblSeleccionado.TabIndex = 5;
             this.lblSeleccionado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSeleccionado.Click += new System.EventHandler(this.lblSeleccionado_Click);
             // 
             // button2
             // 

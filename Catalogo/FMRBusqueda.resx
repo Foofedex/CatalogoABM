@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtBusqueda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 50</value>
+    <value>161, 51</value>
   </data>
   <data name="txtBusqueda.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 20</value>
@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtBusqueda.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lbl_busquedad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -151,13 +151,13 @@
     <value>True</value>
   </data>
   <data name="lbl_busquedad.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Montserrat, 8.249999pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 8.249999pt, style=Bold</value>
   </data>
   <data name="lbl_busquedad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 22</value>
+    <value>158, 22</value>
   </data>
   <data name="lbl_busquedad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 15</value>
+    <value>203, 13</value>
   </data>
   <data name="lbl_busquedad.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -175,7 +175,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_busquedad.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnBusqueda.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -184,13 +184,13 @@
     <value>System</value>
   </data>
   <data name="btnBusqueda.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Montserrat, 8.249999pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 8.249999pt, style=Bold</value>
   </data>
   <data name="btnBusqueda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 86</value>
+    <value>161, 86</value>
   </data>
   <data name="btnBusqueda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 23</value>
+    <value>81, 23</value>
   </data>
   <data name="btnBusqueda.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBusqueda.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnVolver.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -220,7 +220,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnVolver.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 390</value>
+    <value>207, 390</value>
   </data>
   <data name="btnVolver.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 23</value>
@@ -241,28 +241,25 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnVolver.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LBListaBusqueda.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="LBListaBusqueda.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Montserrat, 8.249999pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 8.249999pt, style=Bold</value>
   </data>
   <data name="LBListaBusqueda.HorizontalScrollbar" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LBListaBusqueda.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="LBListaBusqueda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 125</value>
+    <value>68, 125</value>
   </data>
   <data name="LBListaBusqueda.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="LBListaBusqueda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 242</value>
+    <value>381, 236</value>
   </data>
   <data name="LBListaBusqueda.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -277,6 +274,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LBListaBusqueda.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cmboxFiltrado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 88</value>
+  </data>
+  <data name="cmboxFiltrado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 21</value>
+  </data>
+  <data name="cmboxFiltrado.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cmboxFiltrado.Text" xml:space="preserve">
+    <value>Todo</value>
+  </data>
+  <data name="&gt;&gt;cmboxFiltrado.Name" xml:space="preserve">
+    <value>cmboxFiltrado</value>
+  </data>
+  <data name="&gt;&gt;cmboxFiltrado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmboxFiltrado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmboxFiltrado.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -286,7 +307,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>292, 447</value>
+    <value>531, 447</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -363,9 +384,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
-  </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>308, 486</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>308, 486</value>

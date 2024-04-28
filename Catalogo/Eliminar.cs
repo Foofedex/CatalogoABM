@@ -97,21 +97,6 @@ namespace Catalogo
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Eliminar_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSeleccionado_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BTNBack_Click(object sender, EventArgs e)
         {
             Form.ActiveForm.Close();

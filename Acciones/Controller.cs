@@ -17,55 +17,33 @@ namespace Acciones
         
         public List<Articulo> ListarArticulo()
         {
-         List<Articulo> Lista= new List<Articulo> ();
-            SqlConnection conexion= new SqlConnection ();
-            SqlCommand commando = new SqlCommand();
-            SqlDataReader lector;
-            try
-                
-            {   //Distintas bases de conexiones
-                // conexion.ConnectionString = "server=PCFEDEX\\SQLEXPRESS; database=CATALOGO_P3_DB;integrated security=true;";
-                // conexion.ConnectionString = "server=ip\\SQLEXPRESS; database=CATALOGO_P3_DB;integrated security=true;";
-                // conexion.ConnectionString = "server=(local)\\SQLEXPRESS; database=CATALOGO_P3_DB;integrated security=true;";
+            List<Articulo> Lista= new List<Articulo> ();
+            AccesoDatos lector = new AccesoDatos();
 
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
-                commando.CommandType = System.Data.CommandType.Text;
-                commando.CommandText = "SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo;";
-                commando.Connection = conexion;
-                conexion.Open();
-                lector= commando.ExecuteReader();
+            lector.setearQuery("SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo;");
+            lector.ejecutarLectura();
 
-                while (lector.Read()) {
+            while (lector.Lector.Read()) {
 
-                    Articulo aux=new Articulo();
-                    aux.id= lector.GetInt32(0);
-                    aux.Codigo = lector.GetString(1);
-                    aux.Nombre=lector.GetString(2);
-                    aux.Descripcion = lector.GetString(3);
-                    aux.Precio=lector.GetSqlMoney(4);
-                    aux.IDMarca=lector.GetInt32 (5);
-                    aux.Marca = lector.GetString(6);
-                    aux.IDCategoria = lector.GetInt32(7);
-                    aux.Categoria = lector.GetString(8);
-                    aux.Imagen=lector.GetString(9);
-                                                          
-                    Lista.Add(aux);
-                                            
-                    }
-
-
-
-                conexion.Close();
-                return Lista;   
+                Articulo aux=new Articulo();
+                aux.id= lector.Lector.GetInt32(0);
+                aux.Codigo = lector.Lector.GetString(1);
+                aux.Nombre=lector.Lector.GetString(2);
+                aux.Descripcion = lector.Lector.GetString(3);
+                aux.Precio=lector.Lector.GetSqlMoney(4);
+                aux.IDMarca=lector.Lector.GetInt32 (5);
+                aux.Marca = lector.Lector.GetString(6);
+                aux.IDCategoria = lector.Lector.GetInt32(7);
+                aux.Categoria = lector.Lector.GetString(8);
+                aux.Imagen=lector.Lector.GetString(9);
+                                                                   
+                Lista.Add(aux);
+                       
             }
 
-            catch(Exception ex)
-            {
-
-                throw ex;
-            }
-            
-                finally { conexion.Close(); }   
+            lector.cerrarConexion();
+            return Lista;   
+        
         }
 
         //buscar un articulo
@@ -93,8 +71,7 @@ namespace Acciones
                 articuloList.Add(aux);
 
             }
-            nuevaConexion.cerrarConexion();
-            
+            nuevaConexion.cerrarConexion(); 
             return articuloList;
         }
         //consulta de marca
@@ -129,9 +106,6 @@ namespace Acciones
                 aux.Descripcion = nuevaConexion.Lector.GetString(1);
                 articuloList.Add(aux);
             }
-
-
-
 
             nuevaConexion.cerrarConexion();
             return articuloList;
@@ -183,14 +157,10 @@ namespace Acciones
                     aux.Categoria = lector.GetString(8);
                     aux.Imagen = lector.GetString(9);
 
-                    
-
                     Lista.Add(aux);
 
 
                 }
-
-
 
                 conexion.Close();
                 return Lista;
@@ -207,11 +177,9 @@ namespace Acciones
 
         public void Agregar(Articulo artNuevo)
         {
-
-          
+        
             //conexion a bd
             AccesoDatos datos = new AccesoDatos();
-            
 
             try
             {
@@ -267,5 +235,62 @@ namespace Acciones
             conect.cerrarConexion();
         }
 
+
+        public List<Articulo> BuscarporMarca(string buscar)
+        {
+            AccesoDatos nuevaConexion = new AccesoDatos();
+            List<Articulo> articuloList = new List<Articulo>();
+
+            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where m.Descripcion like '%"+ buscar +"%' AND m.Id = a.Id;");
+            nuevaConexion.ejecutarLectura();
+            while (nuevaConexion.Lector.Read())
+            {
+                Articulo aux = new Articulo();
+                aux.id = nuevaConexion.Lector.GetInt32(0);
+                aux.Codigo = nuevaConexion.Lector.GetString(1);
+                aux.Nombre = nuevaConexion.Lector.GetString(2);
+                aux.Descripcion = nuevaConexion.Lector.GetString(3);
+                aux.Precio = nuevaConexion.Lector.GetSqlMoney(4);
+                aux.IDMarca = nuevaConexion.Lector.GetInt32(5);
+                aux.Marca = nuevaConexion.Lector.GetString(6);
+                aux.IDCategoria = nuevaConexion.Lector.GetInt32(7);
+                aux.Categoria = nuevaConexion.Lector.GetString(8);
+                aux.Imagen = nuevaConexion.Lector.GetString(9);
+
+                articuloList.Add(aux);
+
+            }
+            nuevaConexion.cerrarConexion();
+            return articuloList;
+        }
+
+        public List<Articulo> BuscarporCategoria(string buscar)
+        {
+            AccesoDatos nuevaConexion = new AccesoDatos();
+            List<Articulo> articuloList = new List<Articulo>();
+
+            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where c.Descripcion like '%" + buscar + "%' AND c.Id = a.Id;");
+            nuevaConexion.ejecutarLectura();
+            while (nuevaConexion.Lector.Read())
+            {
+                Articulo aux = new Articulo();
+                aux.id = nuevaConexion.Lector.GetInt32(0);
+                aux.Codigo = nuevaConexion.Lector.GetString(1);
+                aux.Nombre = nuevaConexion.Lector.GetString(2);
+                aux.Descripcion = nuevaConexion.Lector.GetString(3);
+                aux.Precio = nuevaConexion.Lector.GetSqlMoney(4);
+                aux.IDMarca = nuevaConexion.Lector.GetInt32(5);
+                aux.Marca = nuevaConexion.Lector.GetString(6);
+                aux.IDCategoria = nuevaConexion.Lector.GetInt32(7);
+                aux.Categoria = nuevaConexion.Lector.GetString(8);
+                aux.Imagen = nuevaConexion.Lector.GetString(9);
+
+                articuloList.Add(aux);
+
+            }
+            nuevaConexion.cerrarConexion();
+            return articuloList;
+        }
     }
+    
 }

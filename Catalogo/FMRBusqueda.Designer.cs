@@ -34,6 +34,7 @@
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.LBListaBusqueda = new System.Windows.Forms.ListBox();
+            this.cmboxFiltrado = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtBusqueda
@@ -42,7 +43,6 @@
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtBusqueda.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // lbl_busquedad
             // 
@@ -79,11 +79,19 @@
             this.LBListaBusqueda.Name = "LBListaBusqueda";
             this.LBListaBusqueda.SelectedIndexChanged += new System.EventHandler(this.LBListaBusqueda_SelectedIndexChanged);
             // 
+            // cmboxFiltrado
+            // 
+            this.cmboxFiltrado.FormattingEnabled = true;
+            resources.ApplyResources(this.cmboxFiltrado, "cmboxFiltrado");
+            this.cmboxFiltrado.Name = "cmboxFiltrado";
+            this.cmboxFiltrado.Click += new System.EventHandler(this.cmboxFiltrado_Click);
+            // 
             // FMRBusqueda
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.cmboxFiltrado);
             this.Controls.Add(this.LBListaBusqueda);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBusqueda);
@@ -103,5 +111,6 @@
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ListBox LBListaBusqueda;
+        private System.Windows.Forms.ComboBox cmboxFiltrado;
     }
 }

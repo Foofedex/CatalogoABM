@@ -21,7 +21,8 @@ namespace Catalogo
        List<Articulo> articulos = new List<Articulo>();
            public Articulo articuloIndividual=new Articulo();
         DataTable dt = new DataTable();
-        
+      
+       
         VistaArticuloYDetalle objVistarArticulo = new VistaArticuloYDetalle();
         public FMRBusqueda()
         {
@@ -54,13 +55,11 @@ namespace Catalogo
             //CAPTURO LA PALABRA Q INGRESO
             string busquedad = txtBusqueda.Text;
             Controller Data= new Controller();
-            articulos = Data.Busquedad(busquedad);
-           
+           // articulos = Data.Busquedad(busquedad);
+           articulos = Data.BuscarporMarca(busquedad);
             if(articulos.Count == 0)
             {
-                MessageBox.Show("Su articulo no se encuentra.");
-                
-       
+                MessageBox.Show("Su articulo no se encuentra.");   
                 txtBusqueda.Text = "";
                 return;
             }
@@ -95,13 +94,16 @@ namespace Catalogo
 
             }
 
-
-    
         }
 
-        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+
+        private void cmboxFiltrado_Click(object sender, EventArgs e)
         {
 
+            cmboxFiltrado.Items.Clear();
+            cmboxFiltrado.Items.Add("Categoria");
+            cmboxFiltrado.Items.Add("Marca");
+            cmboxFiltrado.Items.Add("Todo");
         }
     }
 }

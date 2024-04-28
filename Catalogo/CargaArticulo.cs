@@ -17,6 +17,9 @@ using System.Security.Policy;
 
 namespace Catalogo
 {
+
+    
+
     public partial class FMRArticulo : Form
     {
         public Articulo artiNuevo = new Articulo();
@@ -24,34 +27,30 @@ namespace Catalogo
         {
             InitializeComponent();
         }
+        bool StringNoVacio(string a)
+        {
+            if (a == "")
+            {
+                return false;
+            }
+            else { return true; }
 
+        }
         private void BTNBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
 
+        
         private bool validarCamposTxt()
         {
             EliminarIconosErrorProv();
             bool ok = true;
 
-            if(TXTBID.Text == "")
-            {
-                ok = false;
-                ErrorProvCargaArticulo.SetError(TXTBID, "Ingrese el Codigo.");
-            }
+            if (!StringNoVacio(TXTBID.Text)) ErrorProvCargaArticulo.SetError(TXTBID, "Ingrese el Codigo.");
+            if (!StringNoVacio(TXTBNombre.Text)) ErrorProvCargaArticulo.SetError(TXTBNombre, "Ingrese el Nombre.");
+            if (!StringNoVacio(TXTBDescripcion.Text)) ErrorProvCargaArticulo.SetError(TXTBDescripcion, "Ingrese la Descripcion.");
 
-            if (TXTBNombre.Text == "")
-            {
-                ok = false;
-                ErrorProvCargaArticulo.SetError(TXTBNombre, "Ingrese el Nombre.");
-            }
-            if (TXTBDescripcion.Text == "")
-            {
-                ok = false;
-                ErrorProvCargaArticulo.SetError(TXTBDescripcion, "Ingrese la Descripcion.");
-            }
             if (cboMarca.SelectedIndex < 0)
             {
                
@@ -71,19 +70,6 @@ namespace Catalogo
                 TXTBPrecio.Clear();
                 ok = false;
             }
-     
-
-            /*
-             
-            if (TXTBPrecio.Text != "")
-            
-            {
-
-                ok = false;
-                ErrorProvCargaArticulo.SetError(TXTBPrecio, "Ingrese el Precio.");
-            }
-             */
-
 
             if (txtbUrlImagen.Text == "" || txtbUrlImagen.Text.Length>999)
             {
@@ -124,7 +110,7 @@ namespace Catalogo
                       artiNuevo.Descripcion = TXTBDescripcion.Text;
                       artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
                       string url = txtbUrlImagen.Text;
-                    //  artiNuevo.Imagen = validarUrl(url);
+            
 
                       conexion.Agregar(artiNuevo);
                       MessageBox.Show("Articulo agregado");
