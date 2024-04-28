@@ -286,7 +286,7 @@
     <value>8</value>
   </data>
   <data name="cmboxFiltrado.Text" xml:space="preserve">
-    <value>Todo</value>
+    <value>Filtrar</value>
   </data>
   <data name="&gt;&gt;cmboxFiltrado.Name" xml:space="preserve">
     <value>cmboxFiltrado</value>
