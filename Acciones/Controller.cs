@@ -52,7 +52,7 @@ namespace Acciones
             AccesoDatos nuevaConexion = new AccesoDatos();
             List<Articulo> articuloList = new List<Articulo>();
 
-            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%';");
+            nuevaConexion.setearQuery("SELECT a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, \r\nCASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl \r\nFROM ARTICULOS a\r\nLEFT JOIN marcas m ON a.IdMarca = m.Id\r\nLEFT JOIN categorias c ON a.idcategoria = c.id \r\nLEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';");
             nuevaConexion.ejecutarLectura();
             while (nuevaConexion.Lector.Read())
             {
@@ -74,38 +74,6 @@ namespace Acciones
             nuevaConexion.cerrarConexion(); 
             return articuloList;
         }
-
-
-        public List<Articulo> BuscarModificar(string buscar)
-        {
-            AccesoDatos nuevaConexion = new AccesoDatos();
-            List<Articulo> articuloList = new List<Articulo>();
-
-            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%';");
-            nuevaConexion.ejecutarLectura();
-            while (nuevaConexion.Lector.Read())
-            {
-                Articulo aux = new Articulo();
-                aux.id = nuevaConexion.Lector.GetInt32(0);
-                aux.Codigo = nuevaConexion.Lector.GetString(1);
-                aux.Nombre = nuevaConexion.Lector.GetString(2);
-                aux.Descripcion = nuevaConexion.Lector.GetString(3);
-                aux.Precio = nuevaConexion.Lector.GetSqlMoney(4);
-                aux.IDMarca = nuevaConexion.Lector.GetInt32(5);
-                aux.Marca = nuevaConexion.Lector.GetString(6);
-                aux.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                aux.Categoria = nuevaConexion.Lector.GetString(8);
-                aux.Imagen = nuevaConexion.Lector.GetString(9);
-
-                articuloList.Add(aux);
-
-            }
-            nuevaConexion.cerrarConexion();
-            return articuloList;
-        }
-
-
-
         //consulta de marca
         public List<Articulo> Marca() {
             AccesoDatos nuevaConexion = new AccesoDatos();
@@ -169,7 +137,7 @@ namespace Acciones
 
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 commando.CommandType = System.Data.CommandType.Text;
-                commando.CommandText = "SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%' or m.Marca like '%" + buscar + "%';";
+                commando.CommandText = "SELECT a.id, a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, CASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id  LEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%"+ buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';";
                 commando.Connection = conexion;
                 conexion.Open();
                 lector = commando.ExecuteReader();

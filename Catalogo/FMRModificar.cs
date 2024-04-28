@@ -141,7 +141,7 @@ namespace Catalogo
             ArticuloModificar.IDCategoria = articulos[cboBoxBusqueda.SelectedIndex].IDCategoria;
             ArticuloModificar.id = articulos[cboBoxBusqueda.SelectedIndex].id;
             ArticuloModificar.IDMarca = articulos[cboBoxBusqueda.SelectedIndex].IDMarca;
-           
+
            
             Marca = conexionART.Marca();
             for (int i = 0; i < Marca.Count; i++)
@@ -165,9 +165,7 @@ namespace Catalogo
         private void SeleccionMarca(object sender, EventArgs e)
         {
             ArticuloModificar.IDMarca =Marca[CboMarca.SelectedIndex].IDMarca;
-            // MessageBox.Show(articulos[CboMarca.SelectedIndex].IDMarca.ToString());
-          //  MessageBox.Show(articulos[CboMarca.SelectedIndex].ToString());
-
+           
         }
 
         private void SeleccionCategoria(object sender, EventArgs e)
@@ -189,7 +187,7 @@ namespace Catalogo
                 ArticuloModificar.Precio = SqlMoney.Parse(TxtPrecio.Text);
                 ArticuloModificar.Imagen = TxtURL.Text;
 
-                 MessageBox.Show(ArticuloModificar.IDMarca.ToString() + " " + ArticuloModificar.IDCategoria.ToString());
+                 MessageBox.Show("SE MODIFICO CON EXITO");
                 Controller conexionART = new Controller();
                 conexionART.Modificar(ArticuloModificar);
 
