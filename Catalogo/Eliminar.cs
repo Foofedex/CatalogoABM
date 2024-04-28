@@ -21,7 +21,7 @@ namespace Catalogo
         AccesoDatos BD_Eliminar=new AccesoDatos();
         Controller BD_Buscar =new Controller();
         List<Articulo> list = new List<Articulo>();
-        string Codigo;
+        
 
         //lo que seleccionamos en el list lo mostramos en el laber
         private void listSeleccion_SelectedIndexChanged(object sender, EventArgs e)

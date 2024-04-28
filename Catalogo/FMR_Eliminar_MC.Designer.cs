@@ -115,7 +115,9 @@
             this.Controls.Add(this.BTNDELETE);
             this.Controls.Add(this.TB_ingresar_MC);
             this.Controls.Add(this.GB_MC);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FMR_Eliminar_MC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ELIMINAR MARCA O CATEGORIA";
             this.GB_MC.ResumeLayout(false);
             this.GB_MC.PerformLayout();

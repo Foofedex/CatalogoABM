@@ -14,7 +14,7 @@ namespace Catalogo
 {
     public partial class FMRModificar : Form
     {
-        string palabra;
+        
         FMRBusqueda BusquedadModificar=new FMRBusqueda();
         Articulo ArticuloModificar=new Articulo();
         Controller conexionART=new Controller();
