@@ -41,7 +41,8 @@ namespace Catalogo
         }
         public void button1_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show(cmboxFiltrado.SelectedIndex.ToString());
+           
             LBListaBusqueda.Items.Clear();
             if (txtBusqueda.Text == "") {
                 MessageBox.Show("Ingrese una palabra");
@@ -51,12 +52,25 @@ namespace Catalogo
             {
                 return;
             }
-
+                //-1 0 1 2
             //CAPTURO LA PALABRA Q INGRESO
             string busquedad = txtBusqueda.Text;
             Controller Data= new Controller();
-           // articulos = Data.Busquedad(busquedad);
-           articulos = Data.BuscarporMarca(busquedad);
+            if (cmboxFiltrado.SelectedIndex == 2 || cmboxFiltrado.SelectedIndex == -1) 
+            {
+                articulos = Data.Busquedad(busquedad);
+            }
+            else if (cmboxFiltrado.SelectedIndex == 0) 
+            {
+                articulos = Data.BuscarporCategoria(busquedad);
+            }
+            else
+            {
+                articulos = Data.BuscarporMarca(busquedad); 
+            }
+           
+           
+            
             if(articulos.Count == 0)
             {
                 MessageBox.Show("Su articulo no se encuentra.");   
@@ -66,12 +80,12 @@ namespace Catalogo
 
             foreach (Articulo articulo in articulos)
             {
-
-                
+   
                 LBListaBusqueda.Items.Add(articulo.Nombre+" - "+ articulo.Marca);
-                
+   
             }
-            
+            cmboxFiltrado.SelectedIndex = -1;
+            cmboxFiltrado.Text = "Filtrar";
         }
 
         private void button1_Click_1(object sender, EventArgs e)

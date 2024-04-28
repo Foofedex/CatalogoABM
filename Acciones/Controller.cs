@@ -241,7 +241,7 @@ namespace Acciones
             AccesoDatos nuevaConexion = new AccesoDatos();
             List<Articulo> articuloList = new List<Articulo>();
 
-            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where m.Descripcion like '%"+ buscar +"%' AND m.Id = a.Id;");
+            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where m.Descripcion like '%"+ buscar +"%' AND m.Id = a.IdMarca;");
             nuevaConexion.ejecutarLectura();
             while (nuevaConexion.Lector.Read())
             {
@@ -269,7 +269,7 @@ namespace Acciones
             AccesoDatos nuevaConexion = new AccesoDatos();
             List<Articulo> articuloList = new List<Articulo>();
 
-            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where c.Descripcion like '%" + buscar + "%' AND c.Id = a.Id;");
+            nuevaConexion.setearQuery("SELECT distinct a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion,i.ImagenUrl FROM ARTICULOS a INNER JOIN marcas m ON a.IdMarca = m.Id INNER JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo where c.Descripcion like '%" + buscar + "%' AND c.Id = a.IdCategoria;");
             nuevaConexion.ejecutarLectura();
             while (nuevaConexion.Lector.Read())
             {
