@@ -41,7 +41,6 @@ namespace Catalogo
         }
         public void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cmboxFiltrado.SelectedIndex.ToString());
            
             LBListaBusqueda.Items.Clear();
             if (txtBusqueda.Text == "") {
@@ -52,7 +51,7 @@ namespace Catalogo
             {
                 return;
             }
-                //-1 0 1 2
+             
             //CAPTURO LA PALABRA Q INGRESO
             string busquedad = txtBusqueda.Text;
             Controller Data= new Controller();
