@@ -101,9 +101,6 @@ namespace Catalogo
 
         private void BuscarAmodificar(object sender, EventArgs e)
         {
-
-            
-
             cboBoxBusqueda.Items.Clear();
             CboCategoria.Items.Clear();
             CboMarca.Items.Clear(); 
@@ -111,7 +108,7 @@ namespace Catalogo
             
             List<Articulo> articulosBuscados = new List<Articulo>();
 
-            articulosBuscados= conexionART.Buscar(txtBuscar.Text);
+            articulosBuscados= conexionART.Busqueda_Modificar(txtBuscar.Text);
 
             for (int i = 0; i < articulosBuscados.Count;i ++)
             {

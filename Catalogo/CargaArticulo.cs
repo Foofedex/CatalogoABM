@@ -23,6 +23,10 @@ namespace Catalogo
     public partial class FMRArticulo : Form
     {
         public Articulo artiNuevo = new Articulo();
+        List <Articulo> ListaMarca= new List <Articulo>();
+        List <Articulo> ListaCategoria= new List<Articulo> ();
+        AccesoDatos accesoDatos = new AccesoDatos();
+        AccesoDatos accesoDatos2 = new AccesoDatos();
         public FMRArticulo()
         {
             InitializeComponent();
@@ -40,8 +44,6 @@ namespace Catalogo
         {
             this.Close();
         }
-
-        
         private bool validarCamposTxt()
         {
             EliminarIconosErrorProv();
@@ -78,7 +80,6 @@ namespace Catalogo
             }
             return ok;
         }
-
         private void EliminarIconosErrorProv()
         {
             ErrorProvCargaArticulo.SetError(TXTBID, "");
@@ -90,25 +91,27 @@ namespace Catalogo
             ErrorProvCargaArticulo.SetError(txtbUrlImagen, "");
            
         }
-            private void BTNAdd_Click_1(object sender, EventArgs e)
+        private void BTNAdd_Click_1(object sender, EventArgs e)
             {
                 if (validarCamposTxt())
                 {
 
-                    Controller conexion = new Controller();
+                  Controller conexion = new Controller();
                   try
                   {
 
                     EliminarIconosErrorProv();
                 
-                        MessageBox.Show("Datos Ingresados Correctamente.");
+                      MessageBox.Show("Datos Ingresados Correctamente.");
                 
-                    validarCamposTxt();
+                      validarCamposTxt();
 
                       artiNuevo.Codigo = TXTBID.Text;
                       artiNuevo.Nombre = TXTBNombre.Text;
                       artiNuevo.Descripcion = TXTBDescripcion.Text;
                       artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+
+
                       string url = txtbUrlImagen.Text;
             
 
@@ -124,11 +127,9 @@ namespace Catalogo
                 }
 
         }
-
         private void FMRArticulo_Load_1(object sender, EventArgs e)
         {
-            AccesoDatos accesoDatos = new AccesoDatos();
-            AccesoDatos accesoDatos2 = new AccesoDatos();
+            
 
             try
             {
@@ -139,6 +140,9 @@ namespace Catalogo
 
                 while (accesoDatos.Lector.Read())
                 {
+                    Articulo aux = new Articulo();
+                    aux.IDMarca = accesoDatos.Lector.GetInt32(0);
+                    ListaMarca.Add(aux);
                     cboMarca.Items.Add((string)accesoDatos.Lector["Descripcion"]);
 
                 }
@@ -148,7 +152,10 @@ namespace Catalogo
 
                 while (accesoDatos2.Lector.Read())
                 {
-
+                    Articulo aux = new Articulo();
+                    aux.IDCategoria = accesoDatos2.Lector.GetInt32(0);
+                    ListaCategoria.Add(aux);
+                   
                     cboCategoria.Items.Add((string)accesoDatos2.Lector["Descripcion"]);
 
                 }
@@ -169,13 +176,15 @@ namespace Catalogo
         }
         private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
-            artiNuevo.IDMarca =(cboMarca.SelectedIndex+1);
+            
+            artiNuevo.IDMarca =ListaMarca[cboMarca.SelectedIndex].IDMarca;
+            
            
 
         }
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            artiNuevo.IDCategoria = (cboCategoria.SelectedIndex+1);
+            artiNuevo.IDCategoria = ListaCategoria[cboCategoria.SelectedIndex].IDCategoria;
            
         }
 

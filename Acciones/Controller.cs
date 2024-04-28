@@ -47,12 +47,12 @@ namespace Acciones
         }
 
         //buscar un articulo
-        public List<Articulo> Buscar(string buscar)
+        public List<Articulo> Busqueda_Modificar(string buscar)
         {
             AccesoDatos nuevaConexion = new AccesoDatos();
             List<Articulo> articuloList = new List<Articulo>();
 
-            nuevaConexion.setearQuery("SELECT a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, \r\nCASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl \r\nFROM ARTICULOS a\r\nLEFT JOIN marcas m ON a.IdMarca = m.Id\r\nLEFT JOIN categorias c ON a.idcategoria = c.id \r\nLEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';");
+            nuevaConexion.setearQuery("SELECT a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio,   case when m.Id is null then '0' else m.id end as IdMarca, case when m.Descripcion is null then '0' else m.Descripcion end as Marca, \r\nCASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl \r\nFROM ARTICULOS a\r\nLEFT JOIN marcas m ON a.IdMarca = m.Id\r\nLEFT JOIN categorias c ON a.idcategoria = c.id \r\nLEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';");
             nuevaConexion.ejecutarLectura();
             while (nuevaConexion.Lector.Read())
             {
@@ -129,17 +129,8 @@ namespace Acciones
         {
             AccesoDatos nuevaConexion = new AccesoDatos();
             List<Articulo> Lista = new List<Articulo>();
-            //SqlConnection conexion = new SqlConnection();
-            //SqlCommand commando = new SqlCommand();
-            //SqlDataReader lector;
-
-                //   conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
-                //   commando.CommandType = System.Data.CommandType.Text;
-                //  commando.CommandText = "SELECT a.id, a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, CASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id  LEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%"+ buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';";
-                //  commando.Connection = conexion;
-                //   conexion.Open();
-                //   lector = commando.ExecuteReader();
-                nuevaConexion.setearQuery("SELECT a.id, a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca, CASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, \r\nCASE WHEN c.Descripcion IS NULL THEN '0' ELSE c.Descripcion END ,i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id  LEFT JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';");
+        
+                nuevaConexion.setearQuery("SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo where a.Nombre like '%" + buscar + "%' or a.Descripcion like '%" + buscar + "%' or m.Descripcion like '%" + buscar + "%' or c.Descripcion like '%" + buscar + "%';");
                 nuevaConexion.ejecutarLectura();
             
                 while (nuevaConexion.Lector.Read())
@@ -166,8 +157,6 @@ namespace Acciones
         }
 
  
-           
-
 
         public void Agregar(Articulo artNuevo)
         {       
