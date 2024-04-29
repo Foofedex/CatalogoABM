@@ -57,7 +57,7 @@
             this.LBLNombre.Location = new System.Drawing.Point(85, 86);
             this.LBLNombre.Name = "LBLNombre";
             this.LBLNombre.Size = new System.Drawing.Size(62, 15);
-            this.LBLNombre.TabIndex = 0;
+            this.LBLNombre.TabIndex = 10;
             this.LBLNombre.Text = "Nombre:";
             // 
             // LBLID
@@ -66,7 +66,7 @@
             this.LBLID.Location = new System.Drawing.Point(85, 48);
             this.LBLID.Name = "LBLID";
             this.LBLID.Size = new System.Drawing.Size(60, 15);
-            this.LBLID.TabIndex = 1;
+            this.LBLID.TabIndex = 9;
             this.LBLID.Text = "Codigo :";
             // 
             // LBLDescripcion
@@ -75,7 +75,7 @@
             this.LBLDescripcion.Location = new System.Drawing.Point(85, 123);
             this.LBLDescripcion.Name = "LBLDescripcion";
             this.LBLDescripcion.Size = new System.Drawing.Size(87, 15);
-            this.LBLDescripcion.TabIndex = 3;
+            this.LBLDescripcion.TabIndex = 11;
             this.LBLDescripcion.Text = "Descripcion:";
             // 
             // LBLMarca
@@ -84,7 +84,7 @@
             this.LBLMarca.Location = new System.Drawing.Point(85, 165);
             this.LBLMarca.Name = "LBLMarca";
             this.LBLMarca.Size = new System.Drawing.Size(51, 15);
-            this.LBLMarca.TabIndex = 4;
+            this.LBLMarca.TabIndex = 12;
             this.LBLMarca.Text = "Marca:";
             // 
             // LBLCategoria
@@ -93,7 +93,7 @@
             this.LBLCategoria.Location = new System.Drawing.Point(85, 199);
             this.LBLCategoria.Name = "LBLCategoria";
             this.LBLCategoria.Size = new System.Drawing.Size(73, 15);
-            this.LBLCategoria.TabIndex = 5;
+            this.LBLCategoria.TabIndex = 13;
             this.LBLCategoria.Text = "Categoria:";
             // 
             // imageList1
@@ -108,7 +108,7 @@
             this.LblUrl.Location = new System.Drawing.Point(85, 243);
             this.LblUrl.Name = "LblUrl";
             this.LblUrl.Size = new System.Drawing.Size(52, 15);
-            this.LblUrl.TabIndex = 6;
+            this.LblUrl.TabIndex = 14;
             this.LblUrl.Text = "Precio:";
             this.LblUrl.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
@@ -123,7 +123,7 @@
             this.TXTBNombre.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBNombre.Name = "TXTBNombre";
             this.TXTBNombre.Size = new System.Drawing.Size(237, 21);
-            this.TXTBNombre.TabIndex = 8;
+            this.TXTBNombre.TabIndex = 1;
             // 
             // TXTBDescripcion
             // 
@@ -136,7 +136,7 @@
             this.TXTBDescripcion.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBDescripcion.Name = "TXTBDescripcion";
             this.TXTBDescripcion.Size = new System.Drawing.Size(237, 21);
-            this.TXTBDescripcion.TabIndex = 9;
+            this.TXTBDescripcion.TabIndex = 2;
             // 
             // TXTBPrecio
             // 
@@ -149,14 +149,14 @@
             this.TXTBPrecio.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBPrecio.Name = "TXTBPrecio";
             this.TXTBPrecio.Size = new System.Drawing.Size(237, 21);
-            this.TXTBPrecio.TabIndex = 12;
-                      // 
+            this.TXTBPrecio.TabIndex = 5;
+            // 
             // BTNAdd
             // 
             this.BTNAdd.Location = new System.Drawing.Point(215, 325);
             this.BTNAdd.Name = "BTNAdd";
             this.BTNAdd.Size = new System.Drawing.Size(167, 23);
-            this.BTNAdd.TabIndex = 13;
+            this.BTNAdd.TabIndex = 7;
             this.BTNAdd.Text = "Agregar";
             this.BTNAdd.UseVisualStyleBackColor = true;
             this.BTNAdd.Click += new System.EventHandler(this.BTNAdd_Click_1);
@@ -172,7 +172,7 @@
             this.BTNBack.Location = new System.Drawing.Point(437, 381);
             this.BTNBack.Name = "BTNBack";
             this.BTNBack.Size = new System.Drawing.Size(78, 25);
-            this.BTNBack.TabIndex = 16;
+            this.BTNBack.TabIndex = 8;
             this.BTNBack.Text = "Volver";
             this.BTNBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNBack.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@
             this.TXTBID.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBID.Name = "TXTBID";
             this.TXTBID.Size = new System.Drawing.Size(237, 21);
-            this.TXTBID.TabIndex = 7;
+            this.TXTBID.TabIndex = 0;
             // 
             // txtbUrlImagen
             // 
@@ -202,7 +202,7 @@
             this.txtbUrlImagen.MinimumSize = new System.Drawing.Size(237, 21);
             this.txtbUrlImagen.Name = "txtbUrlImagen";
             this.txtbUrlImagen.Size = new System.Drawing.Size(237, 21);
-            this.txtbUrlImagen.TabIndex = 17;
+            this.txtbUrlImagen.TabIndex = 6;
             // 
             // lblUrlImagen
             // 
@@ -210,25 +210,27 @@
             this.lblUrlImagen.Location = new System.Drawing.Point(85, 284);
             this.lblUrlImagen.Name = "lblUrlImagen";
             this.lblUrlImagen.Size = new System.Drawing.Size(78, 15);
-            this.lblUrlImagen.TabIndex = 18;
+            this.lblUrlImagen.TabIndex = 15;
             this.lblUrlImagen.Text = "Urlimagen:";
             // 
             // cboMarca
             // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(179, 165);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(237, 23);
-            this.cboMarca.TabIndex = 19;
+            this.cboMarca.TabIndex = 3;
             this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // cboCategoria
             // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(179, 199);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(237, 23);
-            this.cboCategoria.TabIndex = 20;
+            this.cboCategoria.TabIndex = 4;
             this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // ErrorProvCargaArticulo

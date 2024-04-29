@@ -91,7 +91,7 @@
             this.BTNModificar.Location = new System.Drawing.Point(128, 305);
             this.BTNModificar.Name = "BTNModificar";
             this.BTNModificar.Size = new System.Drawing.Size(167, 20);
-            this.BTNModificar.TabIndex = 29;
+            this.BTNModificar.TabIndex = 17;
             this.BTNModificar.Text = "Modificar";
             this.BTNModificar.UseVisualStyleBackColor = true;
             this.BTNModificar.Click += new System.EventHandler(this.BTNModificar_Click);
@@ -107,7 +107,7 @@
             this.TxtURL.MinimumSize = new System.Drawing.Size(237, 21);
             this.TxtURL.Name = "TxtURL";
             this.TxtURL.Size = new System.Drawing.Size(253, 20);
-            this.TxtURL.TabIndex = 28;
+            this.TxtURL.TabIndex = 15;
             // 
             // TXTBDescripcion
             // 
@@ -120,7 +120,7 @@
             this.TXTBDescripcion.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTBDescripcion.Name = "TXTBDescripcion";
             this.TXTBDescripcion.Size = new System.Drawing.Size(253, 20);
-            this.TXTBDescripcion.TabIndex = 25;
+            this.TXTBDescripcion.TabIndex = 7;
             // 
             // TXTCodigo
             // 
@@ -133,7 +133,7 @@
             this.TXTCodigo.MinimumSize = new System.Drawing.Size(237, 21);
             this.TXTCodigo.Name = "TXTCodigo";
             this.TXTCodigo.Size = new System.Drawing.Size(253, 20);
-            this.TXTCodigo.TabIndex = 24;
+            this.TXTCodigo.TabIndex = 5;
             // 
             // LBLCategoria
             // 
@@ -141,7 +141,7 @@
             this.LBLCategoria.Location = new System.Drawing.Point(14, 192);
             this.LBLCategoria.Name = "LBLCategoria";
             this.LBLCategoria.Size = new System.Drawing.Size(55, 13);
-            this.LBLCategoria.TabIndex = 21;
+            this.LBLCategoria.TabIndex = 10;
             this.LBLCategoria.Text = "Categoria:";
             // 
             // LBLMarca
@@ -150,7 +150,7 @@
             this.LBLMarca.Location = new System.Drawing.Point(14, 156);
             this.LBLMarca.Name = "LBLMarca";
             this.LBLMarca.Size = new System.Drawing.Size(40, 13);
-            this.LBLMarca.TabIndex = 20;
+            this.LBLMarca.TabIndex = 8;
             this.LBLMarca.Text = "Marca:";
             // 
             // LBLDescripcion
@@ -159,7 +159,7 @@
             this.LBLDescripcion.Location = new System.Drawing.Point(14, 120);
             this.LBLDescripcion.Name = "LBLDescripcion";
             this.LBLDescripcion.Size = new System.Drawing.Size(66, 13);
-            this.LBLDescripcion.TabIndex = 19;
+            this.LBLDescripcion.TabIndex = 6;
             this.LBLDescripcion.Text = "Descripcion:";
             // 
             // LBLNombre
@@ -168,7 +168,7 @@
             this.LBLNombre.Location = new System.Drawing.Point(14, 48);
             this.LBLNombre.Name = "LBLNombre";
             this.LBLNombre.Size = new System.Drawing.Size(47, 13);
-            this.LBLNombre.TabIndex = 17;
+            this.LBLNombre.TabIndex = 2;
             this.LBLNombre.Text = "Nombre:";
             // 
             // label1
@@ -177,7 +177,7 @@
             this.label1.Location = new System.Drawing.Point(14, 262);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 31;
+            this.label1.TabIndex = 14;
             this.label1.Text = "URL Imagen:";
             // 
             // BTNBuscarModificar
@@ -195,7 +195,7 @@
             this.LBLID.Location = new System.Drawing.Point(13, 84);
             this.LBLID.Name = "LBLID";
             this.LBLID.Size = new System.Drawing.Size(46, 13);
-            this.LBLID.TabIndex = 18;
+            this.LBLID.TabIndex = 4;
             this.LBLID.Text = "Codigo :";
             // 
             // cbBoxBuscar
@@ -212,7 +212,7 @@
             this.cboBoxBusqueda.Location = new System.Drawing.Point(104, 45);
             this.cboBoxBusqueda.Name = "cboBoxBusqueda";
             this.cboBoxBusqueda.Size = new System.Drawing.Size(253, 21);
-            this.cboBoxBusqueda.TabIndex = 32;
+            this.cboBoxBusqueda.TabIndex = 3;
             this.cboBoxBusqueda.SelectedIndexChanged += new System.EventHandler(this.cboSeleccionado);
             // 
             // label2
@@ -221,7 +221,7 @@
             this.label2.Location = new System.Drawing.Point(14, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 33;
+            this.label2.TabIndex = 0;
             this.label2.Text = " buscar:";
             // 
             // txtBuscar
@@ -229,14 +229,14 @@
             this.txtBuscar.Location = new System.Drawing.Point(104, 10);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(253, 20);
-            this.txtBuscar.TabIndex = 34;
+            this.txtBuscar.TabIndex = 1;
             // 
             // BTNSearc
             // 
             this.BTNSearc.Location = new System.Drawing.Point(391, 10);
             this.BTNSearc.Name = "BTNSearc";
             this.BTNSearc.Size = new System.Drawing.Size(75, 23);
-            this.BTNSearc.TabIndex = 35;
+            this.BTNSearc.TabIndex = 16;
             this.BTNSearc.Text = "Buscar";
             this.BTNSearc.UseVisualStyleBackColor = true;
             this.BTNSearc.Click += new System.EventHandler(this.BuscarAmodificar);
@@ -246,7 +246,7 @@
             this.TxtPrecio.Location = new System.Drawing.Point(104, 225);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(253, 20);
-            this.TxtPrecio.TabIndex = 36;
+            this.TxtPrecio.TabIndex = 13;
             // 
             // LblPrecio
             // 
@@ -254,25 +254,27 @@
             this.LblPrecio.Location = new System.Drawing.Point(14, 228);
             this.LblPrecio.Name = "LblPrecio";
             this.LblPrecio.Size = new System.Drawing.Size(40, 13);
-            this.LblPrecio.TabIndex = 38;
+            this.LblPrecio.TabIndex = 12;
             this.LblPrecio.Text = "Precio:";
             // 
             // CboMarca
             // 
+            this.CboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboMarca.FormattingEnabled = true;
             this.CboMarca.Location = new System.Drawing.Point(104, 153);
             this.CboMarca.Name = "CboMarca";
             this.CboMarca.Size = new System.Drawing.Size(253, 21);
-            this.CboMarca.TabIndex = 39;
+            this.CboMarca.TabIndex = 9;
             this.CboMarca.SelectedIndexChanged += new System.EventHandler(this.SeleccionMarca);
             // 
             // CboCategoria
             // 
+            this.CboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboCategoria.FormattingEnabled = true;
             this.CboCategoria.Location = new System.Drawing.Point(104, 189);
             this.CboCategoria.Name = "CboCategoria";
             this.CboCategoria.Size = new System.Drawing.Size(253, 21);
-            this.CboCategoria.TabIndex = 40;
+            this.CboCategoria.TabIndex = 11;
             this.CboCategoria.SelectedIndexChanged += new System.EventHandler(this.SeleccionCategoria);
             // 
             // ErrorProvBuscar

@@ -45,7 +45,7 @@
             this.GB_MC.Location = new System.Drawing.Point(24, 12);
             this.GB_MC.Name = "GB_MC";
             this.GB_MC.Size = new System.Drawing.Size(296, 51);
-            this.GB_MC.TabIndex = 2;
+            this.GB_MC.TabIndex = 0;
             this.GB_MC.TabStop = false;
             this.GB_MC.Text = "Seleccione";
             // 
@@ -77,7 +77,7 @@
             this.TB_ingresar_MC.Location = new System.Drawing.Point(24, 91);
             this.TB_ingresar_MC.Name = "TB_ingresar_MC";
             this.TB_ingresar_MC.Size = new System.Drawing.Size(296, 20);
-            this.TB_ingresar_MC.TabIndex = 3;
+            this.TB_ingresar_MC.TabIndex = 1;
             // 
             // BTNBack
             // 
@@ -90,7 +90,7 @@
             this.BTNBack.Location = new System.Drawing.Point(248, 145);
             this.BTNBack.Name = "BTNBack";
             this.BTNBack.Size = new System.Drawing.Size(78, 25);
-            this.BTNBack.TabIndex = 18;
+            this.BTNBack.TabIndex = 3;
             this.BTNBack.Text = "Volver";
             this.BTNBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNBack.UseVisualStyleBackColor = true;
@@ -102,7 +102,7 @@
             this.BTNAdd.Location = new System.Drawing.Point(24, 145);
             this.BTNAdd.Name = "BTNAdd";
             this.BTNAdd.Size = new System.Drawing.Size(88, 23);
-            this.BTNAdd.TabIndex = 17;
+            this.BTNAdd.TabIndex = 2;
             this.BTNAdd.Text = "Agregar";
             this.BTNAdd.UseVisualStyleBackColor = true;
             this.BTNAdd.Click += new System.EventHandler(this.BTNAdd_Click);
