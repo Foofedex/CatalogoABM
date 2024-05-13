@@ -27,7 +27,8 @@ namespace Catalogo
             DGVArticulosLista.DataSource = listarArticulo;
             DGVArticulosLista.Columns[0].Visible = false;
             DGVArticulosLista.Columns[4].Visible = false;
-            DGVArticulosLista.Columns["IDCategoria"].Visible = false;
+            DGVArticulosLista.Columns["DescripcionCateoria"].Visible = true;
+            DGVArticulosLista.Columns["Marca"].Visible = true;
             DGVArticulosLista.Columns["Imagen"].Visible = false;
         }
 

@@ -31,10 +31,12 @@ namespace Acciones
                 aux.Nombre=lector.Lector.GetString(2);
                 aux.Descripcion = lector.Lector.GetString(3);
                 aux.Precio=lector.Lector.GetSqlMoney(4);
-                aux.IDMarca=lector.Lector.GetInt32 (5);
+                aux.marca.IDMarca=lector.Lector.GetInt32 (5);
+                aux.marca.DescripcionMarca = lector.Lector.GetString(6);
                 aux.Marca = lector.Lector.GetString(6);
-                aux.IDCategoria = lector.Lector.GetInt32(7);
-                aux.Categoria = lector.Lector.GetString(8);
+                aux.categoria.IDCategoria = lector.Lector.GetInt32(7);
+                aux.categoria.DescripcionCaterogia = lector.Lector.GetString(8);
+                aux.DescripcionCateoria = lector.Lector.GetString(8);
                 aux.Imagen=lector.Lector.GetString(9);
                                                                    
                 Lista.Add(aux);
@@ -62,10 +64,10 @@ namespace Acciones
                 aux.Nombre = nuevaConexion.Lector.GetString(2);
                 aux.Descripcion = nuevaConexion.Lector.GetString(3);
                 aux.Precio = nuevaConexion.Lector.GetSqlMoney(4);
-                aux.IDMarca = nuevaConexion.Lector.GetInt32(5);
-                aux.Marca = nuevaConexion.Lector.GetString(6);
-                aux.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                aux.Categoria = nuevaConexion.Lector.GetString(8);
+                aux.marca.IDMarca= nuevaConexion.Lector.GetInt32(5);
+                aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
+                aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
+                aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
                 aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                 articuloList.Add(aux);
@@ -75,40 +77,40 @@ namespace Acciones
             return articuloList;
         }
         //consulta de marca
-        public List<Articulo> Marca() {
+        public List<Marca> Marca() {
             AccesoDatos nuevaConexion = new AccesoDatos();
-            List<Articulo> articuloList = new List<Articulo>();
+            List<Marca> ListaMarca = new List<Marca>();
 
             nuevaConexion.setearQuery("SELECT * from Marcas"); 
             nuevaConexion.ejecutarLectura();
             while (nuevaConexion.Lector.Read())
             {
-                Articulo aux= new Articulo();
-                aux.IDMarca = nuevaConexion.Lector.GetInt32(0);
-                aux.Marca = nuevaConexion.Lector.GetString(1);
-                articuloList.Add(aux);
+                Marca auxM = new Marca();
+                auxM.IDMarca = nuevaConexion.Lector.GetInt32(0);
+                auxM.DescripcionMarca= nuevaConexion.Lector.GetString(1);
+                ListaMarca.Add(auxM);
             }
             nuevaConexion.cerrarConexion();
-            return articuloList;
+            return ListaMarca;
         }
 
         //consulta de categoria 
-        public List<Articulo> Categoria()
+        public List<Categoria> Categoria()
         {
             AccesoDatos nuevaConexion = new AccesoDatos();
-            List<Articulo> articuloList = new List<Articulo>();
+            List<Categoria> Categorias = new List<Categoria>();
             nuevaConexion.setearQuery("SELECT * from Categorias");
             nuevaConexion.ejecutarLectura();
             while (nuevaConexion.Lector.Read())
             {
-                Articulo aux = new Articulo();
-                aux.IDCategoria = nuevaConexion.Lector.GetInt32(0);
-                aux.Descripcion = nuevaConexion.Lector.GetString(1);
-                articuloList.Add(aux);
+                Categoria auxC = new Categoria();
+                auxC.IDCategoria = nuevaConexion.Lector.GetInt32(0);
+                auxC.DescripcionCaterogia= nuevaConexion.Lector.GetString(1);
+                Categorias.Add(auxC);
             }
 
             nuevaConexion.cerrarConexion();
-            return articuloList;
+            return Categorias;
         }
 
         //modificar
@@ -117,7 +119,7 @@ namespace Acciones
 
             AccesoDatos nuevaConexion = new AccesoDatos();
             
-            nuevaConexion.setearQuery("update ARTICULOS set Codigo='"+ Modificar.Codigo + "', Nombre='" + Modificar.Nombre + "', Descripcion='"+ Modificar.Descripcion + "',IdMarca='"+ Modificar.IDMarca + "', IdCategoria='"+ Modificar.IDCategoria + "', precio='" + Modificar.Precio + "' where id= '" + Modificar.id + "' update IMAGENES set ImagenUrl='" + Modificar.Imagen + "' where '" + Modificar.id + "'=IMAGENES.IdArticulo");
+            nuevaConexion.setearQuery("update ARTICULOS set Codigo='"+ Modificar.Codigo + "', Nombre='" + Modificar.Nombre + "', Descripcion='"+ Modificar.Descripcion + "',IdMarca='"+ Modificar.marca.IDMarca + "', IdCategoria='"+ Modificar.categoria.IDCategoria + "', precio='" + Modificar.Precio + "' where id= '" + Modificar.id + "' update IMAGENES set ImagenUrl='" + Modificar.Imagen + "' where '" + Modificar.id + "'=IMAGENES.IdArticulo");
             nuevaConexion.ejecutarLectura();
             nuevaConexion.cerrarConexion();
             
@@ -142,10 +144,10 @@ namespace Acciones
                     aux.Nombre = nuevaConexion.Lector.GetString(2);
                     aux.Descripcion = nuevaConexion.Lector.GetString(3);
                     aux.Precio = nuevaConexion.Lector.GetSqlMoney(4);
-                    aux.IDMarca = nuevaConexion.Lector.GetInt32(5);
-                    aux.Marca = nuevaConexion.Lector.GetString(6);
-                    aux.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                    aux.Categoria = nuevaConexion.Lector.GetString(8);
+                    aux.marca.IDMarca = nuevaConexion.Lector.GetInt32(5);
+                    aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
+                    aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
+                    aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
                     aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                     Lista.Add(aux);
@@ -166,7 +168,7 @@ namespace Acciones
             try
             {
               
-                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+artNuevo.Codigo+"','" + artNuevo.Nombre+"', '" + artNuevo.Descripcion + "','" + artNuevo.IDMarca + "','" + artNuevo.IDCategoria+ "','" + artNuevo.Precio + "') INSERT INTO IMAGENES(idArticulo, ImagenUrl) VALUES((SELECT MAX(id) FROM Articulos),'" + artNuevo.Imagen + "');");
+                datos.setearQuery("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+artNuevo.Codigo+"','" + artNuevo.Nombre+"', '" + artNuevo.Descripcion + "','" + artNuevo.marca.IDMarca + "','" + artNuevo.categoria.IDCategoria+ "','" + artNuevo.Precio + "') INSERT INTO IMAGENES(idArticulo, ImagenUrl) VALUES((SELECT MAX(id) FROM Articulos),'" + artNuevo.Imagen + "');");
                 datos.ejecutarAccion();
         
             }
@@ -230,10 +232,10 @@ namespace Acciones
                 aux.Nombre = nuevaConexion.Lector.GetString(2);
                 aux.Descripcion = nuevaConexion.Lector.GetString(3);
                 aux.Precio = nuevaConexion.Lector.GetSqlMoney(4);
-                aux.IDMarca = nuevaConexion.Lector.GetInt32(5);
-                aux.Marca = nuevaConexion.Lector.GetString(6);
-                aux.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                aux.Categoria = nuevaConexion.Lector.GetString(8);
+                aux.marca.IDMarca = nuevaConexion.Lector.GetInt32(5);
+                aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
+                aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
+                aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
                 aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                 articuloList.Add(aux);
@@ -258,10 +260,10 @@ namespace Acciones
                 aux.Nombre = nuevaConexion.Lector.GetString(2);
                 aux.Descripcion = nuevaConexion.Lector.GetString(3);
                 aux.Precio = nuevaConexion.Lector.GetSqlMoney(4);
-                aux.IDMarca = nuevaConexion.Lector.GetInt32(5);
-                aux.Marca = nuevaConexion.Lector.GetString(6);
-                aux.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                aux.Categoria = nuevaConexion.Lector.GetString(8);
+                aux.marca.IDMarca = nuevaConexion.Lector.GetInt32(5);
+                aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
+                aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
+                aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
                 aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                 articuloList.Add(aux);

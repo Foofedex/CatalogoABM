@@ -19,8 +19,8 @@ namespace Catalogo
         Articulo ArticuloModificar=new Articulo();
         Controller conexionART=new Controller();
         List<Articulo>  articulos=new List<Articulo>();
-        List<Articulo> Marca=new List<Articulo>();
-        List<Articulo> Categoria= new List<Articulo>();
+        List<Marca> Marca=new List<Marca>();
+        List<Categoria> Categoria= new List<Categoria>();
 
         int seleccionLista=-1;
         public FMRModificar()
@@ -132,19 +132,19 @@ namespace Catalogo
             TXTCodigo.Text = articulos[cboBoxBusqueda.SelectedIndex].Codigo;
             TXTBDescripcion.Text= articulos[cboBoxBusqueda.SelectedIndex].Descripcion;
             CboMarca.Text=articulos[cboBoxBusqueda.SelectedIndex].Marca;
-            CboCategoria.Text=articulos[cboBoxBusqueda.SelectedIndex].Categoria;
+            CboCategoria.Text=articulos[cboBoxBusqueda.SelectedIndex].categoria.DescripcionCaterogia;
             TxtPrecio.Text = articulos[cboBoxBusqueda.SelectedIndex].Precio.ToString();
             TxtURL.Text= articulos[cboBoxBusqueda.SelectedIndex].Imagen.ToString();
-            ArticuloModificar.IDCategoria = articulos[cboBoxBusqueda.SelectedIndex].IDCategoria;
+            ArticuloModificar.categoria.IDCategoria = articulos[cboBoxBusqueda.SelectedIndex].categoria.IDCategoria;
             ArticuloModificar.id = articulos[cboBoxBusqueda.SelectedIndex].id;
-            ArticuloModificar.IDMarca = articulos[cboBoxBusqueda.SelectedIndex].IDMarca;
+            ArticuloModificar.marca.IDMarca = articulos[cboBoxBusqueda.SelectedIndex].marca.IDMarca;
 
            
             Marca = conexionART.Marca();
             for (int i = 0; i < Marca.Count; i++)
             {
                
-                CboMarca.Items.Add(Marca[i].Marca.ToString());
+                CboMarca.Items.Add(Marca[i].DescripcionMarca.ToString());
                
             }
             Categoria = conexionART.Categoria();
@@ -152,7 +152,7 @@ namespace Catalogo
             for (int i = 0; i < Categoria.Count; i++)
             {
                 
-                CboCategoria.Items.Add(Categoria[i].Descripcion.ToString());
+                CboCategoria.Items.Add(Categoria[i].DescripcionCaterogia.ToString());
                 
             }
                         
@@ -161,14 +161,14 @@ namespace Catalogo
 
         private void SeleccionMarca(object sender, EventArgs e)
         {
-            ArticuloModificar.IDMarca =Marca[CboMarca.SelectedIndex].IDMarca;
+            ArticuloModificar.marca.IDMarca =Marca[CboMarca.SelectedIndex].IDMarca;
            
         }
 
         private void SeleccionCategoria(object sender, EventArgs e)
         {
          
-            ArticuloModificar.IDCategoria = Categoria[CboCategoria.SelectedIndex].IDCategoria;
+            ArticuloModificar.categoria.IDCategoria = Categoria[CboCategoria.SelectedIndex].IDCategoria;
         }
 
 

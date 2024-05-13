@@ -141,7 +141,7 @@ namespace Catalogo
                 while (accesoDatos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.IDMarca = accesoDatos.Lector.GetInt32(0);
+                    aux.marca.IDMarca = accesoDatos.Lector.GetInt32(0);
                     ListaMarca.Add(aux);
                     cboMarca.Items.Add((string)accesoDatos.Lector["Descripcion"]);
 
@@ -153,7 +153,7 @@ namespace Catalogo
                 while (accesoDatos2.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.IDCategoria = accesoDatos2.Lector.GetInt32(0);
+                    aux.categoria.IDCategoria = accesoDatos2.Lector.GetInt32(0);
                     ListaCategoria.Add(aux);
                    
                     cboCategoria.Items.Add((string)accesoDatos2.Lector["Descripcion"]);
@@ -177,14 +177,14 @@ namespace Catalogo
         private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            artiNuevo.IDMarca =ListaMarca[cboMarca.SelectedIndex].IDMarca;
+            artiNuevo.marca.IDMarca =ListaMarca[cboMarca.SelectedIndex].marca.IDMarca;
             
            
 
         }
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            artiNuevo.IDCategoria = ListaCategoria[cboCategoria.SelectedIndex].IDCategoria;
+            artiNuevo.categoria.IDCategoria = ListaCategoria[cboCategoria.SelectedIndex].categoria.IDCategoria;
            
         }
 

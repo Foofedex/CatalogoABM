@@ -16,16 +16,27 @@ namespace Dominio
         public string Nombre { get; set; }
         [DisplayName("Descripción")]
         public string Descripcion { get; set; }
-        public int IDMarca { get; set; }
-        public string Marca { get; set; }   
-        public int IDCategoria { get; set; }
-        public string Categoria { get; set; }
+        public string DescripcionCateoria { get; set; }
+        public string Marca { get; set; }
+
+        public Marca marca = new Marca();
+
+        public Categoria categoria = new Categoria();
         public SqlMoney Precio { get; set; }
         public string Imagen { get; set; }
-
-        public void Cargar()
+    }
+        public class Categoria
         {
+            public Categoria() { }
+            public int IDCategoria { get; set; }
+            public string DescripcionCaterogia { get; set; }
+        }
+        public class Marca
+        {
+            public Marca() { }
+            public int IDMarca { get; set; }
+            public string DescripcionMarca { get; set; }
 
         }
-    }   
+      
 }

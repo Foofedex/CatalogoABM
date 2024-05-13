@@ -29,7 +29,7 @@ namespace Catalogo
                 bool a = true;
                 for (int i = 0; i < B_marcas.Marca().Count; i++)
                 {
-                    if (B_marcas.Marca()[i].Marca.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
+                    if (B_marcas.Marca()[i].IDMarca.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
                     {
                    
                         a = false;
@@ -51,7 +51,7 @@ namespace Catalogo
                 bool a = true;
                 for (int i = 0; i < B_Categorias.Categoria().Count; i++)
                 {
-                    if (B_Categorias.Categoria()[i].Descripcion.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
+                    if (B_Categorias.Categoria()[i].IDCategoria.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
                     {
 
                         a = false;
