@@ -76,5 +76,11 @@ namespace Catalogo
             FMR_Eliminar_MC MC_eliminar = new FMR_Eliminar_MC();
             MC_eliminar.ShowDialog();
         }
+
+        private void listarMarcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMRListarMarca frmListadoMarca = new FMRListarMarca();
+            frmListadoMarca.ShowDialog();
+        }
     }
 }

@@ -88,6 +88,12 @@
     <Compile Include="FMR_Eliminar_MC.Designer.cs">
       <DependentUpon>FMR_Eliminar_MC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMRListarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMRListarMarca.Designer.cs">
+      <DependentUpon>FMRListarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="MarcaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMR_Eliminar_MC.resx">
       <DependentUpon>FMR_Eliminar_MC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMRListarMarca.resx">
+      <DependentUpon>FMRListarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MarcaCategoria.resx">
       <DependentUpon>MarcaCategoria.cs</DependentUpon>

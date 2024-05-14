@@ -272,6 +272,28 @@ namespace Acciones
             nuevaConexion.cerrarConexion();
             return articuloList;
         }
+    
+        public List <Marca> ListarMarcas()
+        {
+            List<Marca> formViewMarcas = new List<Marca>();
+            AccesoDatos lector = new AccesoDatos();
+
+            lector.setearQuery("SELECT M.Id ,M.Descripcion FROM MARCAS M");
+            lector.ejecutarLectura();
+
+            while (lector.Lector.Read()){
+
+                Marca aux = new Marca();
+
+                aux.IDMarca= lector.Lector.GetInt32(0);
+                aux.DescripcionMarca = lector.Lector.GetString(1);
+
+                formViewMarcas.Add(aux);
+            }
+            lector.cerrarConexion();
+            return formViewMarcas;
+        }
+    
     }
     
 }
