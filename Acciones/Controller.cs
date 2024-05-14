@@ -35,7 +35,7 @@ namespace Acciones
                 aux.marca.DescripcionMarca = lector.Lector.GetString(6);
                 aux.Marca = lector.Lector.GetString(6);
                 aux.categoria.IDCategoria = lector.Lector.GetInt32(7);
-                aux.categoria.DescripcionCaterogia = lector.Lector.GetString(8);
+                aux.categoria.DescripcionCategoria = lector.Lector.GetString(8);
                 aux.DescripcionCateoria = lector.Lector.GetString(8);
                 aux.Imagen=lector.Lector.GetString(9);
                                                                    
@@ -67,7 +67,7 @@ namespace Acciones
                 aux.marca.IDMarca= nuevaConexion.Lector.GetInt32(5);
                 aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
                 aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
+                aux.categoria.DescripcionCategoria = nuevaConexion.Lector.GetString(8);
                 aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                 articuloList.Add(aux);
@@ -105,7 +105,7 @@ namespace Acciones
             {
                 Categoria auxC = new Categoria();
                 auxC.IDCategoria = nuevaConexion.Lector.GetInt32(0);
-                auxC.DescripcionCaterogia= nuevaConexion.Lector.GetString(1);
+                auxC.DescripcionCategoria= nuevaConexion.Lector.GetString(1);
                 Categorias.Add(auxC);
             }
 
@@ -147,7 +147,7 @@ namespace Acciones
                     aux.marca.IDMarca = nuevaConexion.Lector.GetInt32(5);
                     aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
                     aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                    aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
+                    aux.categoria.DescripcionCategoria = nuevaConexion.Lector.GetString(8);
                     aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                     Lista.Add(aux);
@@ -235,7 +235,7 @@ namespace Acciones
                 aux.marca.IDMarca = nuevaConexion.Lector.GetInt32(5);
                 aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
                 aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
+                aux.categoria.DescripcionCategoria = nuevaConexion.Lector.GetString(8);
                 aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                 articuloList.Add(aux);
@@ -263,7 +263,7 @@ namespace Acciones
                 aux.marca.IDMarca = nuevaConexion.Lector.GetInt32(5);
                 aux.marca.DescripcionMarca = nuevaConexion.Lector.GetString(6);
                 aux.categoria.IDCategoria = nuevaConexion.Lector.GetInt32(7);
-                aux.categoria.DescripcionCaterogia = nuevaConexion.Lector.GetString(8);
+                aux.categoria.DescripcionCategoria = nuevaConexion.Lector.GetString(8);
                 aux.Imagen = nuevaConexion.Lector.GetString(9);
 
                 articuloList.Add(aux);
@@ -293,7 +293,28 @@ namespace Acciones
             lector.cerrarConexion();
             return formViewMarcas;
         }
-    
+
+        public List<Categoria> ListarCategorias()
+        {
+            List<Categoria> formViewCategorias = new List<Categoria>();
+            AccesoDatos lector = new AccesoDatos();
+
+            lector.setearQuery("SELECT C.Id ,C.Descripcion FROM CATEGORIAS C");
+            lector.ejecutarLectura();
+
+            while (lector.Lector.Read())
+            {
+
+                Categoria aux = new Categoria();
+
+                aux.IDCategoria = lector.Lector.GetInt32(0);
+                aux.DescripcionCategoria = lector.Lector.GetString(1);
+
+                formViewCategorias.Add(aux);
+            }
+            lector.cerrarConexion();
+            return formViewCategorias;
+        }
     }
     
 }

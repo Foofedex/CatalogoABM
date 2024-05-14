@@ -64,6 +64,12 @@
     <Compile Include="FMRListadeArticulo.Designer.cs">
       <DependentUpon>FMRListadeArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMRListarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMRListarCategoria.Designer.cs">
+      <DependentUpon>FMRListarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMRModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMRListadeArticulo.resx">
       <DependentUpon>FMRListadeArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMRListarCategoria.resx">
+      <DependentUpon>FMRListarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMRModificar.resx">
       <DependentUpon>FMRModificar.cs</DependentUpon>

@@ -82,5 +82,11 @@ namespace Catalogo
             FMRListarMarca frmListadoMarca = new FMRListarMarca();
             frmListadoMarca.ShowDialog();
         }
+
+        private void listarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMRListarCategoria fMRListarCategoria = new FMRListarCategoria();
+            fMRListarCategoria.ShowDialog();
+        }
     }
 }

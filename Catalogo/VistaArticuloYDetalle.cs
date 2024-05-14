@@ -31,7 +31,7 @@ namespace Catalogo
             lblCodigo2.Text= objArticulo.Codigo.ToString();
             lblNombre2.Text= objArticulo.Nombre.ToString();
             lblDescripcion2.Text=objArticulo.Descripcion.ToString();
-            lblCategoria2.Text=objArticulo.categoria.DescripcionCaterogia.ToString();
+            lblCategoria2.Text=objArticulo.categoria.DescripcionCategoria.ToString();
             lblMarca2.Text=objArticulo.Marca.ToString();
             CargarImagen(objArticulo.Imagen.ToString());
         }

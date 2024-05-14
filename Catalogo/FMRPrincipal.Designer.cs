@@ -167,6 +167,7 @@
             this.listarCategoriasToolStripMenuItem.Name = "listarCategoriasToolStripMenuItem";
             this.listarCategoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarCategoriasToolStripMenuItem.Text = "Listar Categorias";
+            this.listarCategoriasToolStripMenuItem.Click += new System.EventHandler(this.listarCategoriasToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 

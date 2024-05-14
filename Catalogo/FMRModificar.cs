@@ -132,7 +132,7 @@ namespace Catalogo
             TXTCodigo.Text = articulos[cboBoxBusqueda.SelectedIndex].Codigo;
             TXTBDescripcion.Text= articulos[cboBoxBusqueda.SelectedIndex].Descripcion;
             CboMarca.Text=articulos[cboBoxBusqueda.SelectedIndex].Marca;
-            CboCategoria.Text=articulos[cboBoxBusqueda.SelectedIndex].categoria.DescripcionCaterogia;
+            CboCategoria.Text=articulos[cboBoxBusqueda.SelectedIndex].categoria.DescripcionCategoria;
             TxtPrecio.Text = articulos[cboBoxBusqueda.SelectedIndex].Precio.ToString();
             TxtURL.Text= articulos[cboBoxBusqueda.SelectedIndex].Imagen.ToString();
             ArticuloModificar.categoria.IDCategoria = articulos[cboBoxBusqueda.SelectedIndex].categoria.IDCategoria;
@@ -152,7 +152,7 @@ namespace Catalogo
             for (int i = 0; i < Categoria.Count; i++)
             {
                 
-                CboCategoria.Items.Add(Categoria[i].DescripcionCaterogia.ToString());
+                CboCategoria.Items.Add(Categoria[i].DescripcionCategoria.ToString());
                 
             }
                         

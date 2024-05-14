@@ -29,7 +29,7 @@ namespace Dominio
         {
             public Categoria() { }
             public int IDCategoria { get; set; }
-            public string DescripcionCaterogia { get; set; }
+            public string DescripcionCategoria { get; set; }
         }
         public class Marca
         {
