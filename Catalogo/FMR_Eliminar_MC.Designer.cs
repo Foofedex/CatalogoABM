@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMR_Eliminar_MC));
             this.BTNBack = new System.Windows.Forms.Button();
             this.BTNDELETE = new System.Windows.Forms.Button();
-            this.TB_ingresar_MC = new System.Windows.Forms.TextBox();
+            this.TB_ingresar_MC_para_eliminar = new System.Windows.Forms.TextBox();
             this.GB_MC = new System.Windows.Forms.GroupBox();
             this.RD_Categoria = new System.Windows.Forms.RadioButton();
             this.RD_marca = new System.Windows.Forms.RadioButton();
@@ -45,7 +45,7 @@
             this.BTNBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BTNBack.Image = ((System.Drawing.Image)(resources.GetObject("BTNBack.Image")));
             this.BTNBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNBack.Location = new System.Drawing.Point(236, 145);
+            this.BTNBack.Location = new System.Drawing.Point(230, 143);
             this.BTNBack.Name = "BTNBack";
             this.BTNBack.Size = new System.Drawing.Size(78, 25);
             this.BTNBack.TabIndex = 22;
@@ -64,12 +64,12 @@
             this.BTNDELETE.UseVisualStyleBackColor = true;
             this.BTNDELETE.Click += new System.EventHandler(this.BTNDELETE_Click);
             // 
-            // TB_ingresar_MC
+            // TB_ingresar_MC_para_eliminar
             // 
-            this.TB_ingresar_MC.Location = new System.Drawing.Point(12, 91);
-            this.TB_ingresar_MC.Name = "TB_ingresar_MC";
-            this.TB_ingresar_MC.Size = new System.Drawing.Size(296, 20);
-            this.TB_ingresar_MC.TabIndex = 20;
+            this.TB_ingresar_MC_para_eliminar.Location = new System.Drawing.Point(12, 91);
+            this.TB_ingresar_MC_para_eliminar.Name = "TB_ingresar_MC_para_eliminar";
+            this.TB_ingresar_MC_para_eliminar.Size = new System.Drawing.Size(296, 20);
+            this.TB_ingresar_MC_para_eliminar.TabIndex = 20;
             // 
             // GB_MC
             // 
@@ -113,7 +113,7 @@
             this.ClientSize = new System.Drawing.Size(329, 201);
             this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.BTNDELETE);
-            this.Controls.Add(this.TB_ingresar_MC);
+            this.Controls.Add(this.TB_ingresar_MC_para_eliminar);
             this.Controls.Add(this.GB_MC);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FMR_Eliminar_MC";
@@ -130,7 +130,7 @@
 
         private System.Windows.Forms.Button BTNBack;
         public System.Windows.Forms.Button BTNDELETE;
-        private System.Windows.Forms.TextBox TB_ingresar_MC;
+        private System.Windows.Forms.TextBox TB_ingresar_MC_para_eliminar;
         private System.Windows.Forms.GroupBox GB_MC;
         private System.Windows.Forms.RadioButton RD_Categoria;
         private System.Windows.Forms.RadioButton RD_marca;

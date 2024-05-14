@@ -23,55 +23,68 @@ namespace Catalogo
             Controller B_marcas = new Controller();
             Controller B_Categorias = new Controller();
 
-            if (RD_marca.Checked && TB_ingresar_MC.Text != "")
+            string nombreMarca = TB_ingresar_MC_para_eliminar.Text.Trim().ToLower();
+
+            if (RD_marca.Checked && TB_ingresar_MC_para_eliminar.Text != "")
             {
-                bool a = true;
+                bool marcaAEliminar = false;
                 for (int i = 0; i < B_marcas.Marca().Count; i++)
                 {
-                    if (B_marcas.Marca()[i].IDMarca.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
+                    if (B_marcas.Marca()[i].DescripcionMarca.ToLower().Equals(nombreMarca))
                     {
 
-                        a = false;
+                        marcaAEliminar = true;
+                        break;
                     }
 
                 }
-                if (!a)
+                if (marcaAEliminar)
                 {
                     Controller Conect = new Controller();
-                    Conect.EliminarMarca(TB_ingresar_MC.Text);
+                    Conect.EliminarMarca(TB_ingresar_MC_para_eliminar.Text);
                     MessageBox.Show("SE ELIMINO CON EXITO");
-                    
+
                 }
                 else { MessageBox.Show("MARCA NO ENCONTRADA"); }
 
             }
-            if (RD_Categoria.Checked && TB_ingresar_MC.Text != "")
+
+            string nombreCategoria = TB_ingresar_MC_para_eliminar.Text.Trim().ToLower();
+
+            if (RD_Categoria.Checked && TB_ingresar_MC_para_eliminar.Text != "")
             {
-                bool a = true;
+                bool CategoriaAEliminar = false;
+
                 for (int i = 0; i < B_Categorias.Categoria().Count; i++)
                 {
-                    if (B_Categorias.Categoria()[i].IDCategoria.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
+                    if (B_Categorias.Categoria()[i].DescripcionCategoria.ToLower().Equals(CategoriaAEliminar))
                     {
 
-                        a = false;
+                        CategoriaAEliminar = true;
+                        break;
+
                     }
+                    if (!CategoriaAEliminar)
+                    {
+                        Controller Conect = new Controller();
+                        Conect.EliminarCategoria(TB_ingresar_MC_para_eliminar.Text);
+                        MessageBox.Show("SE ELIMINO CON EXITO");
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("CATEGORIA NO ENCONTRADA");
+                    }
                 }
-                if (!a)
-                {
-                    Controller Conect = new Controller();
-                    Conect.EliminarCategoria(TB_ingresar_MC.Text);
-                    MessageBox.Show("SE ELIMINO CON EXITO");
 
-                }
-                else { MessageBox.Show("CATEGORIA NO ENCONTRADA"); }
             }
 
         }
 
         private void BTNBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+                this.Close();
+
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Acciones
             AccesoDatos lector = new AccesoDatos();
 
             lector.setearQuery("SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo;");
+
             lector.ejecutarLectura();
 
             while (lector.Lector.Read()) {
@@ -211,7 +212,8 @@ namespace Acciones
         public void EliminarMarca(string a)
         {
             AccesoDatos conect = new AccesoDatos();
-            conect.setearQuery("delete from MARCAS  where Descripcion='"+a+"'");
+          //  conect.setearQuery("UPDATE from MARCAS  where Descripcion='"+a+"'");
+            conect.setearQuery("delete from MARCAS where Descripcion='"+a+"'");
             conect.ejecutarAccion();
             conect.cerrarConexion();
         }

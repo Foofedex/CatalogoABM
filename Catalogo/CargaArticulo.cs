@@ -18,15 +18,16 @@ using System.Security.Policy;
 namespace Catalogo
 {
 
-    
+
 
     public partial class FMRArticulo : Form
     {
         public Articulo artiNuevo = new Articulo();
-        List <Articulo> ListaMarca= new List <Articulo>();
-        List <Articulo> ListaCategoria= new List<Articulo> ();
+        List<Articulo> ListaMarca = new List<Articulo>();
+        List<Articulo> ListaCategoria = new List<Articulo>();
         AccesoDatos accesoDatos = new AccesoDatos();
         AccesoDatos accesoDatos2 = new AccesoDatos();
+        
         public FMRArticulo()
         {
             InitializeComponent();
@@ -49,13 +50,17 @@ namespace Catalogo
             EliminarIconosErrorProv();
             bool ok = true;
 
-            if (!StringNoVacio(TXTBID.Text)) ErrorProvCargaArticulo.SetError(TXTBID, "Ingrese el Codigo.");
+            if (!StringNoVacio(TXTBID.Text))
+            {
+                ErrorProvCargaArticulo.SetError(TXTBID, "Ingrese el Codigo.");
+                ok = false;
+            }
             if (!StringNoVacio(TXTBNombre.Text)) ErrorProvCargaArticulo.SetError(TXTBNombre, "Ingrese el Nombre.");
             if (!StringNoVacio(TXTBDescripcion.Text)) ErrorProvCargaArticulo.SetError(TXTBDescripcion, "Ingrese la Descripcion.");
 
             if (cboMarca.SelectedIndex < 0)
             {
-               
+
                 ok = false;
                 ErrorProvCargaArticulo.SetError(cboMarca, "Seleccione la Marca.");
             }
@@ -65,15 +70,15 @@ namespace Catalogo
                 ErrorProvCargaArticulo.SetError(cboCategoria, "Seleccione la Categoria.");
             }
             float numero;
-            if (!float.TryParse(TXTBPrecio.Text, out numero) || numero<0)
+            if (!float.TryParse(TXTBPrecio.Text, out numero) || numero < 0)
             {
-                
+
                 ErrorProvCargaArticulo.SetError(TXTBPrecio, "Ingrese valor numerico positivo. ");
                 TXTBPrecio.Clear();
                 ok = false;
             }
 
-            if (txtbUrlImagen.Text == "" || txtbUrlImagen.Text.Length>999)
+            if (txtbUrlImagen.Text == "" || txtbUrlImagen.Text.Length > 999)
             {
                 ok = false;
                 ErrorProvCargaArticulo.SetError(txtbUrlImagen, "Ingrese la Url y no puede exceder los 999 caracteres ");
@@ -89,48 +94,48 @@ namespace Catalogo
             ErrorProvCargaArticulo.SetError(cboCategoria, "");
             ErrorProvCargaArticulo.SetError(TXTBPrecio, "");
             ErrorProvCargaArticulo.SetError(txtbUrlImagen, "");
-           
+
         }
 
         private void BTNAdd_Click_1(object sender, EventArgs e)
+        {
+            if (validarCamposTxt())
             {
-                if (validarCamposTxt())
+
+                Controller conexion = new Controller();
+                try
                 {
 
-                  Controller conexion = new Controller();
-                  try
-                  {
-
                     EliminarIconosErrorProv();
-                
-                      MessageBox.Show("Datos Ingresados Correctamente.");
-                
-                      validarCamposTxt();
 
-                      artiNuevo.Codigo = TXTBID.Text;
-                      artiNuevo.Nombre = TXTBNombre.Text;
-                      artiNuevo.Descripcion = TXTBDescripcion.Text;
-                      artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
+                    MessageBox.Show("Datos Ingresados Correctamente.");
+
+                    validarCamposTxt();
+
+                    artiNuevo.Codigo = TXTBID.Text;
+                    artiNuevo.Nombre = TXTBNombre.Text;
+                    artiNuevo.Descripcion = TXTBDescripcion.Text;
+                    artiNuevo.Precio = SqlMoney.Parse(TXTBPrecio.Text);
 
 
-                      string url = txtbUrlImagen.Text;
-            
+                    string url = txtbUrlImagen.Text;
 
-                      conexion.Agregar(artiNuevo);
-                      MessageBox.Show("Articulo agregado");
-                      Close();
-                  }
-              
-                  catch (Exception ex)
-                  {
-                      MessageBox.Show(ex.ToString());
-                  }
+
+                    conexion.Agregar(artiNuevo);
+                    MessageBox.Show("Articulo agregado");
+                    Close();
                 }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
 
         }
         private void FMRArticulo_Load_1(object sender, EventArgs e)
         {
-            
+
 
             try
             {
@@ -156,7 +161,7 @@ namespace Catalogo
                     Articulo aux = new Articulo();
                     aux.categoria.IDCategoria = accesoDatos2.Lector.GetInt32(0);
                     ListaCategoria.Add(aux);
-                   
+
                     cboCategoria.Items.Add((string)accesoDatos2.Lector["Descripcion"]);
 
                 }
@@ -177,18 +182,18 @@ namespace Catalogo
         }
         private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            artiNuevo.marca.IDMarca =ListaMarca[cboMarca.SelectedIndex].marca.IDMarca;
-            
-           
+
+            artiNuevo.marca.IDMarca = ListaMarca[cboMarca.SelectedIndex].marca.IDMarca;
+
+
 
         }
         private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             artiNuevo.categoria.IDCategoria = ListaCategoria[cboCategoria.SelectedIndex].categoria.IDCategoria;
-           
+
         }
 
-       
+
     }
 }

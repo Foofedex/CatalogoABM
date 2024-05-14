@@ -22,65 +22,72 @@ namespace Catalogo
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            Controller B_marcas= new Controller();
+            Controller B_marcas = new Controller();
             Controller B_Categorias = new Controller();
-            
+
             string nombreMarca = TB_ingresar_MC.Text.Trim().ToLower();
 
-            if (RD_marca.Checked && TB_ingresar_MC.Text!="")
+            if (RD_marca.Checked && TB_ingresar_MC.Text != "")
             {
                 bool marcaExistente = false;
-              
                 for (int i = 0; i < B_marcas.Marca().Count; i++)
                 {
-                    if (B_marcas.Marca()[i].IDMarca.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower() == nombreMarca)) 
+                    if (B_marcas.Marca()[i].DescripcionMarca.ToLower().Equals(nombreMarca))
                     {
-                        marcaExistente = false;
+                        marcaExistente = true;
                         break;
-                     
+
                     }
-                   
+
                 }
-               if (marcaExistente)
-             
+                if (!marcaExistente)
+
                 {
                     Controller Conect = new Controller();
                     Conect.AgregarMarca(TB_ingresar_MC.Text);
                     MessageBox.Show("SE AGREGO CON EXITO.");
                 }
-                else { MessageBox.Show("LA MARCA YA SE ENCUENTRA REGISTRADA.");}
+                else { MessageBox.Show("LA MARCA YA SE ENCUENTRA REGISTRADA."); }
 
             }
+            
+            string nombreCategoriaIngresada = TB_ingresar_MC.Text.Trim().ToLower();
 
             if (RD_Categoria.Checked && TB_ingresar_MC.Text != "")
             {
-                bool a = true;
+                bool categoriaExistente = false;
+
                 for (int i = 0; i < B_Categorias.Categoria().Count; i++)
                 {
-                    if (B_Categorias.Categoria()[i].IDCategoria.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
-                    {
+                    if (B_Categorias.Categoria()[i].DescripcionCategoria.ToLower().Equals(nombreCategoriaIngresada))
 
-                        a = false;
-                    }
-
+                        categoriaExistente = true;
+                    break;
                 }
-                if (a)
+
+
+                if (!categoriaExistente)
                 {
                     Controller Conect = new Controller();
                     Conect.AgregarCategoria(TB_ingresar_MC.Text);
                     MessageBox.Show("SE AGREGO CON EXITO");
                 }
-                else { MessageBox.Show("CATEGORIA YA REGISTRADA"); }
+                else
+                {
 
+                    MessageBox.Show("LA CATEGORIA YA SE ENCUENTRA REGISTRADA.");
+
+                }
 
             }
 
-          
         }
-
         private void BTNBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
     }
+
 }
