@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Acciones;
+using Dominio;
 
 namespace Catalogo
 {
@@ -23,26 +24,31 @@ namespace Catalogo
         {
             Controller B_marcas= new Controller();
             Controller B_Categorias = new Controller();
-           
+            
+            string nombreMarca = TB_ingresar_MC.Text.Trim().ToLower();
+
             if (RD_marca.Checked && TB_ingresar_MC.Text!="")
             {
-                bool a = true;
+                bool marcaExistente = false;
+              
                 for (int i = 0; i < B_marcas.Marca().Count; i++)
                 {
-                    if (B_marcas.Marca()[i].IDMarca.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower()))
+                    if (B_marcas.Marca()[i].IDMarca.ToString().ToLower().Equals(TB_ingresar_MC.Text.ToLower() == nombreMarca)) 
                     {
-                   
-                        a = false;
+                        marcaExistente = false;
+                        break;
+                     
                     }
                    
                 }
-                if (a)
+               if (marcaExistente)
+             
                 {
                     Controller Conect = new Controller();
                     Conect.AgregarMarca(TB_ingresar_MC.Text);
-                    MessageBox.Show("SE AGREGO CON EXITO");
+                    MessageBox.Show("SE AGREGO CON EXITO.");
                 }
-                else { MessageBox.Show("MARCA REGISTRADA");}
+                else { MessageBox.Show("LA MARCA YA SE ENCUENTRA REGISTRADA.");}
 
             }
 

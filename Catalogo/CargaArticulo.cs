@@ -91,6 +91,7 @@ namespace Catalogo
             ErrorProvCargaArticulo.SetError(txtbUrlImagen, "");
            
         }
+
         private void BTNAdd_Click_1(object sender, EventArgs e)
             {
                 if (validarCamposTxt())
