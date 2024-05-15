@@ -13,17 +13,15 @@ namespace Acciones
 {
     public class Controller
     {
-
-
+        
+        
         public List<Articulo> ListarArticulo()
         {
             List<Articulo> Lista= new List<Articulo> ();
             AccesoDatos lector = new AccesoDatos();
 
-            //lector.setearQuery("SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo;");
-            //
-            //lector.setearQuery("SELECT a.id, a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion, i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo WHERE m.id IS NOT NULL");
-            lector.setearQuery("SELECT a.id, a.Codigo, a.Nombre, a.Descripcion, a.Precio, m.id as IDMarca, m.Descripcion AS Marca, c.Id AS IDCategoria, c.Descripcion, i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id INNER JOIN IMAGENES i ON a.id = i.IdArticulo");
+            lector.setearQuery("SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo;");
+
             lector.ejecutarLectura();
 
             while (lector.Lector.Read()) {
@@ -34,24 +32,12 @@ namespace Acciones
                 aux.Nombre=lector.Lector.GetString(2);
                 aux.Descripcion = lector.Lector.GetString(3);
                 aux.Precio=lector.Lector.GetSqlMoney(4);
-                // aux.marca.IDMarca=lector.Lector.GetInt32 (5);
-                if (!lector.Lector.IsDBNull(5))
-                {
-                    aux.marca.IDMarca = lector.Lector.GetInt32(5);
-                    aux.marca.DescripcionMarca = lector.Lector.GetString(6);
-                    aux.Marca = lector.Lector.GetString(6);
-                }
-                if (!lector.Lector.IsDBNull(7))
-                {
-                    aux.categoria.IDCategoria = lector.Lector.GetInt32(7);
-                    aux.categoria.DescripcionCategoria = lector.Lector.GetString(8);
-                    aux.DescripcionCateoria = lector.Lector.GetString(8);
-                }
-                //aux.marca.DescripcionMarca = lector.Lector.GetString(6);
-                //aux.Marca = lector.Lector.GetString(6);
-                //aux.categoria.IDCategoria = lector.Lector.GetInt32(7);
-                //aux.categoria.DescripcionCategoria = lector.Lector.GetString(8);
-                //aux.DescripcionCateoria = lector.Lector.GetString(8);
+                aux.marca.IDMarca=lector.Lector.GetInt32 (5);
+                aux.marca.DescripcionMarca = lector.Lector.GetString(6);
+                aux.Marca = lector.Lector.GetString(6);
+                aux.categoria.IDCategoria = lector.Lector.GetInt32(7);
+                aux.categoria.DescripcionCategoria = lector.Lector.GetString(8);
+                aux.DescripcionCateoria = lector.Lector.GetString(8);
                 aux.Imagen=lector.Lector.GetString(9);
                                                                    
                 Lista.Add(aux);
@@ -62,8 +48,6 @@ namespace Acciones
             return Lista;   
         
         }
-
-    
 
         //buscar un articulo
         public List<Articulo> Busqueda_Modificar(string buscar)
