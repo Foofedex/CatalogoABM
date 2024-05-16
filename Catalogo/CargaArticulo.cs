@@ -27,7 +27,7 @@ namespace Catalogo
         List<Articulo> ListaCategoria = new List<Articulo>();
         AccesoDatos accesoDatos = new AccesoDatos();
         AccesoDatos accesoDatos2 = new AccesoDatos();
-        
+
         public FMRArticulo()
         {
             InitializeComponent();
@@ -97,11 +97,38 @@ namespace Catalogo
 
         }
 
+        public bool validaciónIDRepetido(string codigo)
+        {
+            try
+            {
+                accesoDatos.setearQuery("SELECT * FROM ARTICULOS WHERE Codigo = '" + codigo + "'");
+                accesoDatos.ejecutarLectura();
+
+                if (accesoDatos.Lector.Read())
+                {
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion(); 
+            }
+        }
+
         private void BTNAdd_Click_1(object sender, EventArgs e)
         {
             if (validarCamposTxt())
             {
-
                 Controller conexion = new Controller();
                 try
                 {
@@ -194,6 +221,27 @@ namespace Catalogo
 
         }
 
+        private void TXTBID_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TXTBID.Text))
+            {
+                MessageBox.Show("El campo no puede quedar vacío.");
+                return;
+            }
 
+            try
+            {
+                if (validaciónIDRepetido(TXTBID.Text))
+                {
+                    MessageBox.Show("Código existente. Ingrese otro.");
+                    TXTBID.Clear();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al verificar el código: " + ex.Message);
+            }
+        }
     }
 }

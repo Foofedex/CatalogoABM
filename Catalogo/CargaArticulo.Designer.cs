@@ -190,6 +190,7 @@
             this.TXTBID.Name = "TXTBID";
             this.TXTBID.Size = new System.Drawing.Size(237, 21);
             this.TXTBID.TabIndex = 0;
+            this.TXTBID.Leave += new System.EventHandler(this.TXTBID_Leave);
             // 
             // txtbUrlImagen
             // 
