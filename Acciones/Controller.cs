@@ -209,11 +209,10 @@ namespace Acciones
             conect.ejecutarAccion();
             conect.cerrarConexion();
         }
-        public void EliminarMarca(string a)
+        public void EliminarMarca(string Descripcion)
         {
             AccesoDatos conect = new AccesoDatos();
-          //  conect.setearQuery("UPDATE from MARCAS  where Descripcion='"+a+"'");
-            conect.setearQuery("delete from MARCAS where Descripcion='"+a+"'");
+            conect.setearQuery("delete from MARCAS where Descripcion= '" + Descripcion + "'");
             conect.ejecutarAccion();
             conect.cerrarConexion();
         }

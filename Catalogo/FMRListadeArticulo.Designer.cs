@@ -58,6 +58,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(754, 492);
             this.Name = "FMRListadeArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMRListadeArticulo";
             this.Load += new System.EventHandler(this.FMRListadeArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVArticulosLista)).EndInit();

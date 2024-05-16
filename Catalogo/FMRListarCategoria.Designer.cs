@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMRListarCategoria));
             this.DGVListaCategoria = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DGVListaCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // DGVListaCategoria
             // 
-            this.DGVListaCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVListaCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVListaCategoria.Location = new System.Drawing.Point(12, 12);
             this.DGVListaCategoria.Name = "DGVListaCategoria";
-            this.DGVListaCategoria.Size = new System.Drawing.Size(508, 247);
+            this.DGVListaCategoria.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DGVListaCategoria.Size = new System.Drawing.Size(381, 180);
             this.DGVListaCategoria.TabIndex = 0;
             // 
             // FMRListarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 282);
+            this.ClientSize = new System.Drawing.Size(420, 215);
             this.Controls.Add(this.DGVListaCategoria);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FMRListarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listar Categoria";
             this.Load += new System.EventHandler(this.FMRListarCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVListaCategoria)).EndInit();
