@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Acciones;
+using Dominio;
 
 namespace Catalogo
 {
@@ -24,31 +25,33 @@ namespace Catalogo
             Controller B_Categorias = new Controller();
             bool b = false;
 
-            int cantidadMarca = B_marcas.ContadorMarca(TB_ingresar_MC_para_eliminar.Text);
+            int cantidadArticulos = B_marcas.ContadorArtxmarca(TB_ingresar_MC_para_eliminar.Text.Trim().ToLower());
 
             if (RD_marca.Checked && TB_ingresar_MC_para_eliminar.Text == "")
             {
                 MessageBox.Show("Ingrese la marca a eliminar");
             }
-
-            if (cantidadMarca > 0 && RD_marca.Checked)
+            
+            if (cantidadArticulos > 0 && RD_marca.Checked)
             {
-                DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar la marca?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿la marca tiene "+ cantidadArticulos+ " articulos asociados?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     b = true;
                 }
 
             }
+            
 
-            if (b == true || (cantidadMarca == 0 && RD_marca.Checked))
+            if (b == true || (cantidadArticulos == 0 && RD_marca.Checked))
             {
 
                 string nombreMarca = TB_ingresar_MC_para_eliminar.Text.Trim().ToLower();
 
-                if (RD_marca.Checked && TB_ingresar_MC_para_eliminar.Text != "")
+                bool marcaAEliminar = false;
+                    Marca eliminar = new Marca();
+                if (RD_marca.Checked && nombreMarca != "")
                 {
-                    bool marcaAEliminar = false;
                     for (int i = 0; i < B_marcas.Marca().Count; i++)
                     {
                         if (B_marcas.Marca()[i].DescripcionMarca.ToLower().Equals(nombreMarca))
@@ -57,25 +60,34 @@ namespace Catalogo
                             marcaAEliminar = true;
                             break;
                         }
-
-                    }
-                    if (marcaAEliminar)
-                    {
-                        Controller Conect = new Controller();
-                        Conect.EliminarMarca(TB_ingresar_MC_para_eliminar.Text);
-                        MessageBox.Show("SE ELIMINO CON EXITO");
+                       
 
                     }
 
                 }
-                else { MessageBox.Show("MARCA NO ENCONTRADA"); }
+                if (!marcaAEliminar)
+                {
+                    MessageBox.Show("MARCA NO ENCONTRADA");
+                }
+               
+                    if (marcaAEliminar)
+                    {
+                        Controller Conect = new Controller();
+                        Conect.EliminarMarca(nombreMarca);
+                        MessageBox.Show("SE ELIMINO CON EXITO");
+
+                    }
+
+                
+               
             }
+           
 
 
             string nombreCategoria = TB_ingresar_MC_para_eliminar.Text.Trim().ToLower();
             bool cate = false;
 
-            int cantidadCategoria = B_Categorias.ContadorCategoria(TB_ingresar_MC_para_eliminar.Text);
+            int cantidadCategoria = B_Categorias.ContadorArtxCategoria(TB_ingresar_MC_para_eliminar.Text);
 
             if (RD_Categoria.Checked && TB_ingresar_MC_para_eliminar.Text == "")
             {
@@ -84,7 +96,7 @@ namespace Catalogo
 
             if (cantidadCategoria > 0 && RD_Categoria.Checked)
             {
-                DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar la Categoria?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿la Categoria tiene "+ cantidadCategoria+" articulos asosiados?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     cate = true;
@@ -105,6 +117,7 @@ namespace Catalogo
 
                     }
                 }
+                if (!CategoriaAEliminar) { MessageBox.Show("Categoria no encontrada"); }
 
                 if (CategoriaAEliminar)
                 {
@@ -115,7 +128,7 @@ namespace Catalogo
                 }
 
             }
-            else { MessageBox.Show("CATEGORIA NO ENCONTRADA"); }
+          
         }
 
 

@@ -19,8 +19,18 @@ namespace Acciones
         {
             List<Articulo> Lista= new List<Articulo> ();
             AccesoDatos lector = new AccesoDatos();
-            lector.setearQuery("SELECT a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio, case when m.Id is null then '0' else m.id end as IdMarca, case when m.Descripcion is null then 'Sin Marca' else m.Descripcion end as Marca, CASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, CASE WHEN c.Descripcion IS NULL THEN 'Sin Categoria' ELSE c.Descripcion END, i.ImagenUrl FROM ARTICULOS a LEFT JOIN marcas m ON a.IdMarca = m.Id LEFT JOIN categorias c ON a.idcategoria = c.id  LEFT JOIN IMAGENES i ON a.id = i.IdArticulo");
-          //  lector.setearQuery("SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo;");
+            lector.setearQuery("SELECT a.id,a.Codigo, a.Nombre, a.Descripcion, a.Precio,  m.id as IDMarca, m.Descripcion AS Marca,  c.Id AS IDCategoria,  c.Descripcion ,i.ImagenUrl FROM ARTICULOS a inner JOIN marcas m ON a.IdMarca = m.Id inner JOIN categorias c ON a.idcategoria = c.id inner JOIN IMAGENES i ON a.id = i.IdArticulo;");
+          
+            /*CON ESTAS QUERY PUEDO VER EN EL LISTAR TODOS LOS ARTICULOS QUE NO CONTENGAN MARCAS Y DESCRIPCION*/
+            /*lector.setearQuery("SELECT a.id ,a.Codigo, a.Nombre, a.Descripcion, a.Precio, 
+           * case when m.Id is null then '0' else m.id end as IdMarca,
+           * case when m.Descripcion is null then 'Sin Marca' else m.Descripcion end as Marca, 
+           * CASE WHEN c.Id IS NULL THEN '0' ELSE c.Id END AS IDCategoria, 
+           * CASE WHEN c.Descripcion IS NULL THEN 'Sin Categoria' ELSE c.Descripcion END,
+           * i.ImagenUrl FROM ARTICULOS a 
+           * LEFT JOIN marcas m ON a.IdMarca = m.Id 
+           * LEFT JOIN categorias c ON a.idcategoria = c.id  
+           * LEFT JOIN IMAGENES i ON a.id = i.IdArticulo");*/
 
             lector.ejecutarLectura();
 
@@ -95,12 +105,12 @@ namespace Acciones
             return ListaMarca;
         }
 
-        public int ContadorMarca(string descripcionMarca)
+        public int ContadorArtxmarca(string descripcionMarca)
         {
             AccesoDatos nuevaConexion=new AccesoDatos();
            
             int contador = 0;
-            nuevaConexion.setearQuery("SELECT COUNT(*) FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id WHERE M.Descripcion = '" + descripcionMarca + "'");
+            nuevaConexion.setearQuery("SELECT COUNT(*) FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id WHERE M.Descripcion like '" + descripcionMarca + "'");
             nuevaConexion.ejecutarLectura();
             if (nuevaConexion.Lector.Read())
             {
@@ -109,12 +119,12 @@ namespace Acciones
             nuevaConexion.cerrarConexion();
             return contador;
         }
-        public int ContadorCategoria(string descripcionCategoria)
+        public int ContadorArtxCategoria(string descripcionCategoria)
         {
 
             AccesoDatos nuevaConexion =new AccesoDatos();
             int contador = 0;
-            nuevaConexion.setearQuery("SELECT COUNT (*) FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE C.Descripcion = '" + descripcionCategoria + "'");
+            nuevaConexion.setearQuery("SELECT COUNT (*) FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE C.Descripcion like '" + descripcionCategoria + "'");
             nuevaConexion.ejecutarLectura();
             if (nuevaConexion.Lector.Read())
             {
